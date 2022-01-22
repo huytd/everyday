@@ -1,4 +1,4 @@
-# 01.22.2022 - Rust/Notes about Vector's memory allocation
+# 01.22.2022 - Rust/Notes about Vector and memory allocation
 
 A Vector in Rust is fundamentally a (pointer, capacity, length) triplet. For example, a `Vec<Char>` containing two elements `'a'` and `'b'`, with the capacity of 4, can be visualized as the following diagram:
 

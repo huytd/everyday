@@ -1,0 +1,96 @@
+{
+  "main": {
+    "id": "b6b3cd0b8277411b",
+    "type": "split",
+    "children": [
+      {
+        "id": "d54183b2b8cdf65c",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "01.01.2022 - TypeScript Non-null assertion operator.md",
+            "mode": "source"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "81dd6e685d78e1a7",
+    "type": "split",
+    "children": [
+      {
+        "id": "a82717e2274e4aa3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6e5f58ab67b74dd8",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "7d36e4a2d0ae1f5d",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "right": {
+    "id": "3b849a0a1d9c5f60",
+    "type": "split",
+    "children": [
+      {
+        "id": "7dc6b1e92a3cca4f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2734460cb1a247da",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "01.01.2022 - TypeScript Non-null assertion operator.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "d54183b2b8cdf65c",
+  "lastOpenFiles": [
+    "01.01.2022 - TypeScript Non-null assertion operator.md",
+    "01.10.2022 - Zig Handling errors.md",
+    "01.04.2022 - Zig Strings in 5 minutes.md"
+  ]
+}

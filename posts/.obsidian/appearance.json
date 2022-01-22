@@ -1,5 +1,8 @@
 {
   "baseFontSize": 16,
   "theme": "moonstone",
-  "cssTheme": "obsidian_ia"
+  "cssTheme": "obsidian_ia",
+  "enabledCssSnippets": [
+    "custom-font"
+  ]
 }

@@ -9,8 +9,9 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "01.01.2022 - TypeScript Non-null assertion operator.md",
-            "mode": "source"
+            "file": "01.03.2022 - React Render a component to any DOM node with React Portals.md",
+            "mode": "source",
+            "source": false
           }
         }
       }
@@ -69,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "01.01.2022 - TypeScript Non-null assertion operator.md",
+                "file": "01.03.2022 - React Render a component to any DOM node with React Portals.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,6 +90,8 @@
   },
   "active": "d54183b2b8cdf65c",
   "lastOpenFiles": [
+    "01.03.2022 - React Render a component to any DOM node with React Portals.md",
+    "01.06.2022 - Zig Comptime.md",
     "01.01.2022 - TypeScript Non-null assertion operator.md",
     "01.10.2022 - Zig Handling errors.md",
     "01.04.2022 - Zig Strings in 5 minutes.md"

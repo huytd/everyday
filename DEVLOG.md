@@ -1,3 +1,34 @@
+# 01.22.2022 - Rust/Notes about Vector's memory allocation
+
+A Vector in Rust is fundamentally a (pointer, capacity, length) triplet. For example, a `Vec<Char>` containing two elements `'a'` and `'b'`, with the capacity of 4, can be visualized as the following diagram:
+
+```
+            ptr      len  capacity
+       +--------+--------+--------+
+       | 0x0123 |      2 |      4 |
+       +--------+--------+--------+
+            |
+            v
+Heap   +--------+--------+--------+--------+
+       |    'a' |    'b' | uninit | uninit |
+       +--------+--------+--------+--------+
+```
+
+The **pointer** will always be pointed to the head of contiguous elements allocated on the heap.
+
+The **capacity** of a Vector is the amount of space allocated for any future elements that will be added to that Vector.
+
+If the Vector's length exceeds the capacity, more space will be allocated to increase the capacity, but all the Vector's elements will need to be **reallocated**. This can be slow, so creating a Vector with some capacity beforehand is always recommended.
+
+When you create a Vector with `Vec::new`, `vec![]` or `Vec::with_capacity(0)`, the capacity will be 0. The Vector will not allocate until new elements are pushed into it.
+
+A Vector **will never automatically shrink itself**, even if it's empty. This is to ensure there are no unnecessary allocations and deallocations. If you wish to free up unused memory, use [`Vec::shrink_to_fit`](https://doc.rust-lang.org/std/vec/struct.Vec.html#method.shrink_to_fit) or [`Vec::shrink_to`](https://doc.rust-lang.org/std/vec/struct.Vec.html#method.shrink_to).
+
+When a Vector is dropped, there is **no guarantee on the order** of which element will be dropped first.
+
+`Vec::push` and `Vec::insert` will never allocate/reallocate if the capacity is sufficient. And it only happens when `len == capacity`. On the other hand, bulk insertion methods like `Vec::append` may reallocate even when it's not necessary.
+
+
 # 01.21.2022 - Math/Count number of digits with Logarithm
 
 Suppose that a number $n$ has $d$ digits, then:
@@ -1096,7 +1127,7 @@ We can also use `comptime` in function parameters, this opened up a lot of possi
 
 For example, let's take a look at this **impractical** example, just to see the concept, we can catch some logic errors at compile time!
 
-The  discount function return the discounted price from an original price and the discount percent. We can use comptime to prevent the discount function to be called with any percent larger than 100%:
+The discount function returns the discounted price from an original price and the discount percent. We can use comptime to prevent the discount function to be called with any percent larger than 100%:
 
 ```zig
 fn discount(price: f32, comptime percent: f32) f32 {
@@ -1149,7 +1180,7 @@ For a more in-depth discussion about `comptime`, be sure that you check out [Zig
 
 # 01.05.2022 - Zig/Where data is stored and how to choose an allocator
 
-Zig has no runtime, hence, no automatic memory management. It's the developer's responsibility to manage the allocation/deallocation of memories. It's important to know how memory allocation works, where your data is stored and what to do with them.
+Zig has no runtime, hence, no automatic memory management. It's the developer's responsibility to manage the allocation/deallocation of memories. It's important to know how memory allocation works, where your data is stored, and what to do with them.
 
 **Where data is stored in a Zig program?**
 
@@ -1166,7 +1197,7 @@ fn createNode(value: i32) *Node {
 }
 ```
 
-In the code above, we return a pointer to a `Node` object that was created inside `createNode` function. This object, however, will be freed after `createNode` function returns, and won't be valid anymore. Any dereference to this pointer will lead to undefined behavior.
+In the code above, we return a pointer to a `Node` object that was created inside the `createNode` function. This object, however, will be freed after the `createNode` function returns, and won't be valid anymore. Any dereference to this pointer will lead to undefined behavior.
 
 This also explains why you are able to return a string literal from a function and safety get away with it:
 
@@ -1444,7 +1475,7 @@ type ImageProps = ImageMetadata & ImageSource
 
 # 01.01.2022 - TypeScript/Non-null assertion operator
 
-Sometimes, you'll run into a case where TS keeps complaining about a value that is possibly `undefined`. For example:
+Sometimes, you'll run into a case where TS keeps complaining about a possibly undefined value. For example:
 
 ```javascript
 const numToString = (a?: number) => {
@@ -1453,7 +1484,7 @@ const numToString = (a?: number) => {
 };
 ```
 
-The proper way to handle this error is to actually check if `a` is valid before returning any values:
+The proper way to handle this error is actually to check if `a` is valid before returning any values:
 
 ```javascript
 if (a) {
@@ -1471,7 +1502,7 @@ const numToString = (a?: number) => {
 };
 ```
 
-What happen if `a` is still `undefined` at runtime? Your program will crash, of course.
+What happens if `a` is still `undefined` at runtime? Your program will crash, of course.
 
 
 # 12.31.2021 - Next.js/Handle Optional Subpath

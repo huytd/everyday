@@ -1,3 +1,79 @@
+# 01.23.2022 - WebAssembly/A quick guide
+
+WebAssembly is a new type of code that **can be loaded and run by the JavaScript VM** on web browsers. It can also be run natively on the computer by other WASM runtimes like [Wasmer](https://wasmer.io/).
+
+WebAssembly is fast and could provide a near-native performance for several reasons:
+
+- It's an assembly-like binary format, that takes very little time to **load** and **parse**.
+- **Compiling and optimizing** in JavaScript engines also takes less time than JavaScript because it's already very close to machine code, and for most of the time, it's already being optimized by Rust/C++/Go compiler.
+- The JavaScript engines don't need to **reoptimize** WebAssembly code the way it does for JavaScript in **runtime**. Hence, executing often takes less time.
+- Garbage collection is not required since the memory is managed manually.
+
+Read more about this in the "[What makes WebAssembly fast?](https://hacks.mozilla.org/2017/02/what-makes-webassembly-fast/)" article from Mozilla.
+
+At a high level, you can think of WebAssembly as a module that has been compiled into a **near-machine code** format. It can be loaded into the JavaScript VM and run along with your JavaScript application, just like any JavaScript module.
+
+It is not designed to replace JavaScript, but to allow web developers to take advantage of the strong points of both languages.
+
+The process of creating and using a WebAssembly module looks like the following diagram:
+
+![](Pasted%20image%2020220123112834.png)
+
+You can use C/C++, Rust, or other languages to compile your code into a WASM **Module**. Each module are made up of [several sections](https://rsms.me/wasm-intro), the most important sections are:
+
+- **References Table**: a resizable typed array of references to functions and other stuff.
+- **Linear Memory**: is a resizable ArrayBuffer that is shared and can be read or written in WebAssembly and your JavaScript context.
+
+In JavaScript, you can load this WASM module and create an **Instance** that contains the references to the table and memory of the WASM module. When creating an instance it's also possible to share some references like variables or functions from JavaScript to WASM.
+
+In the future, WASM modules will be loadable just like any ES2015 modules with `<script type="module">`.
+
+To load and create a WebAssembly instance in JavaScript **from scratch**, you need to:
+
+- Fetch and load the WASM module
+- Compile it and create an instance from it with [`WebAssembly.instantiate`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/instantiate) or [`WebAssembly.instantiateStreaming`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/instantiateStreaming)
+
+For example, the following snippets load and create an instance from a WASM module named `demo.wasm`, it also creates and imports a `hello_from_js` function from JavaScript so it can be used from within the WASM module:
+
+```javascript
+const importObj = {
+    imports: {
+        hello_from_js: (message) => console.log(message);
+    }
+};
+
+const source = fetch('demo.wasm');
+WebAssembly.instantiateStreaming(source, importObj)
+    .then(wasm => {
+        const instance = wasm.instance;
+
+        // call a method from WASM
+        instance.exports.hello_from_rust("Huy");
+
+        // access the linear memory
+        const memory = new Uint8Array(instance.exports.memory.buffer);
+
+        ...
+    });
+```
+
+Using Rust, you can compile your Rust module into a WASM module by using [wasm-pack](https://github.com/rustwasm/wasm-pack). For example, the following Rust program imports the above `hello_from_js` function and call it from the `hello_from_rust` method:
+
+```rust
+use wasm_bindgen::prelude::*;
+
+#[wasm_bindgen]
+extern {
+    pub fn hello_from_js(s: &str);
+}
+
+#[wasm_bindgen]
+pub fn hello_from_rust(name: &str) {
+    hello_from_js(&format!("Hello, {}!", name));
+}
+```
+
+wasm-pack can also make it easier to load and instantiate the WASM module from JavaScript. More on that in the next article.
 # 01.22.2022 - Rust/Notes about Vector and memory allocation
 
 A Vector in Rust is fundamentally a (pointer, capacity, length) triplet. For example, a `Vec<Char>` containing two elements `'a'` and `'b'`, with the capacity of 4, can be visualized as the following diagram:

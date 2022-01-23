@@ -15,7 +15,7 @@ fn main() -> Result<()> {
     for entry in source {
         if let Ok(entry) = entry {
             if let Some(file_name) = entry.file_name().to_str() {
-                if !file_name.starts_with(".") {
+                if !file_name.starts_with(".") && !file_name.starts_with("_") {
                     let content = fs::read_to_string(format!("posts/{}", file_name))?;
                     let title = content.lines().next().unwrap().replace("# ", "");
                     let date_str = title.split_once(" - ").unwrap().0;

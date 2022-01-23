@@ -17,7 +17,7 @@ It is not designed to replace JavaScript, but to allow web developers to take ad
 
 The process of creating and using a WebAssembly module looks like the following diagram:
 
-![](_/meta/Pasted%20image%2020220123112834.png)
+![](_meta/wasm-init.png)
 
 You can use C/C++, Rust, or other languages to compile your code into a WASM **Module**. Each module are made up of [several sections](https://rsms.me/wasm-intro), the most important sections are:
 

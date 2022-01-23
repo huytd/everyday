@@ -1,5 +1,7 @@
 {
   "useTab": false,
   "fileSortOrder": "alphabetical",
-  "legacyEditor": false
+  "legacyEditor": false,
+  "useMarkdownLinks": true,
+  "attachmentFolderPath": "./_meta"
 }

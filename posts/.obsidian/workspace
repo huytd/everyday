@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "01.22.2022 - Rust Notes about Vector memory allocation.md",
+            "file": "01.23.2022 - WebAssembly A quick guide.md",
             "mode": "source",
             "source": false
           }
@@ -53,7 +53,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "3b849a0a1d9c5f60",
@@ -69,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "01.22.2022 - Rust Notes about Vector memory allocation.md",
+                "file": "01.23.2022 - WebAssembly A quick guide.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,6 +90,7 @@
   },
   "active": "d54183b2b8cdf65c",
   "lastOpenFiles": [
+    "01.23.2022 - WebAssembly A quick guide.md",
     "01.22.2022 - Rust Notes about Vector memory allocation.md",
     "01.05.2022 - Zig Where data is stored and how to choose an allocator.md",
     "01.22.2022 - Rust Cargo Workspaces.md",

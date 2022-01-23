@@ -1,3 +1,4 @@
 #!/bin/sh
+cp -f posts/_meta/* _meta/
 ./composer
 git add -A

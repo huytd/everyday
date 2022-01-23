@@ -74,6 +74,8 @@ pub fn hello_from_rust(name: &str) {
 ```
 
 wasm-pack can also make it easier to load and instantiate the WASM module from JavaScript. More on that in the next article.
+
+Currently, WebAssembly is still at MVP phase, therefore, it's still has a lot of limitation like limited WebAPI access, linear memory still limited to 4GB and it's only supports integer and float number. But libraries like wasm-bindgen are made to provide some glue codes that does many things under the hood and bring a wider support for different data types you can share between JavaScript and other languages.
 # 01.22.2022 - Rust/Notes about Vector and memory allocation
 
 A Vector in Rust is fundamentally a (pointer, capacity, length) triplet. For example, a `Vec<Char>` containing two elements `'a'` and `'b'`, with the capacity of 4, can be visualized as the following diagram:

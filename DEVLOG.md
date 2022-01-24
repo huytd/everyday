@@ -88,6 +88,14 @@ Each type is assigned a label `$t0`, `$t1`, and `$t2`. Later on, you'll see thes
 (func $add_five (export "add_five") (type $t2) (param $p0 i32) (result i32) ...)
 ```
 
+And we can see that the WASM module are exporting our Rust's function as well as the **memory**:
+
+```wasm
+(export "alert_from_rust")
+(export "add_five")
+(export "memory")
+```
+
 The string literal that we passed into the `alert` function inside `alert_from_rust` is a value that Rust already known as compile-time, so it was initialized inside the **data** section:
 
 ```wasm

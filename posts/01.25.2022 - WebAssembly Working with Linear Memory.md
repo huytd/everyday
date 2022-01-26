@@ -11,6 +11,7 @@ Linear Memory is mainly used for passing data back and forth between JavaScript 
 In the following example, we create a 1-page memory, store a string `"xịn xò"` on the memory and export them from a WASM module:
 
 **demo.wat**
+
 ```wasm
 (module
   (memory (export "memory") 1)
@@ -29,6 +30,7 @@ wat2wasm demo.wat
 Then we can load them in some JavaScript environment, for example, in NodeJS:
 
 **demo.js**
+
 ```javascript
 const fs = require('fs');
 const wasmSource = fs.readFileSync('demo.wasm');
@@ -71,6 +73,7 @@ Each `i32` number takes 4 bytes, so the address of the `a`, `b`, and `result` in
 We will create the memory from the JavaScript side and import it into our WASM module with the `import` segment.
 
 **sum.wat**
+
 ```wasm
 (module
   (memory (import "js" "mem") 1)
@@ -86,7 +89,9 @@ We will create the memory from the JavaScript side and import it into our WASM m
 )
 ```
 
-Compile the above program with `wat2wasm`, we get `sum.wasm` module. In our JavaScript program, we will need to create an instance of `WebAssembly.Memory` and pass them as an import when we instantiate the WASM module:
+Compile the above program with `wat2wasm`, we get `sum.wasm` module. In our JavaScript program, we will need to create an instance of `WebAssembly.Memory` and pass them as an import when we instantiate the WASM module
+
+**sum.js**
 
 ```javascript
 const fs = require('fs');

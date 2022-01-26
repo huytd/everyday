@@ -3,5 +3,6 @@
   "fileSortOrder": "alphabetical",
   "legacyEditor": false,
   "useMarkdownLinks": true,
-  "attachmentFolderPath": "./_meta"
+  "attachmentFolderPath": "./_meta",
+  "livePreview": false
 }

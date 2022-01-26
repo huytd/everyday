@@ -9,9 +9,9 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "01.24.2022 - WebAssembly How to read WASM code.md",
+            "file": "01.25.2022 - WebAssembly Working with Linear Memory.md",
             "mode": "source",
-            "source": false
+            "source": true
           }
         }
       }
@@ -70,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "01.24.2022 - WebAssembly How to read WASM code.md",
+                "file": "01.25.2022 - WebAssembly Working with Linear Memory.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -90,6 +90,7 @@
   },
   "active": "d54183b2b8cdf65c",
   "lastOpenFiles": [
+    "01.25.2022 - WebAssembly Working with Linear Memory.md",
     "01.24.2022 - WebAssembly How to read WASM code.md",
     "01.23.2022 - WebAssembly A quick guide.md",
     "01.22.2022 - Rust Notes about Vector memory allocation.md",
@@ -98,7 +99,6 @@
     "01.03.2022 - React Render a component to any DOM node with React Portals.md",
     "01.06.2022 - Zig Comptime.md",
     "01.01.2022 - TypeScript Non-null assertion operator.md",
-    "01.10.2022 - Zig Handling errors.md",
-    "01.04.2022 - Zig Strings in 5 minutes.md"
+    "01.10.2022 - Zig Handling errors.md"
   ]
 }

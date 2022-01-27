@@ -4,5 +4,6 @@
   "legacyEditor": false,
   "useMarkdownLinks": true,
   "attachmentFolderPath": "./_meta",
-  "livePreview": false
+  "livePreview": false,
+  "alwaysUpdateLinks": true
 }

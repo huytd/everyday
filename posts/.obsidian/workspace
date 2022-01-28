@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "01.26.2022 - WebAssembly Tables and Dynamic Linking.md",
+            "file": "01.27.2022 - WebAssembly Stack Machine Execution.md",
             "mode": "source",
             "source": true
           }
@@ -70,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "01.26.2022 - WebAssembly Tables and Dynamic Linking.md",
+                "file": "01.27.2022 - WebAssembly Stack Machine Execution.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -90,6 +90,7 @@
   },
   "active": "d54183b2b8cdf65c",
   "lastOpenFiles": [
+    "01.27.2022 - WebAssembly Stack Machine Execution.md",
     "01.26.2022 - WebAssembly Tables and Dynamic Linking.md",
     "01.25.2022 - WebAssembly Working with Linear Memory.md",
     "01.24.2022 - WebAssembly How to read WASM code.md",
@@ -98,7 +99,6 @@
     "01.05.2022 - Zig Where data is stored and how to choose an allocator.md",
     "01.22.2022 - Rust Cargo Workspaces.md",
     "01.03.2022 - React Render a component to any DOM node with React Portals.md",
-    "01.06.2022 - Zig Comptime.md",
-    "01.01.2022 - TypeScript Non-null assertion operator.md"
+    "01.06.2022 - Zig Comptime.md"
   ]
 }

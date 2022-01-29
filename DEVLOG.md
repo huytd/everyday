@@ -1,3 +1,23 @@
+# 01.29.2022 - Supabase/Row Level Security with application user
+
+In Postgres, tables can have [Row Level Security](https://www.postgresql.org/docs/current/ddl-rowsecurity.html) that restrict the user's action on each row.
+
+With Supabase, we can create a policy that matched the current logged in user, this user is from the application level, not the database user:
+
+```sql
+create policy "Users can update their own profiles."
+  on profiles for update using (
+    auth.uid() = id
+  );
+```
+
+The `auth.uid()` here is just a Postgres function provided by Supabase to extract the application's current user. See its implementation here: [supabase/auth-schema.sql#Line 77-78](https://github.com/supabase/supabase/blob/ddac1147354a386342e825cbfb70ec63775e6a2b/docker/dockerfiles/postgres/auth-schema.sql#L77-L78).
+
+Read more:
+
+- https://github.com/supabase/supabase/blob/3ec9c7c6499e4a61ca88ceb24aa4d81ee24c39ae/web/docs/guides/auth.mdx#how-it-works
+- https://github.com/supabase/supabase/blob/23cac64b0c40ab9421108eb830d1b7b35979bd32/web/docs/learn/auth-deep-dive/row-level-security.md
+
 # 01.28.2022 - WebAssembly/Working with wasm-bindgen
 
 [wasm-bindgen](https://github.com/rustwasm/wasm-bindgen) is an awesome tool made by **rustwasm** team, make it very easy to expose Rust's data/functions to JavaScript and vice versa.

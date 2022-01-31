@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "01.30.2022 - Deno FFI API.md",
+            "file": "01.31.2022 - Deno Non-blocking FFI Calls.md",
             "mode": "source",
             "source": true
           }
@@ -70,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "01.30.2022 - Deno FFI API.md",
+                "file": "01.31.2022 - Deno Non-blocking FFI Calls.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -90,15 +90,15 @@
   },
   "active": "d54183b2b8cdf65c",
   "lastOpenFiles": [
-    "01.30.2022 - Deno FFI API.md",
+    "01.31.2022 - Deno Non-blocking FFI Calls.md",
+    "01.17.2022 - JavaScript Console Assert Command.md",
     "01.13.2022 - Comparing floating-point numbers.md",
-    "01.27.2022 - WebAssembly Stack Machine Execution.md",
+    "01.28.2022 - WebAssembly Working with wasm-bindgen.md",
     "01.26.2022 - WebAssembly Tables and Dynamic Linking.md",
     "01.25.2022 - WebAssembly Working with Linear Memory.md",
     "01.24.2022 - WebAssembly How to read WASM code.md",
     "01.23.2022 - WebAssembly A quick guide.md",
     "01.22.2022 - Rust Notes about Vector memory allocation.md",
-    "01.05.2022 - Zig Where data is stored and how to choose an allocator.md",
-    "01.22.2022 - Rust Cargo Workspaces.md"
+    "01.05.2022 - Zig Where data is stored and how to choose an allocator.md"
   ]
 }

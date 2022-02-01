@@ -1,3 +1,39 @@
+# 02.01.2022 - HTML/Auto-fill OTP code from SMS
+
+Safari on iOS and macOS devices have the ability to automatically retrieve and autofill the OTP code sent via SMS if your input has the `autocomplete="one-time-code"` attribute:
+
+```html
+<form action="/verify-otp" method="POST">
+    <input type="text"
+           inputmode="numeric"
+           autocomplete="one-time-code"
+           pattern="\d{6}"
+           required>
+</form>
+```
+
+To make the SMS OTP more secure, you should compose the SMS message with the origin-bound:
+
+```
+Your OTP is 123456
+
+@app-01.huy.rocks #123456
+```
+
+The origin bound is a string containing two parts. The domain name is preceded with `@`, and the OTP is preceded with `#`.
+
+When the device receives the SMS, the OTP code will be auto-filled only if the domain matches your website's domain.
+
+For non-iOS devices, OTP autofill also works but not with the `autocomplete="one-time-code"` attribute. We should use WebOTP API instead.
+
+```javascript
+navigator.credentials.get({
+    otp: {transport:['sms']}
+})
+.then(otp => input.value = otp.code);
+```
+
+More details about WebOTP can be found here: https://web.dev/web-otp/
 # 01.31.2022 - Deno/Non-blocking FFI Calls
 
 Sometimes, we want to call an FFI function that is CPU-bound. This would block the main thread. For example, in this `sleep_and_scream` method from Rust, we use `std::thread::sleep` to hang the function for a while, then print out some text:

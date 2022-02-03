@@ -30,6 +30,7 @@ You can see the high-resolution version of the image [here](https://raw.githubus
 
 - https://alistapart.com/article/say-no-to-faux-bold/
 - https://www.smashingmagazine.com/2012/07/avoiding-faux-weights-styles-google-web-fonts/
+
 # 02.02.2022 - Math/Interpolation Methods
 
 **Interpolation** is a type of estimation method for finding new data points based on the range of a discrete set of known data points.
@@ -116,6 +117,7 @@ Aside from animation, we can use interpolation functions to generate color, or d
 ---
 
 Demo source can be found here: https://github.com/huytd/interpolation-demo
+
 # 02.01.2022 - HTML/Auto-fill OTP code from SMS
 
 Safari on iOS and macOS devices have the ability to automatically retrieve and autofill the OTP code sent via SMS if your input has the `autocomplete="one-time-code"` attribute:
@@ -152,6 +154,7 @@ navigator.credentials.get({
 ```
 
 More details about WebOTP can be found here: https://web.dev/web-otp/
+
 # 01.31.2022 - Deno/Non-blocking FFI Calls
 
 Sometimes, we want to call an FFI function that is CPU-bound. This would block the main thread. For example, in this `sleep_and_scream` method from Rust, we use `std::thread::sleep` to hang the function for a while, then print out some text:
@@ -216,6 +219,7 @@ It's Deno!!!!
 WAAAAAAAAAAAA!!!!!!!!!!!
 Finished!
 ```
+
 # 01.30.2022 - Deno/Introduction to FFI API
 
 From version 1.13, Deno introduced the FFI API (foreign function interface API) that allows us to load libraries built in any language that supports the C ABI (like C/C++, Rust, Zig, Kotlin,...).
@@ -353,6 +357,7 @@ deno run -A --unstable demo.
 ```
 
 The new FFI API opened up a lot of possibilities for Deno/TypeScript, for example, there are projects like [deno_sdl2](https://github.com/littledivy/deno_sdl2) that allows us to create native SDL2 applications using Deno and TypeScript, no more Electron!
+
 # 01.29.2022 - Supabase/Row Level Security with application user
 
 In Postgres, tables can have [Row Level Security](https://www.postgresql.org/docs/current/ddl-rowsecurity.html) that restrict the user's action on each row.
@@ -372,6 +377,7 @@ Read more:
 
 - https://github.com/supabase/supabase/blob/3ec9c7c6499e4a61ca88ceb24aa4d81ee24c39ae/web/docs/guides/auth.mdx#how-it-works
 - https://github.com/supabase/supabase/blob/23cac64b0c40ab9421108eb830d1b7b35979bd32/web/docs/learn/auth-deep-dive/row-level-security.md
+
 
 # 01.28.2022 - WebAssembly/Working with wasm-bindgen
 
@@ -471,6 +477,7 @@ If you're using TypeScript or NodeJS, you might want to take a look at **wasm-bi
 
 If you're working with various data type/struct, it's very helpful to use **serde** for serializing/deserializing into and from JS. See more at https://rustwasm.github.io/wasm-bindgen/reference/arbitrary-data-with-serde.html
 
+
 # 01.27.2022 - WebAssembly/Stack-based execution model
 
 WebAssembly is executed using a stack-based virtual machine.
@@ -516,6 +523,7 @@ At the `i32.add` instruction, the top two values of the value stack are popped o
 ![](_meta/wasm-execution-04.png)
 
 At this step, we reached the end of the `$add` function, the control-flow stack will be popped, the return signature of this function is `i32`, so the value `10` of type `i32` will be returned to the caller of the `$add` function. The execution concluded.
+
 # 01.26.2022 - WebAssembly/Tables and Dynamic Linking
 
 **Table** is another shared instance in WebAssembly just like Linear Memory, but it can only store **function references**. It can be shared between modules, and all you can do with tables is to make **indirect function calls** to the functions references stored in that table.
@@ -607,6 +615,7 @@ wasm://wasm/7396aa4e:1
 RuntimeError: null function or function signature mismatch
     at wasm://wasm/7396aa4e:wasm-function[0]:0x43
 ```
+
 
 # 01.25.2022 - WebAssembly/Working with Linear Memory
 
@@ -745,6 +754,7 @@ instance.exports.sum();
 It seems fine to work with the bytes directly in linear memory in the above examples since we are working with simple data types.
 
 In reality, dealing with higher-level JavaScript data types like Object or Map requires more management and underlying conversion. There are libraries like [wasm-bindgen](https://github.com/rustwasm/wasm-bindgen/) created for this kind of task. We will take a deeper look at these libraries in later articles.
+
 # 01.24.2022 - WebAssembly/How to read WASM code
 
 Just like a good-old-Assembly program, a WebAssembly module is made up of different sections:
@@ -861,6 +871,7 @@ In fact, there is no string type in WebAssembly, and this call shows us how we c
 
 It's not necessary to understand WASM code to work with WASM, but it's super helpful to be able to have a peek inside the "blackbox" and understand what's going on under the hood. It will help a lot when it comes to debugging your WASM code too.
 
+
 # 01.23.2022 - WebAssembly/A quick guide
 
 WebAssembly is a new type of code that **can be loaded and run by the JavaScript VM** on web browsers. It can also be run natively on the computer by other WASM runtimes like [Wasmer](https://wasmer.io/).
@@ -939,6 +950,7 @@ pub fn hello_from_rust(name: &str) {
 wasm-pack can also make it easier to load and instantiate the WASM module from JavaScript. More on that in the next article.
 
 Currently, WebAssembly is still at MVP phase, therefore, it's still has a lot of limitation like limited WebAPI access, linear memory still limited to 4GB and it's only supports integer and float number. But libraries like wasm-bindgen are made to provide some glue codes that does many things under the hood and bring a wider support for different data types you can share between JavaScript and other languages.
+
 # 01.22.2022 - Rust/Notes about Vector and memory allocation
 
 A Vector in Rust is fundamentally a (pointer, capacity, length) triplet. For example, a `Vec<Char>` containing two elements `'a'` and `'b'`, with the capacity of 4, can be visualized as the following diagram:
@@ -968,6 +980,7 @@ A Vector **will never automatically shrink itself**, even if it's empty. This is
 When a Vector is dropped, there is **no guarantee on the order** of which element will be dropped first.
 
 `Vec::push` and `Vec::insert` will never allocate/reallocate if the capacity is sufficient. And it only happens when `len == capacity`. On the other hand, bulk insertion methods like `Vec::append` may reallocate even when it's not necessary.
+
 
 
 # 01.21.2022 - Math/Count number of digits with Logarithm
@@ -1013,6 +1026,7 @@ int digits = log10(n) + 1;
 **Source:** [Proof: How many digits does a number have? - StackExchange Mathematics](https://math.stackexchange.com/questions/231742/proof-how-many-digits-does-a-number-have-lfloor-log-10-n-rfloor-1)
 
 
+
 # 01.20.2022 - Rust/Blanket Implementation
 
 By using generic parameters, you can `impl` a trait for any type that satisfies some trait bounds, for example, implement trait `ToString` for every type `T` that implemented the `Display` trait:
@@ -1042,6 +1056,7 @@ use foo::Foo;
 let i = 10i32;
 i.bar();
 ```
+
 
 
 # 01.19.2022 - Rust/The Never Type
@@ -1091,6 +1106,7 @@ while !done {
 
 - https://doc.rust-lang.org/std/primitive.never.html
 - https://doc.rust-lang.org/book/ch19-04-advanced-types.html?highlight=str#the-never-type-that-never-returns
+
 
 
 # 01.18.2022 - Rust/Lifetime Elision Rules
@@ -1151,6 +1167,7 @@ fn split<'a, 'b>(source: &'a str, delimiter: &'b str) -> &??? str
 In this case, the compiler could not figure out the output lifetime, so it will show a compile error.
 
 
+
 # 01.17.2022 - JavaScript/Console Assert Command
 
 The built-in `console` comes with the `console.assert` method, which is pretty useful to write some tests in your code.
@@ -1185,6 +1202,7 @@ If we change `actual = 15`, the output on the screen will be:
 ```
 All good!
 ```
+
 
 
 # 01.16.2022 - Rust/Dealing with Integer Overflow
@@ -1250,6 +1268,7 @@ When casting between types, wrapping is the default behavior:
 
 - https://github.com/rust-lang/rfcs/blob/master/text/0560-integer-overflow.md
 - https://huonw.github.io/blog/2016/04/myths-and-legends-about-integer-overflow-in-rust/
+
 
 
 # 01.15.2022 - Rust/Deref and DerefMut
@@ -1337,6 +1356,7 @@ impl<T> DerefMut for Something<T> {
 You can read more about `Deref` and `DerefMut` in [The Rust Programming Language Book](https://doc.rust-lang.org/book/ch15-02-deref.html), or in the [documentation](https://doc.rust-lang.org/std/ops/trait.Deref.html).
 
 
+
 # 01.14.2022 - Rust/Implement external traits for external types
 
 One of the rules for working with traits in Rust is: You are not allowed to implement a trait on a type if either the trait or the type is not local to your crate.
@@ -1383,6 +1403,7 @@ impl fmt::Display for List {
 ```
 
 Because `List` is the new type that wraps around `Vec<String>`, you cannot directly access `Vec<String>`'s methods. You can re-implement these methods and redirect the call to `self.0`, or try [implement `Deref` trait](https://doc.rust-lang.org/std/ops/trait.Deref.html) for it.
+
 
 
 # 01.13.2022 - Comparing floating-point numbers
@@ -1486,6 +1507,7 @@ pub fn approxEqRel(comptime T: type, x: T, y: T, tolerance: T) bool {
 - https://floating-point-gui.de/errors/comparison/
 
 
+
 # 01.12.2022 - Zig/How ArenaAllocator works
 
 `ArenaAllocator` is one of Zig's built-in allocators. It takes another allocator and wraps some code around to allow you to allocate memory without the need to free them individually. Every allocated memory will be freed at once when you call `ArenaAllocator.deinit()`.
@@ -1539,6 +1561,7 @@ pub fn deinit(self: ArenaAllocator) void {
 ![](_meta/arena-allocator-deinit.png)
 
 In the above example, `E`, `D` will be freed before `C`. And `B` will be freed before `A`. Hence, no orphaned memory gets leaked.
+
 
 
 # 01.11.2022 - Zig/Build system
@@ -1596,6 +1619,7 @@ pub fn build(b: *Builder) void {
 The executable will be created at `./zig-cache/bin` by default.
 
 See more details in [ZigLearn/Build system](https://ziglearn.org/chapter-3/).
+
 
 
 # 01.10.2022 - Zig/Handling errors
@@ -1709,6 +1733,7 @@ There are a couple of ways we can handle a function with an error return type:
 Lastly, don't forget to check out [Zig's documentation about Errors](https://ziglang.org/documentation/master/#Errors) for more in-depth discussions about error handling!
 
 
+
 # 01.09.2022 - Zig/JSON in 5 minutes
 
 Zig has built-in support for JSON via the `std.json` module.
@@ -1806,6 +1831,7 @@ See [`StringifyOptions` struct](https://github.com/ziglang/zig/blob/master/lib/s
   ```
 
 For more details, you should read [the implementation of `std.json` module](https://github.com/ziglang/zig/blob/master/lib/std/json.zig), also, don't skip the tests at the bottom of the source file. They're super useful!
+
 
 
 # 01.08.2022 - Zig/Case Study: Implementing a Generic Stack
@@ -1977,6 +2003,7 @@ test {
 
 
 
+
 # 01.07.2022 - Zig/Cross-compile C/C++ and Zig programs
 
 Zig came with a built-in C/C++ compiler `zig cc` and `zig c++`. So you can compile and run your C/C++ code with Zig!
@@ -2015,6 +2042,7 @@ And not only Zig's C/C++ compiler, but the Zig compiler itself can do cross-comp
 ```
 zig build-exe -target x86_64-linux-musl hello.zig
 ```
+
 
 
 # 01.06.2022 - Zig/Comptime
@@ -2119,6 +2147,7 @@ var list: NumberList = ...;
 For a more in-depth discussion about `comptime`, be sure that you check out [Zig's documentation](https://ziglang.org/documentation/0.9.0/#comptime).
 
 
+
 # 01.05.2022 - Zig/Where data is stored and how to choose an allocator
 
 Zig has no runtime, hence, no automatic memory management. It's the developer's responsibility to manage the allocation/deallocation of memories. It's important to know how memory allocation works, where your data is stored, and what to do with them.
@@ -2200,6 +2229,7 @@ var node = createNode(allocator, 12) catch |err| {
 ```
 
 Lastly, it's highly recommended to watch this great talk [What's a Memory Allocator Anyway?](https://www.youtube.com/watch?v=vHWiDx_l4V0) by Benjamin Feng.
+
 
 
 # 01.04.2022 - Zig/Strings in 5 minutes
@@ -2313,6 +2343,7 @@ var str = std.fmt.allocPrint(allocator, "SJC-SGN Distance = {d} miles", .{distan
 Thank you so much, everyone on [Reddit](https://www.reddit.com/r/Zig/comments/rxmg9p/zig_strings_in_5_minutes/) and [Lobsters](https://lobste.rs/s/nimeia/zig_strings_5_minutes), for the great feedbacks and discussions that helped me improve this article!!!
 
 
+
 # 01.03.2022 - React/Render a component to any DOM node with React Portals
 
 In React, you can mount a component into any DOM node instead of just the current parent component, with the help of `ReactDOM.createPortal([content], [node] )`.
@@ -2362,6 +2393,7 @@ Using this method, only the HTML structure of the document will be affected and 
 Event bubbling will respect this hierarchy, from `MooContent` to `MooContainer` then `App`.
 
 Accessibility wise, since `MooContent` is rendered under `document.body`, keyboard navigation or screen reader's flow will also be affected by this HTML structure, so make sure you handled them properly by yourself.
+
 
 
 # 01.02.2022 - TypeScript/Type Intersection
@@ -2414,6 +2446,7 @@ type ImageProps = ImageMetadata & ImageSource
 ```
 
 
+
 # 01.01.2022 - TypeScript/Non-null assertion operator
 
 Sometimes, you'll run into a case where TS keeps complaining about a possibly undefined value. For example:
@@ -2446,6 +2479,7 @@ const numToString = (a?: number) => {
 What happens if `a` is still `undefined` at runtime? Your program will crash, of course.
 
 
+
 # 12.31.2021 - Next.js/Handle Optional Subpath
 
 In Next.js, you can define a [dynamic route](https://nextjs.org/docs/routing/dynamic-routes) by creating a file at `/pages/post/[id].tsx`. And this will catch all URLs like `/post/foo`, `/post/bar`,...
@@ -2455,6 +2489,7 @@ But if you want to catch URLs like `/post`, you will have to create another file
 One other way to catch all URLs including `/post/<anything>` and `/post`, you can create a file like `/pages/post/[...id].tsx`.
 
 And to catch all URLs with multiple levels like `/post`, `/post/<anything>`, `/post/<anything>/<any>/<level>/...`, create a file like `/pages/post/[[...id]].tsx`.
+
 
 
 
@@ -2503,6 +2538,7 @@ private deleteAt(value: number, node?: TreeNode): TreeNode | undefined {
 ```
 
 
+
 # 12.29.2021 - Rust/GUI/Druid/Custom Widget
 
 To create a custom widget in [Druid](https://linebender.org/druid/), we create a new struct and implement [Widget](https://docs.rs/druid/latest/druid/trait.Widget.html) trait. Or create a function that returns an `impl Widget`.
@@ -2549,6 +2585,7 @@ impl Widget<AppData> for FooWidget {
 Depends on how much control you want to have for your widget, choose one of the two types of implementation.
 
 
+
 # 12.28.2021 - Data Structures/Binary Tree/In-order Traversal with Stack
 
 This one is a bit more compex than the pre-order (in term of using stack).
@@ -2575,6 +2612,7 @@ while (curr !== null || stack.length) {
   curr = curr.right;
 }
 ```
+
 
 
 # 12.27.2021 - Algorithms/Find Palindrome
@@ -2651,6 +2689,7 @@ return s.substr(start, end - start + 1);
 ```
 
 
+
 # 12.26.2021 - Algorithms/Partition a number to sum of smaller ones
 
 The array **x** is to keep track of all possible integers we can find, the array **t** is to keep the sum **t[i]** of every **x** number from **x[1]** to **x[i]**.
@@ -2718,6 +2757,7 @@ gen(0);
 ```
 
 
+
 # 12.25.2021 - Algorithms/Generate repeated combinatorial
 
 The algorithm is simple:
@@ -2755,6 +2795,7 @@ while (gen != null) {
 ```
 
 
+
 # 12.24.2021 - Scala/Partial Applied Function
 
 Like currying, if a function takes some arguments and we invoke that function without all of the arguments, a new function will be created so we can call it with the remaining functions later on.
@@ -2779,4 +2820,5 @@ const add5 = sum.bind(null, 5);
 
 debug(add5(10));
 ```
+
 

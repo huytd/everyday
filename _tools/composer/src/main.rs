@@ -37,7 +37,7 @@ fn main() -> Result<()> {
 
     for post in &posts {
         content.push_str(&post.content);
-        content.push_str("\n");
+        content.push_str("\n\n");
     }
 
     let mut out_file = File::create("DEVLOG.md")?;

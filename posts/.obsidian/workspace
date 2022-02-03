@@ -9,8 +9,8 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "02.02.2022 - Math Interpolation Methods.md",
-            "mode": "source",
+            "file": "02.03.2022 - Typography Faux Bold and Faux Italic.md",
+            "mode": "preview",
             "source": true
           }
         }
@@ -70,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "02.02.2022 - Math Interpolation Methods.md",
+                "file": "02.03.2022 - Typography Faux Bold and Faux Italic.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -90,6 +90,7 @@
   },
   "active": "d54183b2b8cdf65c",
   "lastOpenFiles": [
+    "02.03.2022 - Typography Faux Bold and Faux Italic.md",
     "02.02.2022 - Math Interpolation Methods.md",
     "02.01.2022 - HTML Auto-fill OTP code from SMS.md",
     "01.31.2022 - Deno Non-blocking FFI Calls.md",
@@ -98,7 +99,6 @@
     "01.28.2022 - WebAssembly Working with wasm-bindgen.md",
     "01.26.2022 - WebAssembly Tables and Dynamic Linking.md",
     "01.25.2022 - WebAssembly Working with Linear Memory.md",
-    "01.24.2022 - WebAssembly How to read WASM code.md",
-    "01.23.2022 - WebAssembly A quick guide.md"
+    "01.24.2022 - WebAssembly How to read WASM code.md"
   ]
 }

@@ -80,6 +80,10 @@ Animated result:
 Above are just some common interpolation methods, for more, please check http://paulbourke.net/miscellaneous/interpolation/
 
 Aside from animation, we can use interpolation functions to generate color, or dynamically generate font size on the web page, create a dynamic layout,... See more details about web-related techniques with interpolation at https://www.smashingmagazine.com/2017/05/fluid-responsive-typography-css-poly-fluid-sizing/
+
+---
+
+Demo source can be found here: https://github.com/huytd/interpolation-demo
 # 02.01.2022 - HTML/Auto-fill OTP code from SMS
 
 Safari on iOS and macOS devices have the ability to automatically retrieve and autofill the OTP code sent via SMS if your input has the `autocomplete="one-time-code"` attribute:

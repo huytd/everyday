@@ -13,7 +13,7 @@ Faux italic is made by **slanting** the original font at an angle. Some fonts ac
 
 This makes some fonts look bad, especially for serif fonts, where all the strokes are precisely well made, and usually have **true italic** styles.
 
-![](faux-italic.png)
+![](_meta/faux-italic.png)
 Source: https://graphicdesign.stackexchange.com/a/76034
 
 Generally, all designers hate faux styles. But as front-end developers, we should try our best to balance between the performance of the web page and the high standard of our fellow designers. And it's not an easy job, trust me.

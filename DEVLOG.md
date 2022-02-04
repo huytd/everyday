@@ -1,3 +1,46 @@
+# 02.04.2022 - TypeScript/Build a library with Parcel
+
+With Parcel 2.0, it's very easy to build a TypeScript library and publish them to NPM later on, with automatically generated types and built-in support for both CommonJS and ESModule.
+
+Let's say you have a library file located at `src/lib.ts`:
+
+```typescript
+export const sum = (a: number, b: number) => a + b;
+```
+
+You want to publish this library as an NPM package, so everyone can use it, all you have to do is modify your `package.json` to add the `source`, `main`, `module`, and `types` sections:
+
+```json@focus=4:7
+{
+  "name": "your-package-name",
+  "version": "1.0.0",
+  "source": "src/lib.ts",
+  "main": "dist/main.js",
+  "module": "dist/module.js",
+  "types": "dist/types.d.ts",
+  "devDependencies": {
+    "parcel": "^2.0.0",
+    "typescript": "^4.5.5"
+  }
+}
+```
+
+The `source` field defines where your package's entry point is.
+
+The `main` field defines the main target of the build, which is the `dist/main.js` file.
+
+The `module` field is to support ESModule.
+
+And finally, the `types` field tells Parcel to generate a type definition `.d.ts` file for your library.
+
+Run the build command:
+
+```
+npx parcel build
+```
+
+If everything went well, you can publish your package to NPM now.
+
 # 02.04.2022 - JavaScript/Use any ASCII characters as a variable name
 
 In JavaScript, you can use any ASCII characters as variable or function names, even non-English words or some special symbols:

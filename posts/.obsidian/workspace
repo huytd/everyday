@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "02.04.2022 - TypeScript Build a library with Parcel.md",
+            "file": "02.05.2022 - TypeScript Build a library with Parcel.md",
             "mode": "source",
             "source": true
           }
@@ -70,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "02.04.2022 - TypeScript Build a library with Parcel.md",
+                "file": "02.05.2022 - TypeScript Build a library with Parcel.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -90,7 +90,7 @@
   },
   "active": "d54183b2b8cdf65c",
   "lastOpenFiles": [
-    "02.04.2022 - TypeScript Build a library with Parcel.md",
+    "02.05.2022 - TypeScript Build a library with Parcel.md",
     "02.04.2022 - JavaScript Non-English Variables.md",
     "02.03.2022 - Typography Faux Bold and Faux Italic.md",
     "02.02.2022 - Math Interpolation Methods.md",

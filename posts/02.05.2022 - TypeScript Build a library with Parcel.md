@@ -1,4 +1,4 @@
-# 02.04.2022 - TypeScript/Build a library with Parcel
+# 02.05.2022 - TypeScript/Build a library with Parcel
 
 With Parcel 2.0, it's very easy to build a TypeScript library and publish them to NPM later on, with automatically generated types and built-in support for both CommonJS and ESModule.
 

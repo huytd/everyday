@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "02.03.2022 - Typography Faux Bold and Faux Italic.md",
+            "file": "02.04.2022 - JavaScript Non-English Variables.md",
             "mode": "source",
             "source": true
           }
@@ -70,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "02.03.2022 - Typography Faux Bold and Faux Italic.md",
+                "file": "02.04.2022 - JavaScript Non-English Variables.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -90,6 +90,7 @@
   },
   "active": "d54183b2b8cdf65c",
   "lastOpenFiles": [
+    "02.04.2022 - JavaScript Non-English Variables.md",
     "02.03.2022 - Typography Faux Bold and Faux Italic.md",
     "02.02.2022 - Math Interpolation Methods.md",
     "02.01.2022 - HTML Auto-fill OTP code from SMS.md",
@@ -98,7 +99,6 @@
     "01.13.2022 - Comparing floating-point numbers.md",
     "01.28.2022 - WebAssembly Working with wasm-bindgen.md",
     "01.26.2022 - WebAssembly Tables and Dynamic Linking.md",
-    "01.25.2022 - WebAssembly Working with Linear Memory.md",
-    "01.24.2022 - WebAssembly How to read WASM code.md"
+    "01.25.2022 - WebAssembly Working with Linear Memory.md"
   ]
 }

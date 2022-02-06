@@ -1,3 +1,35 @@
+# 02.06.2022 - Typescript/Testing with Jest
+
+To use Jest for testing a TypeScript library, we need to install a couple of things:
+
+```
+yarn add -D jest @types/jest ts-jest ts-node
+```
+
+And set up the `jest.config.ts` file to use the `ts-jest` transformer when processing `*.test.ts` files:
+
+```typescript
+import type { Config } from '@jest/types';
+
+const config: Config.InitialOptions = {
+    verbose: true,
+    transform: {
+        '^.+\\.ts?$': 'ts-jest',
+    }
+};
+
+export default config;
+```
+
+From now on, you can run `jest` command to start testing every `*.test.ts` file in the project.
+
+```json@focus=3
+"scripts": {
+    "build": "parcel build",
+    "test": "jest"
+},
+```
+
 # 02.05.2022 - TypeScript/Build a library with Parcel
 
 With Parcel 2.0, it's very easy to build a TypeScript library and publish them to NPM later on, with automatically generated types and built-in support for both CommonJS and ESModule.

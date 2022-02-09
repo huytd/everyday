@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "02.07.2022 Security Timing Attack.md",
+            "file": "02.08.2022 - Cloudflare Expose local server with Tunnel.md",
             "mode": "source",
             "source": true
           }
@@ -70,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "02.07.2022 Security Timing Attack.md",
+                "file": "02.08.2022 - Cloudflare Expose local server with Tunnel.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -90,6 +90,7 @@
   },
   "active": "d54183b2b8cdf65c",
   "lastOpenFiles": [
+    "02.08.2022 - Cloudflare Expose local server with Tunnel.md",
     "02.07.2022 Security Timing Attack.md",
     "02.06.2022 - Typescript Testing with Jest.md",
     "02.05.2022 - TypeScript Build a library with Parcel.md",
@@ -98,7 +99,6 @@
     "02.02.2022 - Math Interpolation Methods.md",
     "02.01.2022 - HTML Auto-fill OTP code from SMS.md",
     "01.31.2022 - Deno Non-blocking FFI Calls.md",
-    "01.17.2022 - JavaScript Console Assert Command.md",
-    "01.13.2022 - Comparing floating-point numbers.md"
+    "01.17.2022 - JavaScript Console Assert Command.md"
   ]
 }

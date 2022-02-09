@@ -1,3 +1,71 @@
+# 02.08.2022 - Cloudflare/Expose local server with Tunnel
+
+Like [Ngrok](https://ngrok.com/), Cloudflare Tunnel is a lightweight daemon that run on your server (or local machine) and create a tunnel between your machine and the Cloudflare edge, allowing you to expose your local services to the internet.
+
+![](https://developers.cloudflare.com/cloudflare-one/static/b745807d9d20353f03afcfdd3611fa57/ccf45/handshake.jpg)
+
+If you have a domain's DNS managed by Cloudflare, you can securely point your domain to the exposed local service.
+
+To use Tunnel, first, install the [`cloudflared`](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/install-and-setup/tunnel-guide#1-download-and-install-cloudflared) command line tool on your machine.
+
+Then, login via the CLI tool with:
+
+```bash
+$ cloudflared tunnel login
+```
+
+During the login process, you will be asked to select the domain that you want to use the tunnel with.
+
+Next, create the tunnel:
+
+```bash
+$ cloudflared tunnel create <NAME>
+
+# for example
+
+$ cloudflared tunnel create dev-tunnel
+```
+
+After this step, you will see the Tunnel's UUID and the JSON config file for that tunnel, you will need this UUID for the next step.
+
+Now, you need to create a `config.yml` file to tell the tunnel how to route traffic from outside to your local application. Each application will have the following fields:
+
+```yaml
+url: http://localhost:<LOCAL-PORT>
+tunnel: <TUNNEL-UUID>
+credentials-file: /root/.cloudflared/<TUNNEL-UUID>.json
+```
+
+Now, you need to assign a CNAME record to your domain, so it can point to your tunnel:
+
+```bash
+$ cloudflared tunnel route dns <TUNNEL-UUID> <HOSTNAME>
+
+# for example
+
+$ cloudflared tunnel route dns b33fb00f demo-001.huy.rocks
+```
+
+Finally, you can run the tunnel:
+
+```bash
+$ cloudflared tunnel run <TUNNEL-UUID>
+```
+
+You can also setup `cloudflared` as a service, so you don't have to run it manually:
+
+```bash
+$ sudo cloudflared service install
+$ sudo systemctl enable cloudflared
+$ sudo systemctl start cloudflared
+```
+
+Lastly, don't forget to start your app:
+
+```bash
+$ PORT=<LOCAL-PORT> ./your-secret-service
+```
+
 # 02.07.2022 - Security/Timing Attack and Constant-time Compare Algorithm
 
 **Timing attack** is the type of attack when an attacker tries to analyze the time it takes your application to do something, in order to guess the data it's operating on.

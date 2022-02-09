@@ -157,7 +157,8 @@ But things get better! The total bundle size is now 1.33kB, a huge leap from 531
 
 Maybe I should rename this post's title to: "How I reduced 500% of the bundle size when using Lodash".
 
-**Read more:**
+**What's next?**
+
 - https://developers.google.com/web/fundamentals/performance/optimizing-javascript/tree-shaking
 - https://developers.google.com/web/fundamentals/performance/webpack/decrease-frontend-size
 
@@ -310,7 +311,7 @@ constant_compare(s1, s2):
         return result == 0
 ```
 
-**Read more:**
+**What's next?**
 
 - https://www.cs.rice.edu/~dwallach/pub/crosby-timing2009.pdf
 - https://codahale.com/a-lesson-in-timing-attacks/
@@ -453,7 +454,7 @@ Here is the comparison of the styles between some commonly used web fonts from G
 
 You can see the high-resolution version of the image [here](https://raw.githubusercontent.com/huytd/everyday/master/_meta/faux-real-comparision.png), or see it directly in your browser [here](https://codepen.io/huytd/pen/LYOZqwo) and [here](https://codepen.io/huytd/pen/podbYbV).
 
-**Read more:**
+**What's next?**
 
 - https://alistapart.com/article/say-no-to-faux-bold/
 - https://www.smashingmagazine.com/2012/07/avoiding-faux-weights-styles-google-web-fonts/
@@ -800,7 +801,7 @@ create policy "Users can update their own profiles."
 
 The `auth.uid()` here is just a Postgres function provided by Supabase to extract the application's current user. See its implementation here: [supabase/auth-schema.sql#Line 77-78](https://github.com/supabase/supabase/blob/ddac1147354a386342e825cbfb70ec63775e6a2b/docker/dockerfiles/postgres/auth-schema.sql#L77-L78).
 
-Read more:
+**What's next?**
 
 - https://github.com/supabase/supabase/blob/3ec9c7c6499e4a61ca88ceb24aa4d81ee24c39ae/web/docs/guides/auth.mdx#how-it-works
 - https://github.com/supabase/supabase/blob/23cac64b0c40ab9421108eb830d1b7b35979bd32/web/docs/learn/auth-deep-dive/row-level-security.md

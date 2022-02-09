@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "02.09.2022 - JavaScript Named imports and dead code elimination.md",
+            "file": "02.07.2022 - Security Timing Attack.md",
             "mode": "source",
             "source": true
           }
@@ -40,7 +40,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "\"Read more\"",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -49,12 +49,12 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "3b849a0a1d9c5f60",
@@ -70,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "02.09.2022 - JavaScript Named imports and dead code elimination.md",
+                "file": "02.07.2022 - Security Timing Attack.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -90,15 +90,15 @@
   },
   "active": "2f9b9a7026659c6b",
   "lastOpenFiles": [
-    "02.09.2022 - JavaScript Named imports and dead code elimination.md",
     "02.07.2022 - Security Timing Attack.md",
+    "02.03.2022 - Typography Faux Bold and Faux Italic.md",
+    "01.29.2022 - Supabase Row Level Security.md",
+    "02.09.2022 - JavaScript Named imports and dead code elimination.md",
     "01.13.2022 - Algorithms Comparing floating-point numbers.md",
     "02.08.2022 - Cloudflare Expose local server with Tunnel.md",
     "02.07.2022 Security Timing Attack.md",
     "02.06.2022 - Typescript Testing with Jest.md",
     "02.05.2022 - TypeScript Build a library with Parcel.md",
-    "02.04.2022 - JavaScript Non-English Variables.md",
-    "02.03.2022 - Typography Faux Bold and Faux Italic.md",
-    "02.02.2022 - Math Interpolation Methods.md"
+    "02.04.2022 - JavaScript Non-English Variables.md"
   ]
 }

@@ -1669,7 +1669,7 @@ Because `List` is the new type that wraps around `Vec<String>`, you cannot direc
 
 
 
-# 01.13.2022 - Comparing floating-point numbers
+# 01.13.2022 - Algorithms/Comparing floating-point numbers
 
 Due to rounding errors, most floating-point numbers cannot be represented precisely in the computer. This led to some weird situations like:
 

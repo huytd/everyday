@@ -4,7 +4,7 @@ One thing about JavaScript that is sometimes confusing: The **named imports**.
 
 When there is a big module that exports a lot of things, we usually think that we can use named import to get just what we needed in that module, and the rest of the thing will magically disappear. It's not.
 
-What really happens is, in _development_ mode, **everything still gets included** when we bundle the application. In _production_ mode, some bundlers will have the built-in dead code elimination feature kick in to remove unused codes.
+What really happens is, in _development_ mode, **everything still gets included** when we bundle the application. In _production_ mode, some bundlers will have the built-in dead code elimination (or tree-shaking) feature kick in to remove unused codes.
 
 For example, let's create a mini project to illustrate this behavior better. We are going to have an `index.js` file for our entry point, and a `lib` folder containing some library files: `a.js`, `b.js` and `c.js`, and a `lib/index.js` file where we blanket export everything in our libs:
 
@@ -97,9 +97,69 @@ console.log(b);
 
 ![](_meta/webpack-dce-dev-2.png)
 
-This example might sound obvious, but in reality, people often get confused that everything will get bundled in development mode and waste countless time debugging and optimizing in the wrong build mode. And that's why this article was written.
+OK, now we understand how named imports behave in different build modes. As long as we import things selectively, we are good in a production build, right?
 
-(That people was me a few hours ago 🤣).
+Sadly it's not!
+
+Not all libraries made the same, for example, the infamous `lodash` package. This library was architected in a different way (go explore it yourself, check the [lodash-cli](https://github.com/lodash-archive/lodash-cli/blob/master/bin/lodash) and [lodash](https://github.com/lodash/lodash) source code). Named imports won't work as you expected!
+
+```bash
+$ yarn add lodash
+```
+
+Try to import just the `pad` function in your `src/index.js`:
+
+```js
+import { pad } from 'lodash';
+
+console.log(pad('abc', 8, '_'));
+```
+
+And build in production mode:
+
+```bash
+$ yarn build && yarn analyze
+```
+
+What you get is a whopping 531kB of lodash in your bundle, and that's not great:
+
+![](_meta/lodash-bigass.png)
+
+What if we selectively import just the `lodash/pad` file?
+
+```js@focus=1
+import { pad } from 'lodash/pad';
+
+console.log(pad('abc', 8, '_'));
+```
+
+![](_meta/lodash-pad-tentacles.png)
+
+The bundle size was reduced to 22.15kB, not bad, huh? But there are still a lot of extra dependencies that got bundled, and Webpack cannot concatenate them to the module.
+
+What you can do is, instead of using `lodash`, just use `lodash-es` package, this is still the lodash but the build is split into modules.
+
+```bash
+$ yarn add lodash-es
+```
+
+We still need to specify the import path for each method we are using:
+
+```js@focus=1
+import { pad } from 'lodash-es/pad';
+
+console.log(pad('abc', 8, '_'));
+```
+
+![](_meta/lodash-es.png)
+
+But things get better! The total bundle size is now 1.33kB, a huge leap from 531kb!!!
+
+Maybe I should rename this post's title to: "How I reduced 500% of the bundle size when using Lodash".
+
+**Read more:**
+- https://developers.google.com/web/fundamentals/performance/optimizing-javascript/tree-shaking
+- https://developers.google.com/web/fundamentals/performance/webpack/decrease-frontend-size
 
 # 02.08.2022 - Cloudflare/Expose local server with Tunnel
 

@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "02.07.2022 - Security Timing Attack.md",
+            "file": "02.09.2022 - JavaScript Named imports and dead code elimination.md",
             "mode": "source",
             "source": true
           }
@@ -70,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "02.07.2022 - Security Timing Attack.md",
+                "file": "02.09.2022 - JavaScript Named imports and dead code elimination.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -90,8 +90,8 @@
   },
   "active": "2f9b9a7026659c6b",
   "lastOpenFiles": [
-    "02.07.2022 - Security Timing Attack.md",
     "02.09.2022 - JavaScript Named imports and dead code elimination.md",
+    "02.07.2022 - Security Timing Attack.md",
     "01.13.2022 - Algorithms Comparing floating-point numbers.md",
     "02.08.2022 - Cloudflare Expose local server with Tunnel.md",
     "02.07.2022 Security Timing Attack.md",

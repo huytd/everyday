@@ -4,15 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "d54183b2b8cdf65c",
+        "id": "2f9b9a7026659c6b",
         "type": "leaf",
         "state": {
-          "type": "markdown",
-          "state": {
-            "file": "01.13.2022 - Algorithms Comparing floating-point numbers.md",
-            "mode": "source",
-            "source": true
-          }
+          "type": "empty",
+          "state": {}
         }
       }
     ],
@@ -70,7 +66,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "01.13.2022 - Algorithms Comparing floating-point numbers.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -88,8 +83,9 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "d54183b2b8cdf65c",
+  "active": "2f9b9a7026659c6b",
   "lastOpenFiles": [
+    "02.09.2022 - JavaScript Named imports and dead code elimination.md",
     "01.13.2022 - Algorithms Comparing floating-point numbers.md",
     "02.08.2022 - Cloudflare Expose local server with Tunnel.md",
     "02.07.2022 Security Timing Attack.md",
@@ -98,7 +94,6 @@
     "02.04.2022 - JavaScript Non-English Variables.md",
     "02.03.2022 - Typography Faux Bold and Faux Italic.md",
     "02.02.2022 - Math Interpolation Methods.md",
-    "02.01.2022 - HTML Auto-fill OTP code from SMS.md",
-    "01.31.2022 - Deno Non-blocking FFI Calls.md"
+    "02.01.2022 - HTML Auto-fill OTP code from SMS.md"
   ]
 }

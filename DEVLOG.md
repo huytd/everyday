@@ -1,3 +1,106 @@
+# 02.09.2022 - JavaScript/Named Imports and Dead Code Elimination
+
+One thing about JavaScript that is sometimes confusing: The **named imports**.
+
+When there is a big module that exports a lot of things, we usually think that we can use named import to get just what we needed in that module, and the rest of the thing will magically disappear. It's not.
+
+What really happens is, in _development_ mode, **everything still gets included** when we bundle the application. In _production_ mode, some bundlers will have the built-in dead code elimination feature kick in to remove unused codes.
+
+For example, let's create a mini project to illustrate this behavior better. We are going to have an `index.js` file for our entry point, and a `lib` folder containing some library files: `a.js`, `b.js` and `c.js`, and a `lib/index.js` file where we blanket export everything in our libs:
+
+```
+.
+├── package.json
+└── src
+    ├── index.js
+    └── lib
+        ├── a.js
+        ├── b.js
+        ├── c.js
+        └── index.js
+```
+
+First, let's export a couple of things in our libs:
+
+```js
+// lib/a.js
+export const a = 10;
+
+// lib/b.js
+export const b = "Hello";
+
+// lib/c.js
+export const c = (name) => console.log(`HELLO, ${name}!`);
+```
+
+Re-export everything in `lib/index.js`:
+
+```js
+export * from './a';
+export * from './b';
+export * from './c';
+```
+
+And import just what we needed in `index.js`:
+
+```js
+import { b } from './lib';
+
+console.log(b);
+```
+
+Now, we build the project in two different modes: development and production, and use `webpack-bundle-analyzer` to analyze the difference:
+
+```json@focus=5:9
+{
+  "name": "webpack-test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack build --profile --json > stats.json",
+    "build:dev": "webpack build --mode development --profile --json > stats.json",
+    "analyze": "webpack-bundle-analyzer stats.json"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.5.5",
+    "webpack": "^5.68.0",
+    "webpack-bundle-analyzer": "^4.5.0",
+    "webpack-cli": "^4.9.2"
+  }
+}
+```
+
+In production build, as expected, there is only module `b.js` got imported, and Webpack went as far as inlined the exported values into the code:
+
+```bash
+$ yarn build && yarn analyze
+```
+
+![](_meta/webpack-dce-prod.png)
+
+But in development mode, you will see that everything got bundled, even the unimported modules like `a.js` or `c.js`:
+
+```bash
+$ yarn build:dev && yarn analyze
+```
+
+![](_meta/webpack-dce-dev.png)
+
+If we modify the `src/index.js` to import directly from module `b` instead of from the blanket re-exports in `lib/index.js`, you will get what you expected when building in development mode:
+
+```js
+import { b } from './lib/b';
+
+console.log(b);
+```
+
+![](_meta/webpack-dce-dev-2.png)
+
+This example might sound obvious, but in reality, people often get confused that everything will get bundled in development mode and waste countless time debugging and optimizing in the wrong build mode. And that's why this article was written.
+
+(That people was me a few hours ago 🤣).
+
 # 02.08.2022 - Cloudflare/Expose local server with Tunnel
 
 Like [Ngrok](https://ngrok.com/), Cloudflare Tunnel is a lightweight daemon that run on your server (or local machine) and create a tunnel between your machine and the Cloudflare edge, allowing you to expose your local services to the internet.

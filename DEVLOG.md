@@ -47,35 +47,35 @@ $$
 We have a grammar:
 
 $$
-G = (\{ S \}, \{ x, y, z, +, -, *, /, (, ) \}, R, S)
+G = (\\{ S \\}, \\{ x, y, z, +, -, *, /, (, ) \\}, R, S)
 $$
 
 With the following production rules:
 
-$$\begin{align} 
-S &\rightarrow x \\
-S &\rightarrow y \\
-S &\rightarrow z \\
-S &\rightarrow S + S \\
-S &\rightarrow S - S \\
-S &\rightarrow S * S \\
-S &\rightarrow S\ / \ S \\
-S &\rightarrow (S) \\
-\end{align}$$
+```
+S → x | y | z
+S → S + S
+S → S - S
+S → S * S
+S → S / S
+S → (S)
+```
 
 ---
 
-Another example, a grammar $G$ to match all palindromes of the characters $\{ a, b \}$ like $aa$, $aabaa$, $aabbaa$, $bab$,...
+Another example, a grammar $G$ to match all palindromes of the characters $\\{ a, b \\}$ like $aa$, $aabaa$, $aabbaa$, $bab$,...
 
-$$\begin{align} 
-G & = (\{ S \}, \{ a, b \}, R, S) \\
-\\
-S &\rightarrow aSa \\
-S &\rightarrow bSb \\
-S &\rightarrow \varepsilon \\
-\end{align}$$
+$$
+G = (\\{ S \\}, \\{ a, b \\}, R, S)
+$$
 
-The last rule is called $\varepsilon$-production, which mean $S$ be rewrite as an empty string.
+```
+S → aSa
+S → bSb
+S → ε
+```
+
+The last rule is called ε-production, which mean $S$ be rewrite as an empty string.
 
 # 02.09.2022 - JavaScript/Named Imports and Dead Code Elimination
 

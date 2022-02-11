@@ -4,13 +4,13 @@
     "type": "split",
     "children": [
       {
-        "id": "2f9b9a7026659c6b",
+        "id": "36082af5d37cf54c",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "02.07.2022 - Security Timing Attack.md",
-            "mode": "source",
+            "file": "02.10.2022 - Parsing Context-Free Grammar.md",
+            "mode": "preview",
             "source": true
           }
         }
@@ -54,7 +54,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "3b849a0a1d9c5f60",
@@ -70,7 +71,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "02.07.2022 - Security Timing Attack.md",
+                "file": "02.10.2022 - Parsing Context-Free Grammar.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -88,8 +89,9 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "2f9b9a7026659c6b",
+  "active": "36082af5d37cf54c",
   "lastOpenFiles": [
+    "02.10.2022 - Parsing Context-Free Grammar.md",
     "02.07.2022 - Security Timing Attack.md",
     "02.03.2022 - Typography Faux Bold and Faux Italic.md",
     "01.29.2022 - Supabase Row Level Security.md",
@@ -98,7 +100,6 @@
     "02.08.2022 - Cloudflare Expose local server with Tunnel.md",
     "02.07.2022 Security Timing Attack.md",
     "02.06.2022 - Typescript Testing with Jest.md",
-    "02.05.2022 - TypeScript Build a library with Parcel.md",
-    "02.04.2022 - JavaScript Non-English Variables.md"
+    "02.05.2022 - TypeScript Build a library with Parcel.md"
   ]
 }

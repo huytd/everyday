@@ -9,8 +9,8 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "02.10.2022 - Parsing Context-Free Grammar.md",
-            "mode": "source",
+            "file": "02.11.2022 - Parsing Context-Free Grammar Derivations Leftmost Rightmost.md",
+            "mode": "preview",
             "source": true
           }
         }
@@ -71,7 +71,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "02.10.2022 - Parsing Context-Free Grammar.md",
+                "file": "02.11.2022 - Parsing Context-Free Grammar Derivations Leftmost Rightmost.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -91,6 +91,7 @@
   },
   "active": "36082af5d37cf54c",
   "lastOpenFiles": [
+    "02.11.2022 - Parsing Context-Free Grammar Derivations Leftmost Rightmost.md",
     "02.10.2022 - Parsing Context-Free Grammar.md",
     "02.07.2022 - Security Timing Attack.md",
     "02.03.2022 - Typography Faux Bold and Faux Italic.md",
@@ -99,7 +100,6 @@
     "01.13.2022 - Algorithms Comparing floating-point numbers.md",
     "02.08.2022 - Cloudflare Expose local server with Tunnel.md",
     "02.07.2022 Security Timing Attack.md",
-    "02.06.2022 - Typescript Testing with Jest.md",
-    "02.05.2022 - TypeScript Build a library with Parcel.md"
+    "02.06.2022 - Typescript Testing with Jest.md"
   ]
 }

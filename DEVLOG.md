@@ -1,3 +1,97 @@
+# 02.13.2022 - Parser/Railroad Diagrams
+
+**Railroad Diagrams** (or **Syntax Diagrams**) are the graphical way to represent [context-free grammars](/everyday/02-10-2022-parsing-context-free-grammar).
+
+Each diagram defines a nonterminal. And they must have an **entry point** and an **endpoint**.
+
+There is no official standard about how should we draw the railroad/syntax diagrams but historically, terminals are represented by round boxes and nonterminals are represented by rectangular boxes.
+
+Let's take a look at the following grammar:
+
+```bnf
+sum = signed digit, [ "+", signed digit ] ;
+signed digit = [ "-" ], digit ;
+digit = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+```
+
+The railroad diagram of the above grammar can be represented as:
+
+**digit**
+
+![](_meta/digit-railroad.png)
+
+**signed digit**
+
+![](_meta/signed-digit-railroad.png)
+
+**sum**
+
+![](_meta/sum-railroad.png)
+
+In real world, syntax diagram can be seen in [JSON specs](https://www.json.org/json-en.html), or [SQLite](https://www.sqlite.org/syntaxdiagrams.html).
+
+# 02.12.2022 - Parser/Backus-Naur Form and variants
+
+**Backus-Naur Form (BNF)** is a metasyntax for [context-free grammars](/everyday/02-10-2022-parsing-context-free-grammar), is used to describe the syntax of languages used in computing such as programming languages, instruction sets,...
+
+## The BNF syntax
+
+The specification of BNF is quite simple, it's a set of derivation rules written as:
+
+```bnf
+<symbol> ::= expression1 | expression2
+```
+
+Where:
+
+- `<symbol>` is the nonterminal, they are always enclosed between the pair `<>`
+- `expressions` consists of one or more sequences of either terminals or nonterminals.
+- `::=` mean the symbol on the left must be replaced by the expression on the right.
+- If a nonterminal can be replaced by multiple expressions, they can be separated by the vertical bar "|"
+
+For example, the following grammar define a signed integer number:
+
+```bnf
+<signed integer> ::= <integer> | <sign> <integer>
+<integer> ::= <digit> | <integer> <digit>
+<digit>  ::= 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+<sign>   ::= -
+```
+
+## The Extended BNF syntax
+
+There are many variants of BNF, one of the most popular variants is **Extended BNF (EBNF)**. It added some other symbols so we can explain the grammar better, like the sequence symbol (`,`), repeated symbol (`{}`), optional symbol (`[]`),...
+
+In EBNF, nonterminal does not necessarily enclose between the pair `<>`, and the definition symbol `::=` can be written as `=`. Terminals are strictly enclosed within the quotation marks (`""` or `''`). Each production rule is terminated by the semicolon `;`, and they can contain comments (`(* *)`) too:
+
+```bnf
+(* this is a comment *)
+digit = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+```
+
+A concatenation symbol is used to express the sequence of terminals, each separated by a comma (`,`), for example:
+
+```bnf
+twelve = "1", "2" ;
+ten = "1", "0" ;
+one ten = "1", ten ;
+```
+
+If a symbol needed to be repeated (zero or more times), we can use `{}` symbols. For example, the following definition matches all powers of ten, including 10, 100, 1000, 10000,...
+
+```bnf
+powers of ten = one, zero, { zero } ;
+one  = "1" ;
+zero = "0" ;
+```
+
+Optional can be expressed by `[]`, everything that is optional can be present just once or not at all, for example:
+
+```bnf
+signed digit = [ "-" ], digit ;
+digit = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+```
+
 # 02.11.2022 - Parsing/Context-Free Grammar/Leftmost and Rightmost Derivations
 
 A derivation of *a string* for *a grammar* is a *sequence of production rule applications*.

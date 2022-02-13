@@ -1,4 +1,4 @@
-# 02.13.2022 - Parser/Railroad Diagrams
+# 02.13.2022 - Parsing/Railroad Diagrams
 
 **Railroad Diagrams** (or **Syntax Diagrams**) are the graphical way to represent [context-free grammars](/everyday/02-10-2022-parsing-context-free-grammar).
 
@@ -30,7 +30,7 @@ The railroad diagram of the above grammar can be represented as:
 
 In real world, syntax diagram can be seen in [JSON specs](https://www.json.org/json-en.html), or [SQLite](https://www.sqlite.org/syntaxdiagrams.html).
 
-# 02.12.2022 - Parser/Backus-Naur Form and variants
+# 02.12.2022 - Parsing/Backus-Naur Form and variants
 
 **Backus-Naur Form (BNF)** is a metasyntax for [context-free grammars](/everyday/02-10-2022-parsing-context-free-grammar), is used to describe the syntax of languages used in computing such as programming languages, instruction sets,...
 

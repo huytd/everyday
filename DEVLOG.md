@@ -1,3 +1,105 @@
+# 02.14.2022 - TypeScript/Implement Rust-style Result
+
+In Rust, there is a [Result<T, E>](https://doc.rust-lang.org/rust-by-example/std/result.html) type that could return either an `Ok(T)` value if the operation is succeeded, or an `Err(E)` value if the operation is failed.
+
+To mimic this type in TypeScript, first, let's define the `Result<T, E>` type:
+
+```typescript
+type Result<T, E = undefined> = { ok: true, value: T }
+                            | { ok: false, error: E | undefined };
+```
+
+OK, so what's going on here?
+
+The `Result<T, E>` type is a union type that either returns:
+
+- A _success_ result: which is an object that has the field `ok` set to `true`, and the field `value` of type `T` to carry the actual result.
+- The _error_ result: which is an object that has the field `ok` set to `false`, and the field `error` of type `E` to carry the error details.
+
+Following Rust's Result type, we can omit the type `E` and write `Result<T>`. To support this, the `error` field needs to have the type of `E | undefined`. And defaults to `undefined` if not specified.
+
+We also need a way to create a _success_ or _error_ value, let's call them `Ok(data: T)` and `Err(error?: E)`. Both functions return a `Result<T, E>` type:
+
+```typescript
+const Ok = <T>(data: T): Result<T, never> => {
+    return { ok: true, value: data };
+};
+
+const Err = <E>(error?: E): Result<never, E> => {
+    return { ok: false, error };
+};
+```
+
+For the `Ok` function, the error type `E` will never be used, so we don't need to worry about the `E` type, hence the return type `Result<T, never>`. The same applied for the `Result<never, E>` type of the `Err` function.
+
+Now, we can use our `Result` type, for example, let's create a `parseBoolean` method that will return either a `boolean` value or an error `string`:
+
+```typescript
+const parseBoolean = (input: string): Result<boolean, string> => {
+    if ((/(true|false)/i).test(input)) {
+        return Ok(input.toLowerCase() === "true");
+    }
+    return Err("Invalid input!");
+}
+
+console.log(parseBoolean("true"));
+// -> Result { ok: true, value: true }
+
+console.log(parseBoolean("False"));
+// -> Result { ok: true, value: false }
+
+console.log(parseBoolean("what"));
+// -> Result { ok: false, error: 'Invalid input!' }
+
+console.log(parseBoolean("haha"));
+// -> Result { ok: false, error: 'Invalid input!' }
+```
+
+Or another example, this time we return a custom error type:
+
+```typescript
+enum IntegerParseError {
+    InvalidInput,
+    NegativeNumber
+};
+
+const parseUnsignedInteger = (input: string): Result<number, IntegerParseError> => {
+    let num = parseInt(input);
+    if (isNaN(num)) {
+        return Err(IntegerParseError.InvalidInput);
+    }
+    if (num < 0) {
+        return Err(IntegerParseError.NegativeNumber);
+    }
+    return Ok(num);
+}
+
+console.log(parseUnsignedInteger("hello"));
+// -> Result { ok: false, error: IntegerParseError.InvalidInput }
+
+console.log(parseUnsignedInteger("1238"));
+// -> Result { ok: true, value: 1238 }
+
+console.log(parseUnsignedInteger("-12"));
+// -> Result { ok: false, error: IntegerParseError.NegativeNumber }
+```
+
+Oh, and we can omit the `Err` type as well, it will be defaulted as `undefined`:
+
+```typescript
+const parseBooleanTheYoloWay = (input: string): Result<boolean> => {
+    if ((/(true|false)/i).test(input)) {
+        return Ok(input.toLowerCase() === "true");
+    }
+    return Err();
+}
+
+console.log(parseBooleanTheYoloWay("haha"));
+// -> Result { ok: false, error: undefined }
+```
+
+And that's it, we have implemented Rust's Result type in TypeScript, with just 7 lines of code! (Well... just the spirit of it, there are a lot more about the real `Result` type of course).
+
 # 02.13.2022 - Parsing/Railroad Diagrams
 
 **Railroad Diagrams** (or **Syntax Diagrams**) are the graphical way to represent [context-free grammars](/everyday/02-10-2022-parsing-context-free-grammar).

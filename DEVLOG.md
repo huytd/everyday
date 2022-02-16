@@ -1,3 +1,59 @@
+# 02.15.2022 - Vim/Record and Replay Macro
+
+Macro is a complex type of repeation, it allow you to record and replay a sequence of actions.
+
+A macro can be created by:
+
+1. Press `q<register-name>` to start record mode and store the macro to the `<register-name>`. For example `qa`.
+2. Perform the sequence of edits or commands.
+3. Stop the record by hitting `q` again.
+
+At this point, you can replay a macro by pressing `@<register-name>` (for example: `@a`). To replay the macro multiple times, press `<n>@<register-name>` for example `99@a` will replay 99 times.
+
+You can also call a macro while recording, this is called recursive macro.
+
+---
+
+Let's use macro to convert a CSV table into SQL statements. For example, the following data table has 3 columns: `name`, `email` and some id.
+
+```csv
+Kay Mitchell,massa.non@aol.net,2
+Micah Christensen,tincidunt.orci@yahoo.couk,1
+Shad Carver,ornare.fusce@protonmail.edu,4
+Chanda Benton,libero.proin.mi@protonmail.net,8
+Darryl Joyner,hendrerit.donec.porttitor@yahoo.org,4
+```
+
+We want to convert each line into an SQL statement that look like this. Only the name and email columns are used, the id will be deleted:
+
+```sql
+INSERT INTO users (name, email) VALUES ('<column 1>','<column 2>');
+```
+
+If we are not using macro, we have to repeat the following edit for each line:
+
+- Press `0` to jump to the beginning of line
+- Press `i` to enter Insert mode
+- Type `INSERT INTO users (name, email) VALUES ('`
+- Then press `<C-o>f,` to jump to the next `,` character without exiting the Insert mode, type in the closing `'`
+- Press `<C-o>l` to move left one character (skipping the `,`) and insert the opening `'`
+- Press `<C-o>f,` again to jump to the next `,` character, type `');`
+- Finally, press `<C-o>D` to delete whatever left on that line
+
+To save time, hit `qq` to create a new macro and store it to the register `q`. Then perform the above editing for the first line. When you are done, hit `q` again.
+
+Now, you can go to each line and press `@q` to let the macro do its job.
+
+If you don't want to manually press `@q` on each line, you can do it in the macro too! When recording your edit, at the last step, go to the next line and press `@q`, then close the recording. This time, the macro will automatically jump to the next line and call itself again until the cursor reached the end of the file.
+
+To see what's your macro look like, open a new buffer and type `"qp`, the content of the macro will be pasted to the buffer:
+
+```
+0iINSERT INTO users (name, email) VALUES ('^Of,'^Ol'^Of,');^OD
+```
+
+You can edit the macro as you want, and save it back to the `q` register by pressing `"qyy` (`"q` to select the `q` register, and `yy` to copy the whole line).
+
 # 02.14.2022 - TypeScript/Implement Rust-style Result
 
 In Rust, there is a [Result<T, E>](https://doc.rust-lang.org/rust-by-example/std/result.html) type that could return either an `Ok(T)` value if the operation is succeeded, or an `Err(E)` value if the operation is failed.

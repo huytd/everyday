@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "02.14.2022 - TypeScript Implement Rust Result type.md",
+            "file": "02.15.2022 - Vim Record and Replay Macro.md",
             "mode": "source",
             "source": true
           }
@@ -71,7 +71,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "02.14.2022 - TypeScript Implement Rust Result type.md",
+                "file": "02.15.2022 - Vim Record and Replay Macro.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -91,6 +91,7 @@
   },
   "active": "36082af5d37cf54c",
   "lastOpenFiles": [
+    "02.15.2022 - Vim Record and Replay Macro.md",
     "02.14.2022 - TypeScript Implement Rust Result type.md",
     "01.19.2022 - Rust The Never Type.md",
     "02.12.2022 - Parser BNF.md",
@@ -99,7 +100,6 @@
     "02.10.2022 - Parsing Context-Free Grammar.md",
     "02.07.2022 - Security Timing Attack.md",
     "02.03.2022 - Typography Faux Bold and Faux Italic.md",
-    "01.29.2022 - Supabase Row Level Security.md",
-    "02.09.2022 - JavaScript Named imports and dead code elimination.md"
+    "01.29.2022 - Supabase Row Level Security.md"
   ]
 }

@@ -16,7 +16,7 @@ You can also call a macro while recording, this is called recursive macro.
 
 Let's use macro to convert a CSV table into SQL statements. For example, the following data table has 3 columns: `name`, `email` and some id.
 
-```csv
+```
 Kay Mitchell,massa.non@aol.net,2
 Micah Christensen,tincidunt.orci@yahoo.couk,1
 Shad Carver,ornare.fusce@protonmail.edu,4
@@ -53,6 +53,7 @@ To see what's your macro look like, open a new buffer and type `"qp`, the conten
 ```
 
 You can edit the macro as you want, and save it back to the `q` register by pressing `"qyy` (`"q` to select the `q` register, and `yy` to copy the whole line).
+
 
 # 02.14.2022 - TypeScript/Implement Rust-style Result
 

@@ -1,3 +1,124 @@
+# 02.16.2022 - TypeScript/The unknown type
+
+You can think of `unknown` as a type-safe version of `any`. They are both used to represent the type of value that is unknown beforehand (like a result of `JSON.parse`,...), but `unknown` required us to do more type checking before we can actually use the result.
+
+## What's the problem with `any`?
+
+In TypeScript, using `any` is like turning on cheat mode. Values with `any` type implicitly conform to all possible types, so you can write code just like there is no type checking at all.
+
+The following snippet compiled fine. Because `x` has `any` type, TypeScript could not catch any error at compile time:
+
+```typescript
+let x: any;
+x = 1412;
+let a = x.toLowerCase();
+```
+
+Only when you run it, the program will crash because there is no `toLowerCase()` method for a number. To prevent errors like this, we have to type check `any` values ourselves.
+
+Another example, let's say you are parsing a JSON string to a data structure and use them later on:
+
+```typescript
+interface User {
+    name: string;
+    email: string;
+};
+
+function parseUserData(input: string): any {
+    return JSON.parse(input);
+};
+
+const user = parseUserData('{ "yolo": "haha" }');
+console.log(user.name);
+```
+
+In this example, the input JSON string is invalid, so the parse result of `parseUserData` is not in the shape of a `User` at all. We are using the `user` object without validating its value, this would lead to a runtime error. TypeScript could not prevent this because we forget to do type checking (manually) on the `any` typed value.
+
+As you can see, when using `any`, all the benefits of using TypeScript are completely gone.
+
+## The `unknown` type
+
+An `unknown` is a top type (just like `any`) in TypeScript. Anything is assignable to `unknown`, but `unknown` is **not assignable** to anything (except the `any` and the `unknown` itself) **without type assertion** or a **control flow-based narrowing**.
+
+In our first example, if `x` is an `unknown`, TypeScript will throw an error when we attempt to use the value of `x` in the code:
+
+```typescript
+let x: unknown;
+x = 1412;
+let a = x.toLowerCase();
+        ^^^^^^^^^^^^^^^^
+        Property 'toLowerCase' does not exist on type 'unknown'
+```
+
+To use an `unknown` value, we need to narrow them down with type assertion, this to make sure we know what we are doing:
+
+```typescript
+let x: unknown;
+x = 1412;
+if (typeof x === "string") {
+    let a = x.toLowerCase();
+}
+```
+
+Now, let's get back to our second example and see what would TypeScript do if the `parseUserData` function has `unknown` type instead of `any`:
+
+```typescript
+interface User {
+    name: string;
+    email: string;
+};
+
+function parseUserData(input: string): unknown {
+    return JSON.parse(input);
+};
+
+const user = parseUserData('{ "yolo": "haha" }');
+console.log(user.name);
+            ^^^^^^^^^
+            Property 'name' does not exist on type `unknown`
+```
+
+So, no more forgetting to do validation:
+
+```typescript@focus=10:12,15:19
+interface User {
+    name: string;
+    email: string;
+};
+
+function parseUserData(input: string): unknown {
+    return JSON.parse(input);
+};
+
+function isUser(input: unknown): input is User {
+    return (input as User) !== undefined;
+}
+
+const user = parseUserData('{ "yolo": "haha" }');
+if (isUser(user)) {
+    console.log(user.name);
+} else {
+    console.log("Sorry, input data is corrupted!");
+}
+```
+
+---
+
+By enforcing type assertion before usage, the `unknown` type allows us to express the uncertainty just like what we would do with `any` without losing any benefits of the type system.
+
+But be mindful that when doing type assertion, TypeScript does not perform any special checks to make sure the type assertion is valid. So you can write code like this and it still compiles, but the program will not work as expected:
+
+```typescript
+const user = parseUserData('{ "yolo": "haha" }') as User;
+console.log(user.name); // undefined
+```
+
+You can find more in-depth discussions about the `unknown` type here:
+
+- https://mariusschulz.com/blog/the-unknown-type-in-typescript
+- https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-0.html#new-unknown-top-type
+- https://www.typescriptlang.org/play?q=214#example/unknown-and-never
+
 # 02.15.2022 - Vim/Record and Replay Macro
 
 Macro is a complex type of repeation, it allow you to record and replay a sequence of actions.

@@ -4,9 +4,9 @@ Macro is a complex type of repeation, it allow you to record and replay a sequen
 
 A macro can be created by:
 
-1. Press `q<register-name>` to start record mode and store the macro to the `<register-name>`. For example `qa`.
-2. Perform the sequence of edits or commands.
-3. Stop the record by hitting `q` again.
+- Press `q<register-name>` to start record mode and store the macro to the `<register-name>`. For example `qa`.
+- Perform the sequence of edits or commands.
+- Stop the record by hitting `q` again.
 
 At this point, you can replay a macro by pressing `@<register-name>` (for example: `@a`). To replay the macro multiple times, press `<n>@<register-name>` for example `99@a` will replay 99 times.
 

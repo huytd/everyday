@@ -11,12 +11,12 @@ fn main() -> Result<()> {
     let mut posts: Vec<Post> = vec![];
     let mut total_content_size = 0;
 
-    let source = fs::read_dir("posts")?;
+    let source = fs::read_dir("notes")?;
     for entry in source {
         if let Ok(entry) = entry {
             if let Some(file_name) = entry.file_name().to_str() {
                 if !file_name.starts_with(".") && !file_name.starts_with("_") {
-                    let content = fs::read_to_string(format!("posts/{}", file_name))?;
+                    let content = fs::read_to_string(format!("notes/{}", file_name))?;
                     let title = content.lines().next().unwrap().replace("# ", "");
                     let date_str = title.split_once(" - ").unwrap().0;
                     if let Ok(date) = NaiveDate::parse_from_str(date_str, "%m.%d.%Y") {

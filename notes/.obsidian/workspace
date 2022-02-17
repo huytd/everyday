@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "02.16.2022 - TypeScript The unknown Type.md",
+            "file": "02.17.2022 - Data Structures Graph Represent.md",
             "mode": "preview",
             "source": true
           }
@@ -71,7 +71,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "02.16.2022 - TypeScript The unknown Type.md",
+                "file": "02.17.2022 - Data Structures Graph Represent.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -91,6 +91,8 @@
   },
   "active": "36082af5d37cf54c",
   "lastOpenFiles": [
+    "02.17.2022 - Data Structures Graph Represent.md",
+    "12.30.2021 - Data Structures Binary Search Tree Delete node.md",
     "02.16.2022 - TypeScript The unknown Type.md",
     "02.15.2022 - Vim Record and Replay Macro.md",
     "02.14.2022 - TypeScript Implement Rust Result type.md",
@@ -98,8 +100,6 @@
     "02.12.2022 - Parser BNF.md",
     "02.13.2022 - Parsing Railroad Diagram.md",
     "02.11.2022 - Parsing Context-Free Grammar Derivations Leftmost Rightmost.md",
-    "02.10.2022 - Parsing Context-Free Grammar.md",
-    "02.07.2022 - Security Timing Attack.md",
-    "02.03.2022 - Typography Faux Bold and Faux Italic.md"
+    "02.10.2022 - Parsing Context-Free Grammar.md"
   ]
 }

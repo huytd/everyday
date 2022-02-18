@@ -9,8 +9,8 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "02.17.2022 - Data Structures Graph Represent.md",
-            "mode": "preview",
+            "file": "02.18.2022 - JavaScript Beware the delete.md",
+            "mode": "source",
             "source": true
           }
         }
@@ -71,7 +71,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "02.17.2022 - Data Structures Graph Represent.md",
+                "file": "02.18.2022 - JavaScript Beware the delete.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -91,6 +91,7 @@
   },
   "active": "36082af5d37cf54c",
   "lastOpenFiles": [
+    "02.18.2022 - JavaScript Beware the delete.md",
     "02.17.2022 - Data Structures Graph Represent.md",
     "12.30.2021 - Data Structures Binary Search Tree Delete node.md",
     "02.16.2022 - TypeScript The unknown Type.md",
@@ -99,7 +100,6 @@
     "01.19.2022 - Rust The Never Type.md",
     "02.12.2022 - Parser BNF.md",
     "02.13.2022 - Parsing Railroad Diagram.md",
-    "02.11.2022 - Parsing Context-Free Grammar Derivations Leftmost Rightmost.md",
-    "02.10.2022 - Parsing Context-Free Grammar.md"
+    "02.11.2022 - Parsing Context-Free Grammar Derivations Leftmost Rightmost.md"
   ]
 }

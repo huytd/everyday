@@ -1,3 +1,51 @@
+# 02.20.2022 - Long Reads/Rediscovering the Benefits of Drawing
+
+**Article:** https://blogs.scientificamerican.com/symbiartic/rediscovering-the-forgotten-benefits-of-drawing/
+
+In the old times, scientist are required to have drawing skill, because they have to recreate everything they observed in their research, drawing is the only way to do that. With the advance of technologies (like camera, photographing, printing,...), people throw away their drawing skills.
+
+In the 1920s and 1930s, drawing skill was eliminated from public schools.
+
+It's a big mistake, because drawing skill also help them improve their observation, pay more attention on small details, patterns,... this seems to be an essential skill for technical worker like us as well.
+
+---
+
+The article also mentioned something interesting, it's the **focus on product vs process.**
+
+The act of taking the end result of drawing - a drawing, into your research report, is obviously a product, you can obtain the product via alternatives methods, by using technology, capture it from elsewhere, print it out, paste it.
+
+But the act of making the drawing - the drawing process, is far more important, as it's help you improve a lot of things, like observation skill. It's far more valuable than just taking the product out and use it.
+
+
+# 02.19.2022 - Long Reads/The Art of Close Reading
+
+**Reference Link:** https://eric.ed.gov/?id=EJ718563
+**Full text:** https://files.eric.ed.gov/fulltext/EJ718563.pdf
+
+In this article, the author make the point about what is the worst way to read (passively, scan your eyes from left to right, and let the idea of what you read magically flow into your mind), and what is the best way to consume some serious text, to gain knowledge or improve your own thinking (read reflectively and also, try to think about how you're reading process while you're reading, engage with the text via critical thinking, and understand what are the factors that involved in your thinking process,...)
+
+## The worst way to read
+
+Is, to mindlessly wandering from paragraph to paragraph, don't pay any attention to what's the author are writing, obviously, you finished reading without gaining any knowledge or having any change in your way of thinking, or getting what's the author trying to say.
+
+## The right way to read
+
+**Reading Reflectively** - actively seeking the meaning, and monitor what being said from paragraph to paragraph, aware of the different between your own thinking and the author's thinking. Read with a clear purpose. And the most important, being open to the new idea or new ways of thinking.
+
+**Think about reading while you read** - it's to understand how you're doing on your reading job while reading the text, so you can adjust. For example, you would realize
+that the text you're reading is hard to understand, hence, you slow down and read each paragraph more carefully. Or you realized that the author is talking about something that you don't fully empathy yet, so instead of immediately reject the idea, you digest it first to gain more insights about it.
+
+**Engage with the text** - You're not just reading the text, you're having a dialogue with each of the sentences in the text (related: [Reading is about having a conversation with the author](https://fs.blog/2015/05/reading-a-book-is-a-conversation/)). You must train yourself asking questions like: can you summarize it in your own words? Can you link your own knowledge or experience with what being read? Can you generate metaphor or diagram to explain it? What's remain unclear for you?...
+
+**Every book is a potential teacher** - And what you need to do is to open your mind to read, if you could do so, you could learn from an unlimited number of teachers in your life.
+
+**The factors involved in your thinking** - these are the things that affects your way of thinking: the purpose of thinking, your point of view, your assumptions, that lead to implications, the concepts that you're using to interpret information, to answer your questions while reading.
+
+**Enter the author's mind** - knowing these factors, try to get out your own mind and put it under the perspective of the author so you can realized what's you've been seeing is wrong or right, and the same with the author's seeing. Then back and forth moving between what you read and what you're thinking. You'll be able to change your thinking, or improve it, accepting new thinking as well.
+
+**Understand that reading is a real work** - and it required skills and fundamentals. You need to understand what's a good reading required, otherwise, you'll read poorly and do it wrong.
+
+
 # 02.18.2022 - JavaScript/Beware the delete
 
 Unlike C/C++, the [delete](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/delete) operator in JavaScript has nothing to do with memory deallocation.

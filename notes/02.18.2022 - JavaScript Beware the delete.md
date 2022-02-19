@@ -6,7 +6,7 @@ What it actually does is **remove a property from its parent object**. If there 
 
 In the following example, delete `foo.b` will mark the string "yolo" as unreachable, and it will eventually be released from the memory:
 
-```typescript
+```javascript
 let foo = {
     a: 12,
     b: "yolo"
@@ -21,8 +21,8 @@ delete foo.b;
 
 But in a scenario when two objects shared the same reference, things might not work as you expected.
 
-```typescript
-let boo = "hello";
+```javascript
+let boo = { c: true };
 
 let foo = {
     a: 12,
@@ -33,13 +33,13 @@ let bar = {
     b: boo
 };
 
-// foo = { a: 12, b: "hello" }
-// bar = { b: "hello" }
+// foo = { a: 12, b: { c: true } }
+// bar = { b: { c: true } }
 
 delete foo.b;
 
 // foo = { a: 12 }
-// bar = { b: "hello" }
+// bar = { b: { c: true } }
 ```
 
 ![](_meta/delete-object-with-ref.png)
@@ -48,57 +48,82 @@ The string `boo` is shared between `foo` and `bar` as the property `b`, when you
 
 ---
 
-When the `delete` command is called, if the target is successfully deleted, it will return `true`, otherwise, it will return `false`.
+In strict mode, when the `delete` command is called and the target could not be deleted, a `SyntaxError` will be thrown. If running in non-strict mode (also known as [sloopy mode](https://developer.mozilla.org/en-US/docs/Glossary/Sloppy_mode)), a `false` value will be returned instead.
 
-You cannot delete a variable defined with `let` or `const` inside its declaration scope:
+When a property is created as [non-configurable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/delete#non-configurable_properties), it cannot be deleted, and a `TypeError` will be raised instead.
 
 ```javascript
-{
-    let c = "hello";
-    delete c; // returns false
-    console.log(c); // output: "hello"
-    
-    const d = 15;
-    delete d; // returns false
-    console.log(d); // output: 15
-}
+'use strict';
+
+var bar = {};
+Object.defineProperty(bar, 'hello', { configurable: false });
+delete bar.hello; // TypeError
+
+
+var foo = {};
+Object.defineProperty(foo, 'goodbye', { configurable: true });
+delete foo.goodbye; // this works fine
 ```
 
-A variable defined with `var` can be deleted from within its declaration scope, but not in the function scope, or global scope.
+A variable defined with `var` is either belongs to a scope of the function it's defined in, or the global scope (if not defined inside any function).
 
-For example, a top level `var` can't be deleted:
+When defined in the global scope, a variable is added as a non-configurable property to the global object. So, it cannot be deleted.
 
 ```javascript
+'use strict';
+
 // global scope
-var hello = "good";
-delete hello; // returns false
+var hello = "world";
+delete globalThis.hello; // Type Error
+delete hello; // Syntax Error, see below
 ```
 
-You can delete a `var` in a block scope:
+Also, in strict mode, if `delete` is used on a direct reference to a variable, function argument, or a function name, it also throws a Syntax Error:
 
 ```javascript
-{
-    var b = 10;
-    delete b; // returns true
-    console.log(b); // b is not defined
+'use strict';
+
+var b = 'xyz';
+delete b; // Syntax Error
+
+let c = "hello";
+delete c; // SyntaxError:
+
+const d = 15;
+delete d; // SyntaxError
+
+function hello(x) {
+    delete x; // Syntax Error
 }
+
+function hello() {}
+delete hello; // Syntax Error
 ```
 
-But you can't do it in a function scope...
+Deleting a variable defined with `var` inside a function is also does not works:
 
 ```javascript
+'use strict';
+
 function hello() {
-    var x = 10;
-    delete x; // returns false
+    var x = "what's up?";
+    delete x; // Syntax Error
 }
 ```
 
-This holds true for function's params as well:
+---
+
+In non-strict mode, if you define a variable without the `var` keyword, it will be added to the global object as configurable, hence, we can delete it:
 
 ```javascript
-function yolo(b) {
-    delete b; // returns false
-}
+awesome = true;
+delete awesome; // true
+```
+
+And if you delete something that does not exist, it also returns true!
+
+```javascript
+delete somethingDoesNotExist; // true!!!
 ```
 
 ---

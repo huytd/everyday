@@ -1,4 +1,4 @@
-# 02.20.2022 - Long Reads/Rediscovering the Benefits of Drawing
+# 02.20.2022 - Reading Notes/Rediscovering the Benefits of Drawing
 
 **Article:** https://blogs.scientificamerican.com/symbiartic/rediscovering-the-forgotten-benefits-of-drawing/
 
@@ -17,7 +17,7 @@ The act of taking the end result of drawing - a drawing, into your research repo
 But the act of making the drawing - the drawing process, is far more important, as it's help you improve a lot of things, like observation skill. It's far more valuable than just taking the product out and use it.
 
 
-# 02.19.2022 - Long Reads/The Art of Close Reading
+# 02.19.2022 - Reading Notes/The Art of Close Reading
 
 **Reference Link:** https://eric.ed.gov/?id=EJ718563
 **Full text:** https://files.eric.ed.gov/fulltext/EJ718563.pdf

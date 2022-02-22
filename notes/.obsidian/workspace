@@ -9,8 +9,8 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "02.19.2022 - Reading Notes The Art of Close Reading.md",
-            "mode": "source",
+            "file": "02.21.2022 - Security Cryptography PBKDF2.md",
+            "mode": "preview",
             "source": true
           }
         }
@@ -71,7 +71,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "02.19.2022 - Reading Notes The Art of Close Reading.md",
+                "file": "02.21.2022 - Security Cryptography PBKDF2.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -91,6 +91,7 @@
   },
   "active": "36082af5d37cf54c",
   "lastOpenFiles": [
+    "02.21.2022 - Security Cryptography PBKDF2.md",
     "02.19.2022 - Reading Notes The Art of Close Reading.md",
     "02.20.2022 - Reading Notes Rediscovering the Benefits of Drawing.md",
     "02.18.2022 - JavaScript Beware the delete.md",
@@ -99,7 +100,6 @@
     "02.16.2022 - TypeScript The unknown Type.md",
     "02.15.2022 - Vim Record and Replay Macro.md",
     "02.14.2022 - TypeScript Implement Rust Result type.md",
-    "01.19.2022 - Rust The Never Type.md",
-    "02.12.2022 - Parser BNF.md"
+    "01.19.2022 - Rust The Never Type.md"
   ]
 }

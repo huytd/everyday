@@ -1,6 +1,6 @@
 # 02.23.2022 - CSS/Percentage Padding and Margin
 
-When you specify a percentage value for the CSS padding or margin of an element, this percentage is **based on the width of its parent element**, not the width of the element itself.
+When you specify a percentage value for the CSS padding or margin of an element, this percentage is **based on the width of the containing block**, not the width of the element itself.
 
 For example, in the following code, the `margin-top` of the child element is **150px** (half the parent's width), not **40px** (half of the child element's width).
 

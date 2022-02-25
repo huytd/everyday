@@ -1,3 +1,165 @@
+# 02.24.2022 - TypeScript/Enums at runtime and tree-shaking
+
+In TypeScript, an enum can be defined in various ways: a numeric enum, a string-based enum, or heterogeneous enum.
+
+By default, any enum member will have a numeric value:
+
+```typescript
+enum Fruit {
+    Orange,
+    Apple,
+    Mango
+}
+
+// equivalent to
+
+enum Fruit {
+    Orange = 0,
+    Apple  = 1,
+    Mango  = 2
+}
+```
+
+A string-based enum is an enum where its members have string values:
+
+```typescript
+enum Fruit {
+    Orange = "cam",
+    Apple  = "táo",
+    Mango  = "xoài"
+}
+```
+
+A heterogeneous enum is the type of enum where you can have a mix between numeric and string values.
+
+---
+
+Numeric enums are compiled to JavaScript in the following form:
+
+```typescript
+var Fruit;
+(function (Fruit) {
+    Fruit[Fruit["Orange"] = 0] = "Orange";
+    Fruit[Fruit["Apple"]  = 1] = "Apple";
+    Fruit[Fruit["Mango"]  = 2] = "Mango";
+})(Fruit || (Fruit = {}));
+```
+
+It's a bit too much to look at this compiled code, but what it exactly does is create a `Fruit` object and assign a couple of values to this object:
+
+```typescript
+Fruit["Orange"] = 0;
+Fruit["Apple"]  = 1;
+Fruit["Mango"]  = 2;
+
+Fruit[0] = "Orange";
+Fruit[1] = "Apple";
+Fruit[2] = "Mango";
+```
+
+These assignments allow the enum to be accessed in various ways:
+
+```typescript
+// Static lookup
+Fruit.Orange // = 0
+
+// Dynamic lookup
+Fruit['Apple'] // = 1 
+Fruit[Fruit.Orange] // = "Orange"
+Fruit[2] // = "Mango"
+```
+
+In the case of string-based enum, the generated code is much more straight-forward:
+
+```typescript
+var Fruit;
+(function (Fruit) {
+    Fruit["Orange"] = "cam";
+    Fruit["Apple"] = "táo";
+    Fruit["Mango"] = "xoài";
+})(Fruit || (Fruit = {}));
+```
+
+You can only dynamically access the enum members via a string:
+
+```typescript
+// Static lookup
+Fruit.Orange // = "cam"
+
+// Dynamic lookup
+Fruit["Mango"] // = "xoài"
+```
+
+---
+
+The wrapping function around each compiled enum is called IIFE (Immediately Invoked Function Expression):
+
+```typescript
+(function (Fruit) {
+
+})(Fruit || (Fruit = {}));
+```
+
+What it does is capture a local variable `Fruit` that either points to a pre-defined `Fruit` or a new empty object `Fruit || (Fruit = {}`. One of its applications is to allow you to split the enum into multiple declarations.
+
+For example, we split the enum `Fruit` into two parts:
+
+```typescript
+enum Fruit {
+    Orange = "cam",
+    Apple  = "táo",
+    Mango  = "xoài"
+}
+
+enum Fruit {
+    Durian = "sầu riêng"
+}
+```
+
+This compiles to:
+
+```typescript
+var Fruit;
+
+(function (Fruit) {
+    Fruit["Orange"] = "cam";
+    Fruit["Apple"] = "táo";
+    Fruit["Mango"] = "xoài";
+})(Fruit || (Fruit = {}));
+//           ^^^^^ Fruit is a new object {}
+
+(function (Fruit) {
+    Fruit["Durian"] = "sầu riêng";
+})(Fruit || (Fruit = {}));
+// ^^^^^ Fruit is referenced to the existing Fruit
+```
+
+The usage of IIFE is useful here but with a drawback, during production build, [tree-shaking](/everyday/02-09-2022-javascript-named-imports-and-dead-code-elimination) is impossible to check if this generated code is being used or not, hence, these enums will always appear in the bundled code, even if you are not using them anywhere.
+
+---
+
+If an enum is prefixed with a `const`, there will be no generated code for this enum at all, because every usage of this enum's value will be inlined with its actual value, for example, the following code:
+
+```typescript
+const enum Fruit {
+    Orange = "cam",
+    Apple  = "táo",
+    Mango  = "xoài"
+}
+
+console.log(Fruit.Apple);
+console.log(Fruit.Mango);
+```
+
+Will be compiled to:
+
+```
+console.log("táo" /* Apple */);
+console.log("xoài" /* Mango */);
+```
+
+This approach has a clear performance benefit but comes with some pitfalls, make sure you [check them in the document](https://www.typescriptlang.org/docs/handbook/enums.html#const-enum-pitfalls) before using it.
+
 # 02.23.2022 - CSS/Percentage Padding and Margin
 
 When you specify a percentage value for the CSS padding or margin of an element, this percentage is **based on the width of the containing block**, not the width of the element itself.

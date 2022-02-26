@@ -27,7 +27,7 @@ type Product = Book | AudioBook;
 
 Next, you want to build a filter function that allows the users to filter the product based on its `productType`:
 
-```typescript@focus=1,5
+```typescript
 type ProductType = "book" | "audioBook";
 
 function filterProduct(

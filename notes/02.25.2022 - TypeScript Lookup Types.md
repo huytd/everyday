@@ -30,7 +30,10 @@ Next, you want to build a filter function that allows the users to filter the pr
 ```typescript
 type ProductType = "book" | "audioBook";
 
-function filterProduct(products: Product[], productType: ProducType): Product[] {
+function filterProduct(
+    products: Product[],
+    productType: ProductType
+): Product[] {
     return products.filter(
         product => product.productType === productType
     );

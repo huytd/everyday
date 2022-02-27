@@ -30,7 +30,7 @@ Your application communicates with the **Runtime** by sending **Commands**. When
 
 For example, Elm's [Http.get](https://package.elm-lang.org/packages/elm/http/latest/Http#get) method uses the Web API to send an HTTP request, and it also has an `expect` parameter to specify what message should be sent back to the application after the request finished.
 
-```haskell@focus=3:4,11
+```haskell@focus=3:4,10
 import Http
 
 type Msg

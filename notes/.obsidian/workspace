@@ -7,12 +7,8 @@
         "id": "f8a07040a4edc5f3",
         "type": "leaf",
         "state": {
-          "type": "markdown",
-          "state": {
-            "file": "02.27.2022 - Reading Notes Good and Bad Procrastination.md",
-            "mode": "source",
-            "source": true
-          }
+          "type": "empty",
+          "state": {}
         }
       }
     ],
@@ -71,7 +67,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "02.27.2022 - Reading Notes Good and Bad Procrastination.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",

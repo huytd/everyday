@@ -1,3 +1,21 @@
+# 02.26.2022 - Reading Notes/Suffering Oriented Programming
+
+**Article:** http://nathanmarz.com/blog/suffering-oriented-programming.html
+
+OK, so I came across this very interesting article about product building, the author talks about a style of programming that he called **Suffering-oriented programming**.
+
+The idea is: **Don't start building anything unless you feel the pain of not having it**. It applies to any big product, architectural decision, or everyday programming problem.
+
+This is to make sure you fully understand the problem that you are trying to solve and focus on what matters.
+
+Next, when you have a well-defined problem in hand, what should come next is: Make it possible -> Make it beautiful -> Make it fast.
+
+- **Make it possible:** it's better to just "hack things out" to get the problem solved, your solution doesn't have to be generic, extensible, or follow any good programming practices — focusing too much on these details just slows you down, and even worse, prevent you from solving the actual need.
+- **Make it beautiful:** After having an initial working solution, you will gain more understanding of the problem, have more insights into what needs to be done. It's time to make your solution "beautiful" — extend your solution so it covers more use cases, make it more generic, and more extensible, explore deeper into the problem-space, the deeper you dig in, the better your solution is.
+- **Make it fast:** at this phase, you have a very well-made solution for your problem, it's time to focus on optimizing, hardening the solution.
+
+Finally, this is not a one-off, but a continuous cycle. If you can get everything right in one shot, lucky you. But in reality, you may learn something along the way that helps you make it deeper into the problem-space, so you can get back to the drawing board and come up with another better solution. **Rinse and repeat**.
+
 # 02.25.2022 - TypeScript/Lookup Types
 
 Let's say you are tasked to build the next Amazon, and you gotta start small. So, you build a website that only sells books and audiobooks for now.
@@ -16,7 +34,7 @@ type Book = BaseItem & {
 }
 
 type AudioBook = BaseItem & {
-    productType: "audioBok";
+    productType: "audioBook";
     duration: number;
 }
 

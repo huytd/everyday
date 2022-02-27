@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "02.25.2022 - TypeScript Lookup Types.md",
+            "file": "02.26.2022 - Reading Notes Suffering Oriented Programming.md",
             "mode": "source",
             "source": true
           }
@@ -71,7 +71,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "02.25.2022 - TypeScript Lookup Types.md",
+                "file": "02.26.2022 - Reading Notes Suffering Oriented Programming.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -91,6 +91,7 @@
   },
   "active": "f8a07040a4edc5f3",
   "lastOpenFiles": [
+    "02.26.2022 - Reading Notes Suffering Oriented Programming.md",
     "02.25.2022 - TypeScript Lookup Types.md",
     "_meta/lookup-type-001.png",
     "01.02.2022 - TypeScript Type Intersection.md",
@@ -99,7 +100,6 @@
     "02.23.2022 - CSS Percentage Padding and Margin.md",
     "02.22.2022 - Security How Bitwarden encrypts your data.md",
     "02.21.2022 - Security Cryptography PBKDF2.md",
-    "02.19.2022 - Reading Notes The Art of Close Reading.md",
-    "02.20.2022 - Reading Notes Rediscovering the Benefits of Drawing.md"
+    "02.19.2022 - Reading Notes The Art of Close Reading.md"
   ]
 }

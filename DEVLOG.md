@@ -1,3 +1,39 @@
+# 03.01.2022 - Reading Notes/Tetris Effect
+
+**Article:** https://en.m.wikipedia.org/wiki/Tetris_effect
+
+*Tetris Effect* is an effect that happens **when you devote a large amount of time and mental effort to do something, it will shape the way you think, see, and do stuff**.
+
+Or put it simply, your brain continues to do what you were doing, even when you are physically not.
+
+For example:
+
+- Play Tetris and you will see yourself shaping/fitting people, objects around you just like how you fit things in the game.
+- Play chess and you'll see yourself thinking, pondering before making a move on anything, including your work, your communication.
+- Web developers who have worked with HTML/CSS for a while can develop a habit of seeing everything on the web as boxes, lol.
+- Listening to the same type of music over and over can shape the way you see your life, or your emotion depending on what kind of music you are listening to.
+
+Research said this effect is related to [Procedural memory](https://en.m.wikipedia.org/wiki/Procedural_memory), an unconscious memory that guides the performance of skills or behaviors that you learned unconsciously (via repetition).
+
+The interesting point here is **repetition**. Do something repetitively and the Tetris Effect kicks in. If you do good things, you form a good habit. If you do bad things, you get a bad habit.
+
+You can use this effect to drive yourself into learning new skills or developing good habits, improving your mental health (read a book every day, write an article weekly, say thanks more often,...)
+
+---
+
+**Conclusion:** Reading about this effect help me understand better the way the human brain works, and how this effect could help us to improve ourselves, learning new skills, but it's also a risk of taking it too much, just like drugs.
+
+**What's next?** There are some interesting articles related to the Tetris Effect:
+
+- [Do Computer Games Fry Your Brain?](https://web.archive.org/web/20080122021142/http://www.citypaper.net/articles/032196/article038.shtml), Annette Earling, CityPaper
+- [Real World Doesn't Use a Joystick](https://www.wired.com/2005/01/real-world-doesnt-use-a-joystick/), Daniel Terdiman, Wired
+- [Possible future risk of Virtual Reality](http://catless.ncl.ac.uk/Risks/17.78.html#subj1), Garth Kidd
+- [This Is Your Brain on Tetris](https://www.wired.com/1994/05/tetris-2/), Jefferey Golosmith, Wired
+- [The Tetris Effect: What is it?](https://exploringyourmind.com/tetris-effect/), Exploring Your Mind
+- [Rewire Your Brain for Positivity and Happiness Using the Tetris Effect](https://lifehacker.com/rewire-your-brain-for-positivity-and-happiness-using-th-5982005), Walter Chen, Life Hack
+- [How Movie Soundtracks Influence the Brain](https://exploringyourmind.com/movie-soundtracks-influence-brain/), Exploring Your Mind
+- [Is Tetris Good For The Brain?](https://www.sciencedaily.com/releases/2009/09/090901082851.htm), ScienceDaily
+
 # 02.28.2022 - TypeScript/Type Annotation vs Type Assertion
 
 By default, the TypeScript compiler tries its best to analyze the code and infer the type of your variables.

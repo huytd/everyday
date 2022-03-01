@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "02.27.2022 - Design Patterns The Elm Architecture.md",
+            "file": "02.28.2022 - TypeScript Type Annotation vs Type Assertion.md",
             "mode": "source",
             "source": true
           }
@@ -71,7 +71,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "02.27.2022 - Design Patterns The Elm Architecture.md",
+                "file": "02.28.2022 - TypeScript Type Annotation vs Type Assertion.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -91,8 +91,7 @@
   },
   "active": "f8a07040a4edc5f3",
   "lastOpenFiles": [
-    "02.27.2022 - Design Patterns The Elm Architecture.md",
-    "02.27.2022 - Reading Notes Good and Bad Procrastination.md",
+    "02.28.2022 - TypeScript Type Annotation vs Type Assertion.md",
     "02.26.2022 - Reading Notes Suffering Oriented Programming.md",
     "02.25.2022 - TypeScript Lookup Types.md",
     "_meta/lookup-type-001.png",
@@ -100,6 +99,7 @@
     "02.25.2022 - TypeScript Type import.md",
     "02.24.2022 - TypeScript Enums at runtime.md",
     "02.23.2022 - CSS Percentage Padding and Margin.md",
-    "02.22.2022 - Security How Bitwarden encrypts your data.md"
+    "02.22.2022 - Security How Bitwarden encrypts your data.md",
+    "02.21.2022 - Security Cryptography PBKDF2.md"
   ]
 }

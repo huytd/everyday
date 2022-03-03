@@ -1,6 +1,97 @@
 # 03.02.2022 - TypeScript/Arrow Function in Classes
 
-In JavaScript/TypeScript, you can create a class with either a normal function or an arrow function:
+One of the most confusing things in JavaScript is the context object `this` inside a function. The value of `this` **depends on how the function is called, not how the function is defined**.
+
+Let's take a look at this example:
+
+```typescript
+class Foo {
+    name = "foo";
+
+    sayHello() {
+        console.log(this.name);
+    }
+}
+
+let a = new Foo();
+a.sayHello();
+```
+
+The output of the above snippet is as expected:
+
+```
+"foo"
+```
+
+But if we change the code to this:
+
+```typescript
+let a = new Foo();
+const wrapper = {
+    name: "awesome",
+    fn: a.sayHello
+};
+wrapper.fn();
+```
+
+Now, the output is:
+
+```
+"awesome"
+```
+
+It's because the context of the `sayHello` function has been changed when we wrap it inside the `wrapper` object.
+
+One way to fix this is to re-bind the method in the class's constructor:
+
+```typescript
+class Foo {
+    ...
+
+    constructor() {
+        this.sayHello = this.sayHello.bind(this);
+    }
+
+    ...
+}
+
+let a = new Foo();
+const wrapper = {
+    name: "awesome",
+    fn: a.sayHello
+};
+wrapper.fn();
+```
+
+The output is now correctly displayed:
+
+```
+"foo"
+```
+
+Another way to solve this context problem, and avoid re-bind the methods in the class's constructor is to use the arrow function:
+
+```typescript
+class Foo {
+    name = "foo";
+
+    sayHello = () => {
+        console.log(this.name);
+    }
+}
+```
+
+This will preserve the `this` context inside the `sayHello` method, regardless of how the method is called.
+
+But there is a memory and performance impact when doing this. The [Handbook](https://www.typescriptlang.org/docs/handbook/2/classes.html#arrow-functions) only mentioned it in a single line without any further explanation: 
+
+> This will use more memory, because each class instance will have its own copy of each function defined this way
+
+I was confused about this statement, so I decided to take a closer look to find out why.
+
+---
+
+Let's take a look at another example:
 
 ```typescript
 class Foo {
@@ -14,15 +105,7 @@ class Foo {
 }
 ```
 
-There is a memory and performance impact when doing this. The [Handbook](https://www.typescriptlang.org/docs/handbook/2/classes.html#arrow-functions) only mentioned it in a single line without any further explanation: 
-
-> This will use more memory, because each class instance will have its own copy of each function defined this way
-
-I was confused about this statement, so I decided to take a closer look to find out why.
-
----
-
-First, let's compile the following TypeScript snippet to JavaScript, this is what we get:
+Compile this snippet to JavaScript, this is what we get:
 
 ```javascript
 "use strict";

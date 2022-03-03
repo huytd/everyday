@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "03.02.2022 - TypeScript Arrow Function in Classes.md",
+            "file": "03.03.2022 - Git CODEOWNERS file.md",
             "mode": "source",
             "source": true
           }
@@ -71,7 +71,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "03.02.2022 - TypeScript Arrow Function in Classes.md",
+                "file": "03.03.2022 - Git CODEOWNERS file.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -91,6 +91,7 @@
   },
   "active": "f8a07040a4edc5f3",
   "lastOpenFiles": [
+    "03.03.2022 - Git CODEOWNERS file.md",
     "03.02.2022 - TypeScript Arrow Function in Classes.md",
     "03.01.2022 - Reading Notes Tetris Effect.md",
     "02.28.2022 - TypeScript Type Annotation vs Type Assertion.md",
@@ -99,7 +100,6 @@
     "_meta/lookup-type-001.png",
     "01.02.2022 - TypeScript Type Intersection.md",
     "02.25.2022 - TypeScript Type import.md",
-    "02.24.2022 - TypeScript Enums at runtime.md",
-    "02.23.2022 - CSS Percentage Padding and Margin.md"
+    "02.24.2022 - TypeScript Enums at runtime.md"
   ]
 }

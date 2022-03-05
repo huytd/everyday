@@ -17,6 +17,7 @@ So, depending on how would you want to do with an unfinished task before an inte
 
 **Reference:** https://en.wikipedia.org/wiki/Zeigarnik_effect
 
+
 # 03.03.2022 - Git/CODEOWNERS file
 
 On Github, you can create a `CODEOWNERS` file in the `.github/` or `docs/` folder to specify which person or team is responsible for the code in a repository.

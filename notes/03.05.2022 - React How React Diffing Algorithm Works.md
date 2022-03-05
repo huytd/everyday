@@ -1,4 +1,4 @@
-# 03.05.2022 - React/How React Diffing Algorithm Works
+# 03.05.2022 - React/How React's Diffing Algorithm Works
 
 If you are busy, here is what you are looking for:
 
@@ -20,7 +20,15 @@ The way the algorithm works is:
 - If two elements are the same type, React will check each of the attributes and only update what changed. The algorithm continues with all the current component's children.
 - If two elements have different types, all old DOM nodes are destroyed, new DOM nodes are inserted, all the lifecycle methods of the component and its children like `componentWillUnmount()`, `componentDidMount()`,... will be called.
 
-The reconciliation algorithm cannot tell the difference between the two render trees if the child elements are just re-ordered, in this case, we could use a `key` prop to give it a hint.
+![](_meta/react-diff.png)
+
+The reconciliation algorithm cannot tell the difference between the two render trees if the child elements are just re-ordered. For example, if you insert a new element in the middle of the list, the algorithm will see every element from the inserted position as an updated node:
+
+![](_meta/react-diff-reorder.png)
+
+In this case, adding a `key` property into each element will help the algorithm determine if a node is unchanged or not during the update.
+
+![](_meta/react-diff-key.png)
 
 It's important to note that, the current algorithm will not try to match two subtrees if they are of different component types.
 

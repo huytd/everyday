@@ -6,10 +6,12 @@ A more detailed explanation for this effect is: **When a task has been establish
 
 For example:
 A waiter can remember the order of unpaid tables very well, but once the order is paid, they hardly recall any details.
+
 - If you cannot finish some task before the weekend, your mind be stuck with that task during the weekend.
 - When you are working on some problem and stuck, go for a walk with that problem in mind, you might be able to think better about it and come up with a solution.
 
 So, depending on how would you want to do with an unfinished task before an interrupt, you can either:
+
 - Keep it in mind and take a break. This will help you solve the problem better.
 - Or write down your thoughts about the task somewhere make a promise to come back with it after the interruption. This will release your mind, so you have the capacity for other activities.
 

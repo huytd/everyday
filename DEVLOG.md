@@ -117,6 +117,7 @@ Newer CSS layouts like [Flexbox](https://developers.google.com/web/updates/2013/
 It's also recommended to read ZeroX-DG's [Browser from Scratch: Layout](https://zerox-dg.github.io/blog/2021/09/26/Browser-from-Scratch-Layout/) article for a more in-depth look at how browser's layout calculation works.
 
 **References:**
+
 - https://developers.google.com/web/fundamentals/performance/rendering
 - https://medium.com/@paul_irish/requestanimationframe-scheduling-for-nerds-9c57f7438ef4
 - https://techblog.smc.it/en/2020-08-03/grid-vs-flexbox-performance

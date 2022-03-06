@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "03.05.2022 - React How React Diffing Algorithm Works.md",
+            "file": "03.06.2022 - Reading Notes Browser Rendering Process.md",
             "mode": "source",
             "source": true
           }
@@ -70,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "03.05.2022 - React How React Diffing Algorithm Works.md",
+                "file": "03.06.2022 - Reading Notes Browser Rendering Process.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -90,6 +90,7 @@
   },
   "active": "b065b27d00214098",
   "lastOpenFiles": [
+    "03.06.2022 - Reading Notes Browser Rendering Process.md",
     "03.05.2022 - React How React Diffing Algorithm Works.md",
     "03.05.2022 - TypeScript Type Manipulation Mapped Types.md",
     "03.04.2022 - Reading Notes Zeigarnik Effect.md",
@@ -98,7 +99,6 @@
     "03.01.2022 - Reading Notes Tetris Effect.md",
     "02.28.2022 - TypeScript Type Annotation vs Type Assertion.md",
     "02.26.2022 - Reading Notes Suffering Oriented Programming.md",
-    "02.25.2022 - TypeScript Lookup Types.md",
-    "_meta/lookup-type-001.png"
+    "02.25.2022 - TypeScript Lookup Types.md"
   ]
 }

@@ -4,13 +4,13 @@
     "type": "split",
     "children": [
       {
-        "id": "b065b27d00214098",
+        "id": "660f05558c93a97f",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "03.08.2022 - Reading Notes Layout Thrashing.md",
-            "mode": "preview",
+            "file": "03.09.2022 - Reading Notes Browser Rendering Painting Compositing.md",
+            "mode": "source",
             "source": true
           }
         }
@@ -70,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "03.08.2022 - Reading Notes Layout Thrashing.md",
+                "file": "03.09.2022 - Reading Notes Browser Rendering Painting Compositing.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -88,8 +88,9 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "b065b27d00214098",
+  "active": "660f05558c93a97f",
   "lastOpenFiles": [
+    "03.09.2022 - Reading Notes Browser Rendering Painting Compositing.md",
     "03.08.2022 - Reading Notes Layout Thrashing.md",
     "03.07.2022 - Reading Notes Two types of Knowledge.md",
     "03.06.2022 - Reading Notes Browser Rendering Process.md",
@@ -98,7 +99,6 @@
     "03.04.2022 - Reading Notes Zeigarnik Effect.md",
     "03.03.2022 - Git CODEOWNERS file.md",
     "03.02.2022 - TypeScript Arrow Function in Classes.md",
-    "03.01.2022 - Reading Notes Tetris Effect.md",
-    "02.28.2022 - TypeScript Type Annotation vs Type Assertion.md"
+    "03.01.2022 - Reading Notes Tetris Effect.md"
   ]
 }

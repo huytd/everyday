@@ -6,7 +6,7 @@
 
 **Compositing** is the process of transforming and putting together the render layers to display on the screen.
 
-![A representation of compositor layers.](https://developers.google.com/web/fundamentals/performance/rendering/images/simplify-paint-complexity-and-reduce-paint-areas/layers.jpg)
+![](_meta/compositor-layers.png)
 
 By default, everything on the screen will be rendered as a single compositor layer.
 
@@ -14,7 +14,7 @@ If an element is subject to changes between frames (like moving around with `tra
 
 This explains why doing animation in CSS can result in a better performance than doing them in JavaScript. Since `transform` and `opacity` [will not trigger a reflow](https://csstriggers.com), you can skip the layout calculation. The pipeline will look like this:
 
-![The pixel pipeline without layout.](https://developers.google.com/web/fundamentals/performance/rendering/images/simplify-paint-complexity-and-reduce-paint-areas/frame-no-layout.jpg)
+![](_meta/frame-no-layout.png)
 
 But creating new layers **is not free**. For every layer, its data (like image texture) need to be uploaded to the GPU for rendering, it takes time, bandwidth, and memory to do so. You should avoid creating new layers unnecessary, or without any proper performance profiling.
 

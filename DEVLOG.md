@@ -1,3 +1,23 @@
+# 03.10.2022 - Reading Notes/The Curse of Knowledge 
+
+**The curse of knowledge** is a cognitive bias of **assuming that others have the same background knowledge to understand what you are talking**.
+
+It is also known as the [False-Consensus Effect](https://www.nngroup.com/articles/false-consensus/).
+
+This bias explains why someone is particularly bad at teaching or writing, as they do not empathy the level of their target audience (the student or the readers) and give a lot of advanced concepts without further explanation or prerequisites.
+
+In computer programming and software design, the curse of knowledge's effect can be seen in many ways:
+
+- A programmer failed to write their code in an understandable way or comment on their code properly so the others can read because it seems obvious at the time they wrote it. 
+- Software engineers who have deep knowledge in technology might produce some complex and unfriendly UI design, but the end-users, who do not have the same level of knowledge, will find it hard to use and navigate.
+
+**References:**
+
+- https://en.wikipedia.org/wiki/Curse_of_knowledge
+- https://www.nngroup.com/articles/false-consensus/
+
+
+
 # 03.09.2022 - Reading Notes/Browser Rendering: Painting and Compositing
 
 **Painting** and **Compositing** are the last two steps to generate a frame in the [browser's pixel pipeline](/everyday/03-06-2022-reading-notes-browser-s-rendering-process).

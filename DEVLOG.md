@@ -1,3 +1,32 @@
+# 03.11.2022 - SEO/Structured Data for Google Search
+
+**Structured data** is a special data snippet you can insert into your page to help Google Search identify your content in a richer way (called **Rich Result**). It usually comes in the [JSON-LD format](https://json-ld.org).
+
+For example:
+
+```javascript
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org/",
+    "@type": "Recipe",
+    "name": "Party Coffee Cake",
+    "author": {
+        "@type": "Person",
+        "name": "Mary Stone"
+    },
+    "datePublished": "2018-03-10",
+    "description": "This coffee cake is awesome and perfect for parties.",
+    "prepTime": "PT20M"
+}
+</script>
+```
+
+You can use Google's [Rich Results Test](https://search.google.com/test/rich-results) tool to debug your structured data.
+
+There are many different types of rich results like Article, Book, Carousel, FAQ, Event,...
+
+See the full list of supported rich results and the structured data to implement them in this document: https://developers.google.com/search/docs/advanced/structured-data/search-gallery
+
 # 03.10.2022 - Reading Notes/The Curse of Knowledge 
 
 **The curse of knowledge** is a cognitive bias of **assuming that others have the same background knowledge to understand what you are talking**.

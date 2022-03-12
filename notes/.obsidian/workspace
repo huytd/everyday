@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "03.11.2022 - SEO Structured Data for Google.md",
+            "file": "03.12.2022 - RxJS Cancel Request with Subscription.md",
             "mode": "source",
             "source": true
           }
@@ -70,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "03.11.2022 - SEO Structured Data for Google.md",
+                "file": "03.12.2022 - RxJS Cancel Request with Subscription.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -90,6 +90,7 @@
   },
   "active": "660f05558c93a97f",
   "lastOpenFiles": [
+    "03.12.2022 - RxJS Cancel Request with Subscription.md",
     "03.11.2022 - SEO Structured Data for Google.md",
     "03.10.2022 - Reading Notes The Curse of Knowledge.md",
     "03.09.2022 - Reading Notes Browser Rendering Painting Compositing.md",
@@ -98,7 +99,6 @@
     "03.06.2022 - Reading Notes Browser Rendering Process.md",
     "03.05.2022 - React How React Diffing Algorithm Works.md",
     "03.05.2022 - TypeScript Type Manipulation Mapped Types.md",
-    "03.04.2022 - Reading Notes Zeigarnik Effect.md",
-    "03.03.2022 - Git CODEOWNERS file.md"
+    "03.04.2022 - Reading Notes Zeigarnik Effect.md"
   ]
 }

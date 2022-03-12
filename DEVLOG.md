@@ -1,6 +1,6 @@
 # 03.12.2022 - RxJS/Cancel Request with Subscription
 
-In RxJS, a [Subscription](https://rxjs.dev/guide/subscription) is an object that represents a disposable resource, it can be used to stop an [Observable](https://rxjs.dev/guide/observable).
+In RxJS, a [Subscription](https://rxjs.dev/guide/subscription) is an object that represents an execution of an [Observable](https://rxjs.dev/guide/observable). It has the most important method, the `unsubscribe()`, mainly used to cancel the execution.
 
 For example, we usually make API calls like this:
 
@@ -12,7 +12,7 @@ this.apiService.post(`/upload`).subscribe(response => {
 
 This works fine if our API call run to complete. But what happens if the user cancels the operation in the middle of the API call? For example, the user decided to close the upload dialog.
 
-The Subscription object has the `unsubscribe()` method to stop an Observable, we can handle such case like this:
+We can handle such case like this:
 
 ```typescript
 startUpload() {

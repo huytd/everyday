@@ -1,3 +1,30 @@
+# 03.13.2022 - Reading Notes/Two modes of thinking: Focused mode vs. Diffuse mode
+    
+The [Learning How to Learn](https://www.coursera.org/learn/learning-how-to-learn/home/welcome) course proposed an idea that there are two modes of thinking: **Focused** and **Diffuse**.
+
+You are either in one of the two modes but never be in two modes at the same time.
+
+![](focused-vs-diffuse.png)
+
+**Focused mode** is when your mind highly concentrates on learning or understanding a problem. It effectively ignores all the unrelated information and actively looks for details that are related to the subject. It thinks in a fixed way using the familiar's patterns.
+
+**Diffuse mode** is when you look at the big picture or let your mind wander between ideas, maybe unconsciously. Your brain may creatively form new connections and generate new ideas in this mode.
+
+---
+    
+When you learn something new, especially something that little more difficult, **your mind needs to go back and forth between the two modes**.
+
+For example, get into the focused mode to understand the basics of the topic, then free your mind, get into diffuse mode to passively internalize the knowledge, connect what you've learned to other things you already knew.
+
+Or vice versa, let your mind explore things in diffuse mode and go back to focus mode with the ideas and connections you made in diffuse mode.
+
+This is exactly the technique that some great artists and scientists like Salvador Dali or Thomas Edison used to think. They would hold a metal key or something in their hand, sit back, and relax their mind (thinking in diffuse mode). As they began to felt asleep, the key would fall, making a noise to wake them up. At this point, they'll focus and dig deeper into the new ideas or connections that came during the diffuse mode.
+
+**References**
+
+- https://www.coursera.org/learn/learning-how-to-learn/home/welcome
+- https://www.learnable-europe.eu/how-to-approach-problems-and-learning-focused-vs-diffuse-thinking/
+
 # 03.12.2022 - RxJS/Cancel Request with Subscription
 
 In RxJS, a [Subscription](https://rxjs.dev/guide/subscription) is an object that represents an execution of an [Observable](https://rxjs.dev/guide/observable). It has the most important method, the `unsubscribe()`, mainly used to cancel the execution.

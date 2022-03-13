@@ -4,7 +4,7 @@ The [Learning How to Learn](https://www.coursera.org/learn/learning-how-to-learn
 
 You are either in one of the two modes but never be in two modes at the same time.
 
-![](focused-vs-diffuse.png)
+![](_meta/focused-vs-diffuse.png)
 
 **Focused mode** is when your mind highly concentrates on learning or understanding a problem. It effectively ignores all the unrelated information and actively looks for details that are related to the subject. It thinks in a fixed way using the familiar's patterns.
 

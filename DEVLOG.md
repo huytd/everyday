@@ -1,3 +1,191 @@
+# 03.14.2022 - Elm/Building large Elm applications
+
+Coming from React or other UI frameworks, when it comes to building large applications, you might have the habit of breaking it into smaller components.
+
+This mental model does not fit in Elm, in fact, [there is nothing called Component in Elm](https://guide.elm-lang.org/webapps/structure.html\#components). Instead, you are encouraged to stay as long as possible in a single file. As your code grows, if they reached the point where modifying or reading is challenged enough, you can start breaking them up into smaller functions, and composing them if needed.
+
+The chapter 6 of the [Programming Elm](https://programming-elm.com) book outlined some strategies to do so.
+
+## Splitting the View
+
+The view can be split into multiple functions, and you can call each function for each case.
+
+Personally, I think each subview function can take a smaller part of the model as its arguments, so rendering is much easier to organize.
+
+## Simplifying Messages
+
+Messages can be grouped to reduce duplication when handling updates, using **parametrized message value**.
+
+For example:
+
+Let’s say you are building an Elm app for a gas station, the user can select the gas type they want: **Regular** (87), **Mid-grade** (89), and **Premium** (91 or 93).
+
+Initially, you would define each of the gas selections as an individual message, there will be duplication when updating the model:
+
+```haskell
+-- message
+type Msg
+    = SelectRegular
+    | SelectMidGrade
+    | SelectPremium
+
+-- update
+case msg of
+    SelectRegular -> { model | gasType = Regular }
+    SelectMidGrade -> { model | gasType = MidGrade }
+    SelectPremium -> { model | gasType = Premium }
+```
+
+Using the parameterized message, we only need one message `SelectGas` and the gas type would be a parameter, we can reduce code duplication in the update function:
+
+```haskell
+-- message
+type Msg
+    = SelectGas GasType
+
+-- update
+case msg of
+    SelectGas type -> { model | gasType = type }
+```
+
+## Use nested state
+
+Organizing your application state as a flat object would make the `update` function handle too many responsibilities, making it complex to read and modify.
+
+For example, instead of a big flat state:
+
+```haskell
+type alias Model =
+    { supplyLevel: Int
+    , supplyGasType: GasType
+    , buyerGasLevel: Int
+    , buyerGasType: GasType
+    }
+```
+
+We can organize it as a nested state:
+
+```haskell
+type alias Supply =
+    { level: Int
+    , gasType: GasType
+    }
+
+type alias Buyer =
+    { level: Int
+    , gasType: GasType
+    }
+
+type alias Model =
+    { supply: Supply
+    , buyer: Buyer
+    }
+```
+
+Using **nested state** would modularize your code better, the update function can be separated into smaller ones, each function will handle the smaller part of the state object.
+
+For example, with the nested state, we split up the update function into
+smaller functions for each type:
+
+```haskell
+updateSupply : SupplyMsg -> Supply -> Supply
+updateSupply msg supply =
+    case msg of
+        ...
+
+updateBuyer : BuyerMsg -> Buyer -> Buyer
+updateBuyer msg buyer =
+    case msg of
+        ...
+
+update : Msg -> Model -> Model
+update msg model =
+    case msg of
+        SupplyMsg supplyMsg ->
+            { model
+            | supply = updateSupply supplyMsg model.supply
+            }
+        BuyerMsg buyerMsg ->
+            { model
+            | buyer = updateBuyer buyerMsg model.buyer
+            }
+```
+
+But nested states will make it harder to handle, especially when you have multiple levels nested. The rule of thumb is, design states sparingly when possible. When you have to use a nested state, try not to go more than one level deep.
+
+## Use extensible records
+
+Another alternative to nested state is **extensible records type**. It is like an interface, defined in the syntax of `type alias Something s` where `s` is the type variable. **Any record that contains all the fields defined in the extensible record, is an instance of that extensible record**.
+
+For example, if we have a type `BlogPost`, we can create an extensible
+record type `Reaction` like this:
+
+```haskell
+type alias BlogPost =
+    { title: String
+    , content: String
+    , likes: Int
+    , dislikes: Int
+    }
+
+type alias Reaction post =
+    { post
+    | likes: Int,
+    | dislikes: Int
+    }
+```
+
+Any instance of `BlogPost` is also an instance of `Reaction`, because
+they all have the `likes` and `dislikes` fields.
+
+On the other hand, any record that does not have the `likes` and
+`dislikes` fields are not an instance of `LikeCount`.
+
+We can use extensible record to split up the update function into smaller ones. For example, to implement the post’s reaction feature, we can define a new `ReactionMsg` type for message, and write a `updateReaction` function like this:
+
+```haskell
+type ReactionMsg
+    = Like
+    | Dislike
+
+updateReaction : ReactionMsg -> Reaction r -> Reaction r
+updateReaction reactionMsg post =
+    case reactionMsg of
+        Like -> { post | likes = post.likes + 1 }
+        Dislike -> { post | dislikes = post.dislikes + 1 }
+```
+
+Then, the most important part is wiring up the `ReactionMsg` and `updateReaction` into the existing `Msg` type and `update` function:
+
+```haskell
+type Msg
+    = ReactionMsg ReactionMsg
+    | OtherMsg OtherMsg
+    | ...
+
+type Model =
+    { post: BlogPost
+    }
+
+update : Msg -> Model -> Model
+update msg model =
+    case msg of
+        ReactionMsg reactionMsg ->
+            { model
+            | post = ( updateReaction reactionMsg model.post )
+            }
+    ...
+```
+
+The `model.post` record, which has the type `BlogPost`, can be passed into the `updateReaction` function because it has `likes` and `dislikes` fields, so it’s an instance of the `Reaction` type.
+
+By using this characteristic of extensible record, we can modularize the different features of the application easily, while being able to keep the model as a flat structure, hence, there is no need for nested structure.
+
+**References**
+
+- https://programming-elm.com
+- https://guide.elm-lang.org/webapps/structure.html\#components
+
 # 03.13.2022 - Reading Notes/Two modes of thinking: Focused mode vs. Diffuse mode
     
 The [Learning How to Learn](https://www.coursera.org/learn/learning-how-to-learn/home/welcome) course proposed an idea that there are two modes of thinking: **Focused** and **Diffuse**.

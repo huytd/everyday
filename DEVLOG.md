@@ -2,7 +2,7 @@
 
 Coming from React or other UI frameworks, when it comes to building large applications, you might have the habit of breaking it into smaller components.
 
-This mental model does not fit in Elm, in fact, [there is nothing called Component in Elm](https://guide.elm-lang.org/webapps/structure.html\#components). Instead, you are encouraged to stay as long as possible in a single file. As your code grows, if they reached the point where modifying or reading is challenged enough, you can start breaking them up into smaller functions, and composing them if needed.
+This mental model does not fit in Elm, in fact, [Component are discouraged in Elm](https://guide.elm-lang.org/webapps/structure.html\#components). Instead, you are encouraged to stay as long as possible in a single file. As your code grows, if they reached the point where modifying or reading is challenged enough, you can start breaking them up into smaller functions, and composing them if needed.
 
 The chapter 6 of the [Programming Elm](https://programming-elm.com) book outlined some strategies to do so.
 

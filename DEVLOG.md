@@ -130,8 +130,8 @@ type alias BlogPost =
 
 type alias Reaction post =
     { post
-    | likes: Int,
-    | dislikes: Int
+    | likes: Int
+    , dislikes: Int
     }
 ```
 
@@ -141,7 +141,7 @@ they all have the `likes` and `dislikes` fields.
 On the other hand, any record that does not have the `likes` and
 `dislikes` fields are not an instance of `LikeCount`.
 
-We can use extensible record to split up the update function into smaller ones. For example, to implement the post’s reaction feature, we can define a new `ReactionMsg` type for message, and write a `updateReaction` function like this:
+We can use an extensible record to split up the update function into smaller ones. For example, to implement the post’s reaction feature, we can define a new `ReactionMsg` type for the message, and write a `updateReaction` function like this:
 
 ```haskell
 type ReactionMsg

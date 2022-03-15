@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "03.14.2022 - Elm Building large applications.md",
+            "file": "03.15.2022 - Reading Notes How to Edit Your Own Writing.md",
             "mode": "source",
             "source": true
           }
@@ -70,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "03.14.2022 - Elm Building large applications.md",
+                "file": "03.15.2022 - Reading Notes How to Edit Your Own Writing.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -90,6 +90,7 @@
   },
   "active": "660f05558c93a97f",
   "lastOpenFiles": [
+    "03.15.2022 - Reading Notes How to Edit Your Own Writing.md",
     "03.14.2022 - Elm Building large applications.md",
     "03.13.2022 - Reading Notes Diffuse vs Focused mode.md",
     "03.12.2022 - RxJS Cancel Request with Subscription.md",
@@ -98,7 +99,6 @@
     "03.09.2022 - Reading Notes Browser Rendering Painting Compositing.md",
     "03.08.2022 - Reading Notes Layout Thrashing.md",
     "03.07.2022 - Reading Notes Two types of Knowledge.md",
-    "03.06.2022 - Reading Notes Browser Rendering Process.md",
-    "03.05.2022 - React How React Diffing Algorithm Works.md"
+    "03.06.2022 - Reading Notes Browser Rendering Process.md"
   ]
 }

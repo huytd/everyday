@@ -92,7 +92,7 @@ export const Storage = {
 
 Then you can go and replace your localStorage usage with the new Storage:
 
-```git
+```diff
 - localStorage.setItem('key-001', JSON.stringify(value));
 + Storage.set('key-001', value);
 

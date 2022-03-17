@@ -1,3 +1,36 @@
+# 03.17.2022 - JavaScript/Partial update an object in IndexedDB
+
+Let's say, you have the object store called **characters** as the following table:
+
+| Key | Value |
+|:----|:------|
+|1    | { **name**: "Bilbo Baggins", **race**: "Hobbits" } |
+|2    | { **name**: "Legolas Greenleaf", **race**: "Elves" } |
+
+To update a record, we can use [`IDBObjectStore.put()`](https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/put) method, but this will update the value object as a whole.
+
+In case you want to change just the `name` of record #1, from "Bilbo" to "Frodo", you will need to create a [Cursor](https://developer.mozilla.org/en-US/docs/Web/API/IDBCursor) to find the record #1, and use [`IDBCursor.update()`](https://developer.mozilla.org/en-US/docs/Web/API/IDBCursor/update) method to make an update:
+
+```typescript
+const transaction = db.transaction(['characters'], 'readwrite');
+const store = transaction.objectStore('characters');
+
+store.openCursor().onsuccess = event => {
+    const cursor = event.target.result;
+    if (cursor) {
+        if (cursor.value.name === 'Bilbo Baggins') {
+            const updateData = cursor.value;
+            updateData.name = 'Frodo Baggins';
+            
+            cursor.update(updateData);
+        }
+        cursor.continue();
+    }
+};
+```
+
+
+
 # 03.16.2022 - JavaScript/Moving from LocalStorage to IndexedDB
 
 LocalStorage is a popular solution to persists data (locally) across sessions for web applications, but there are some limitations, for example:

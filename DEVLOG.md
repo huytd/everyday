@@ -1,3 +1,44 @@
+# 03.18.2022 - Reading Notes/Contributing to complex projects
+
+**Article:** https://mitchellh.com/writing/contributing-to-complex-projects
+
+As a developer, our main job is contributing to code projects, it can be a work project or an open-source project.
+
+With work projects, we might have access to more resources (other developers to learn or ask questions, give guidance, internal documents about how the system works,...). For open-source projects, you are mostly on your own.
+
+In this article, Mitchell outlined the steps he takes before contributing to an open-source project.
+
+- **Step 1: Become a user**
+  The first step is actually to use the project as a user, for example, if it's a language or a framework, start by building some toy projects with it. By doing this, you will gain empathy and understanding about how the project works, why it was built that way, understand what changes need or need not be implemented.
+
+- **Step 2: Learn how to build the project**
+  Learn how to get the source code and build the project, get a working binary on your machine. Don't try to learn anything about the implementation or internals yet. But do learn how to run the tests, this makes it easier to experiment with the codebase in later steps.
+  
+- **Step 3: Learn the internals**
+  Start with some features that you are already familiar with as a user, try tracing down the code from outside to inside, if needed, write down the path, which file or which function calls, so you will get a big picture about the feature, and gradually understand how everything is connected in the codebase. Do not try to go to any details at this point.
+
+  Then, start understanding each part in the path, read the implementation details, from the inside out. It means, you go from the least abstract layer and climb up.
+
+  Don't try to learn everything at once, because you will be overwhelmed and lost your motivation.
+
+  After gaining enough knowledge about each feature you are interested in, start experimenting by breaking things and changing them the way you want. For example, add some log, or think up about some alternative behavior, modify the code and run the test again to verify if you guess it right or not.
+  
+- **Step 4: Reimplement recent changes**
+  Now, go read the merged pull requests, pick some recent changes or bug fixes and learn how the other maintainers implemented them, or try to implement the fix yourself and see if you arrive with the same solution.
+
+  Do it this way, you get to challenge yourself by working on a real problem, and always have a solved solution to reference when you get stuck.
+  
+- **Step 5: Make a bite-sized change**
+  At this point, you are good to go. Start contributing the project by looking for small issues, most open source projects have the *"Good first issue"* label or something similar, these are beginner-friendly tickets, most of them have a clear description and expectation to work on.
+
+---
+
+Personally, I agree with his approach, and one thing I want to add is: Take as much time as you can to learn, don't rush into contributing when you do not fully understand how things work.
+
+When you are rushing to create your first PR, you are either risk doing it wrong (get a rejection from the other maintainers, making unnecessary changes) or lose your motivation because you could not make any progress.
+
+
+
 # 03.17.2022 - JavaScript/Partial update an object in IndexedDB
 
 Let's say, you have the object store called **characters** as the following table:

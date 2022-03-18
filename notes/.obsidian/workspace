@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "03.17.2022 - JavaScript Partial update an object in IndexedDB.md",
+            "file": "03.18.2022 - Reading Notes Contributing to complex projects.md",
             "mode": "source",
             "source": true
           }
@@ -70,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "03.17.2022 - JavaScript Partial update an object in IndexedDB.md",
+                "file": "03.18.2022 - Reading Notes Contributing to complex projects.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -90,6 +90,7 @@
   },
   "active": "660f05558c93a97f",
   "lastOpenFiles": [
+    "03.18.2022 - Reading Notes Contributing to complex projects.md",
     "03.17.2022 - JavaScript Partial update an object in IndexedDB.md",
     "03.16.2022 - JavaScript Moving to IndexedDB.md",
     "03.15.2022 - Reading Notes How to Edit Your Own Writing.md",
@@ -98,7 +99,6 @@
     "03.12.2022 - RxJS Cancel Request with Subscription.md",
     "03.11.2022 - SEO Structured Data for Google.md",
     "03.10.2022 - Reading Notes The Curse of Knowledge.md",
-    "03.09.2022 - Reading Notes Browser Rendering Painting Compositing.md",
-    "03.08.2022 - Reading Notes Layout Thrashing.md"
+    "03.09.2022 - Reading Notes Browser Rendering Painting Compositing.md"
   ]
 }

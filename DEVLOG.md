@@ -1,32 +1,22 @@
 # 03.18.2022 - Reading Notes/Contributing to complex projects
 
-**Article:** https://mitchellh.com/writing/contributing-to-complex-projects
-
 As a developer, our main job is contributing to code projects, it can be a work project or an open-source project.
 
 With work projects, we might have access to more resources (other developers to learn or ask questions, give guidance, internal documents about how the system works,...). For open-source projects, you are mostly on your own.
 
-In this article, Mitchell outlined the steps he takes before contributing to an open-source project.
+In [his article](https://mitchellh.com/writing/contributing-to-complex-projects), Mitchell outlined the steps he takes before contributing to an open-source project.
 
 - **Step 1: Become a user**
-  The first step is actually to use the project as a user, for example, if it's a language or a framework, start by building some toy projects with it. By doing this, you will gain empathy and understanding about how the project works, why it was built that way, understand what changes need or need not be implemented.
+  Use the project as a user, for example, if it's a language or a framework, start by building some toy projects with it. You will gain empathy and understanding the project works, understand why things were built that way, what changes need or need not be implemented.
 
 - **Step 2: Learn how to build the project**
-  Learn how to get the source code and build the project, get a working binary on your machine. Don't try to learn anything about the implementation or internals yet. But do learn how to run the tests, this makes it easier to experiment with the codebase in later steps.
+  Learn how to get the source code and build the project. Don't try to learn anything about the implementation or internals yet. But do learn how to run the tests.
   
 - **Step 3: Learn the internals**
-  Start with some features that you are already familiar with as a user, try tracing down the code from outside to inside, if needed, write down the path, which file or which function calls, so you will get a big picture about the feature, and gradually understand how everything is connected in the codebase. Do not try to go to any details at this point.
-
-  Then, start understanding each part in the path, read the implementation details, from the inside out. It means, you go from the least abstract layer and climb up.
-
-  Don't try to learn everything at once, because you will be overwhelmed and lost your motivation.
-
-  After gaining enough knowledge about each feature you are interested in, start experimenting by breaking things and changing them the way you want. For example, add some log, or think up about some alternative behavior, modify the code and run the test again to verify if you guess it right or not.
+  Start with some features that you are already familiar with as a user and dig deeper into the codebase. Do not try to go to any details at this point or try to learn everything at once, because you will be overwhelmed and lost your motivation.
   
 - **Step 4: Reimplement recent changes**
-  Now, go read the merged pull requests, pick some recent changes or bug fixes and learn how the other maintainers implemented them, or try to implement the fix yourself and see if you arrive with the same solution.
-
-  Do it this way, you get to challenge yourself by working on a real problem, and always have a solved solution to reference when you get stuck.
+  Now, go read the merged pull requests, pick some recent changes or bug fixes and learn how the other maintainers implemented them, or try to implement the fix yourself and see if you arrive with the same solution. Do it this way, you get to challenge yourself by working on a real problem, and always have a solved solution to reference when you get stuck.
   
 - **Step 5: Make a bite-sized change**
   At this point, you are good to go. Start contributing the project by looking for small issues, most open source projects have the *"Good first issue"* label or something similar, these are beginner-friendly tickets, most of them have a clear description and expectation to work on.
@@ -37,6 +27,86 @@ Personally, I agree with his approach, and one thing I want to add is: Take as m
 
 When you are rushing to create your first PR, you are either risk doing it wrong (get a rejection from the other maintainers, making unnecessary changes) or lose your motivation because you could not make any progress.
 
+---
+
+I asked some other developers about their approach for learning new codebases, you can read their original answers in Vietnamese at this link: https://gist.github.com/huytd/d2438b925b2fdbd5eb2f91c4091ce0fb
+
+Here's my rough translation:
+
+[**@minh.nguyen**](https://github.com/nguyenquangminh0711): I usually follow (most of) these steps:
+
+- RTFM
+- Get the system up and running, with the recommended settings from the document. For example, Redis will have a sentinel or Redis cluster, or standalone.
+- Explore every feature of the system, or every interface of the library, especially the seemingly fancy features.
+- Build from source. Pay attention to the components, dependencies of the project.
+- Read the design document if possible.
+- Debug to see how the components are connected.
+- Pick some simple flow, try to find the entry point, start debugging from there.
+- Make some small changes.
+- Now actually reading the code, take notes so you won't get lost in the middle of the way.
+- Focus on high-level design, especially important classes, background threads.
+- It would be boring to just read. Pick some bug in the issue list and try to fix it.
+
+[**@giongto35**](https://github.com/giongto35): This sounds interesting, I still trying to find the best way, here's what I got so far:
+
+- If the codebase is small or a new product, read all the PRs since the beginning: So you get to understand the code history (which is very important).
+- If the codebase is large:
+    - Use the tree printing to understand the code structure
+    - Find the entry point, determine the most changed file: people spent 80% of the time fixing 20% of the files.
+
+    ```
+     git log --pretty=format: --name-only | sort | uniq -c | sort -rg | head -10
+     ```
+     
+    - Use a good IDE with a good reference finding feature, run code, use breakpoint to debug, with stack-trace.
+
+[**@hieuk09**](https://github.com/hieuk09): Here's my take:
+
+- First, you need to be able to setup the project and run the tests: this is the most important. It might be hard in complex projects or unfamiliar languages.
+- Next, depending on how complex the business logic is, you have the top-down or bottom-up approaches:
+    - If the business logic is complex, use the top-down approach: Run integration tests or manual tests on the browser to understand the operation flow. Then read the code to understand how these business logics are implemented. At this point, you can try changing the code to see how things change.
+    - If the business logic is simple, or you cannot setup the project to run the tests, you can split the codebase into multiple layers (for example, web applications usually organized in MVC), find the lowermost layer, and see how these layers are used. For example, in a User model, which has the `update_password` method, you can search to see where `update_password` is being used. From there, trace upward to understand the flow.
+- Finally, find all the global states/monkey-patches/constants in the code to see what's the assumption of the system, and understand the trade-off in the code, as well as their limitations.
+
+[**@ledongthuc**](https://github.com/ledongthuc): OK, assuming you got a lot of time and no pressure, I usually use the top-down approach, from general and go all the way to the details. Starting from the business logic:
+
+- Try to understand what's the business purpose of the service/source code/system, and where does it help in the organization
+- If it's a service, understand what does this service does, what data it saves, what's its purpose in the system.
+- If it's a library, what problem does this library solves?
+- The idea of this step is to focus on the non-code, learn the business, understand the problem you're hired to solve.
+
+Next, focus on how the source code communicates to the outside:
+
+- If it's a command-line application, learn how to use it
+- If it's an API, find out what are the endpoints, which parameters they take, they could be REST, protobuf, socket, bla bla
+- If it's a web application, learn how to use the UI. This step mostly focus on document and a small part of the communication in the code (API define/UI).
+
+Next, I will read the business logic code, at this step, I need to determine why I choose to read the code:
+
+- To fix or change some particular flow
+- To understand the general, so I can handle everything later on.
+
+If I only focus on one flow/feature, I will trace down the business to read. If I need to handle everything, I will try to determine the main purpose of the services, and try to understand the workflow of the logic.
+
+- Note down the data sources that are accessed by the flow you are reading (write file/DB/cache,...)
+- Note down every external service that is being called
+- Note down all the libraries being used
+
+At this point, I will stop. Then depending on what's the requirement on the task I pick, I will dig deeper. My idea is to read and understand the big picture. It won't help if I go too much into the details from the beginning because I will forget it.
+
+---
+
+Some interesting resources about how to approach a complex codebase:
+
+- https://mitchellh.com/writing/contributing-to-complex-projects
+- https://towardsdatascience.com/the-most-efficient-way-to-read-code-written-by-someone-else-cb1a05102b76
+- https://medium.com/@zhaojunzhang/work-effectively-on-a-large-codebase-dc0e2242558a
+- https://amberwilson.co.uk/blog/how-to-approach-a-new-codebase/
+
+And other guides on contributing to open source projects generally:
+
+- https://stackoverflow.blog/2020/08/03/getting-started-with-contributing-to-open-source/
+- https://opensource.guide/how-to-contribute/
 
 
 # 03.17.2022 - JavaScript/Partial update an object in IndexedDB

@@ -15,6 +15,7 @@ Some tactics to combat the Collector's Fallacy:
 - **Do a monthly purge:** Don't be afraid to delete items off the reading list if they're not excited you anymore. Do it periodically, maybe once a month.
 
 **References:**
+
 - https://zettelkasten.de/posts/collectors-fallacy/
 - https://observer.com/2017/05/the-collectors-fallacy-why-we-gather-things-we-dont-need/
 

@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "03.20.2022 - Reading Notes Collector Fallacy.md",
+            "file": "03.21.2022 - Rust Skip some fields when serializing.md",
             "mode": "source",
             "source": true
           }
@@ -70,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "03.20.2022 - Reading Notes Collector Fallacy.md",
+                "file": "03.21.2022 - Rust Skip some fields when serializing.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -90,6 +90,7 @@
   },
   "active": "660f05558c93a97f",
   "lastOpenFiles": [
+    "03.21.2022 - Rust Skip some fields when serializing.md",
     "03.20.2022 - Reading Notes Collector Fallacy.md",
     "03.19.2022 - Angular A quick guide to getting started.md",
     "03.18.2022 - Reading Notes Contributing to complex projects.md",
@@ -98,7 +99,6 @@
     "03.15.2022 - Reading Notes How to Edit Your Own Writing.md",
     "03.14.2022 - Elm Building large applications.md",
     "03.13.2022 - Reading Notes Diffuse vs Focused mode.md",
-    "03.12.2022 - RxJS Cancel Request with Subscription.md",
-    "03.11.2022 - SEO Structured Data for Google.md"
+    "03.12.2022 - RxJS Cancel Request with Subscription.md"
   ]
 }

@@ -274,6 +274,11 @@ class AppComponent {}
 }
 ```
 
+## What's next?
+
+- https://angular.io/guide/component-styles
+- https://angular.io/guide/view-encapsulation
+
 # 03.21.2022 - Rust/Skip some fields when serializing
 
 Using serde, we can serialize a data structure into different formats, for example, JSON:

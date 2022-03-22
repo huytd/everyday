@@ -32,7 +32,7 @@ In the `Foo` component, we load a CSS file with the content of:
 }
 
 // foo.tsx
-import ''./foo.style.css';
+import './foo.style.css';
 
 const Foo = () => (
     <div className='foo'>Foo</div>
@@ -106,11 +106,11 @@ This is how we build the `Foo` component:
 ```typescript
 @Component({
     selector: "foo",
-    styles: [`
-    .foo {
+    styles: [
+    `.foo {
         background: red;
-    }
-    `],
+    }`
+    ],
     template: `<div class="foo">Foo</div>`
 })
 class FooComponent {}
@@ -121,11 +121,11 @@ And the `Bar` component:
 ```typescript
 @Component({
     selector: "bar",
-    styles: [`
-    .bar {
+    styles: [
+    `.bar {
         background: yellow;
-    }
-    `],
+    }`
+    ],
     template: `<div class="bar">Bar</div>`
 })
 class BarComponent {}
@@ -136,11 +136,11 @@ And lastly, the `App` component:
 ```typescript
 @Component({
     selector: "app",
-    styles: [`
-    .foo {
+    styles: [
+    `.foo {
         background: blue;
-    }
-    `],
+    }`
+    ],
     template: `
     <div class="app">
         <div class="foo">Foo from App</div>
@@ -226,20 +226,22 @@ By using the custom attributes, Angular is able to isolate the conflict styles s
 
 If we specify the `ViewEncapsulation.None` to a component, the custom context attributes will not be generated, resulting in a normal-looking CSS styles (only for that component):
 
-```typescript@focus=3:7,9,13:16
+```typescript
 @Component({
     selector: "app",
-    styles: [`
-    .foo {
+    styles: [
+    `.foo {
         background: blue;
-    }
-    `],
+    }`
+    ],
     ...
     encapsulation: ViewEncapsulation.None
 })
-class AppComponent {}
+```
 
-// Generated CSS
+Here's the generated CSS:
+
+```css
 .foo {
     background: blue;
 }
@@ -247,24 +249,26 @@ class AppComponent {}
 
 The same as when we apply a `::ng-deep` pseudo-selector for a CSS rule, that CSS rule will be generated as a global scope:
 
-```typescript@focus=3:11,13,17:24
+```typescript
 @Component({
     selector: "app",
-    styles: [`
-    .foo {
+    styles: [
+    `.foo {
         background: blue;
     }
 
     ::ng-deep .bar {
         color: red;
-    }
-    `],
+    }`
+    ],
     ...
     encapsulation: ViewEncapsulation.Emulated
 })
-class AppComponent {}
+```
 
-// Generated CSS
+The generated CSS would be:
+
+```css
 .foo[_ngcontent-qwd-c0] {
     background: blue;
 }
@@ -273,6 +277,10 @@ class AppComponent {}
     color: red;
 }
 ```
+
+The `.bar` selector is generated at the global scope, so it can be applied to the `bar` elements in the inner scope.
+
+This is why we should always narrow down the scope of the selector when using `::ng-deep`, so it will affect only the child components of your current component.
 
 ## What's next?
 

@@ -59,6 +59,15 @@ struct Note {
 }
 ```
 
+Output:
+
+```json
+{
+  "title": "Hello, World!",
+  "content": "Lorem ipsum doro note note!",
+}
+```
+
 Also, you can skip a field conditionally, with `skip_serializing_if`, for example:
 
 ```rust
@@ -68,6 +77,51 @@ struct Note {
     content: String,
     #[serde(skip_serializing_if = "Option::is_none")]
     author: Option<Author>
+}
+```
+
+If the `author` field is a `Some` value, things works normally:
+
+```rust
+let note = Note {
+    title: String::from("Hello, World!"),
+    content: String::from("Lorem ipsum doro note note!"),
+    author: Some(Author {
+        id: 1,
+        name: String::from("Huy")
+    })
+};
+```
+
+Output:
+
+```json
+{
+  "title": "Hello, World!",
+  "content": "Lorem ipsum doro note note!",
+  "author": {
+    "id": 1,
+    "name": "Huy"
+  }
+}
+```
+
+But if the `author` is `None`, it will be skipped:
+
+```rust
+let note = Note {
+    title: String::from("Hello, World!"),
+    content: String::from("Lorem ipsum doro note note!"),
+    author: None
+};
+```
+
+Output:
+
+```json
+{
+  "title": "Hello, World!",
+  "content": "Lorem ipsum doro note note!",
 }
 ```
 

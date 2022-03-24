@@ -1,3 +1,64 @@
+# 03.23.2022 - Skills/Active Listening
+
+Active Listening is a process to **engage** and **empathize** with the speaker when talking about something.
+
+The most important part of active listening is to:
+
+- Try to understand the topic you're listening to from the speaker's point of view, not your point of view. Try to stop yourself from thinking about how you are going to respond.
+- Response to the speaker to let them know you're engaged and understand what they said. By either nonverbal (nodding, mh-hmm,...) or verbal feedback (asking questions, suggesting ideas periodically, following up, rephrasing what they just said in your language,...)
+
+If it's a meeting, prepare before joining it, stay engaged, put off every distraction (phone, computer,...), and turn on your camera.
+
+If you are invited to a meeting, you're expected to add some value to it. Try to speak up whenever you have something to say. Don't just stay silent.
+
+The longer you stay silent in meetings, the harder it will feel to speak up. Don't wait until the end.
+
+If you’re not speaking up because you haven’t prepared, go prepare. Quickly note down the points you want to talk about on a piece of paper next to you helped a lot.
+
+Do your research before each meeting, so you'll come to the meeting well prepared about the topic, so you know when and how to speak/ask.
+
+If you have nothing to say, then stay quiet. But if there is something in your mind and you're wondering, "should I say this" it's probably time to speak up.
+
+If there's never a silent moment for you to chime in, and you think it's rude to interrupt, just let everyone know that you want to talk (raising hand, have some gesture), if it's an online meeting, use the chat panel.
+
+Some ways to add value to a meeting:
+
+- Ask questions that spark further discussion, avoid dead-end questions)
+- Summarize the discussion after the meeting
+- Provide additional background information for people's ideas
+- Support someone else's point of view
+- Steer the discussion back if it started to go off track
+- Identify action items, ensure people are allocated with them
+
+---
+
+To engage in a conversation, it's important to know when and how to ask questions while you're listening.
+
+Periodically asking questions is a good method to make sure you're engaged in the listening.
+
+Don't just repeat or rephrase what the speaker just said, ask some follow-up questions on the last idea they mentioned, suggest some new information, or ask questions that might spark a new idea/direction for the conversation, stay relevant, challenge assumptions in a constructive way.
+
+The questions should be open-ended to encourage the speaker to engage more. Avoid the yes-no questions, as it's the dead end.
+
+Some good questions that can spark discussions:
+
+- Counter the approach that people are talking about with some edge case
+- Ask if you can suggest some new direction or approaches: "Can I add my opinion on this?", "Can I have a question about..."
+- Clarify your understanding of the topic
+- Ask how did they come up with this topic/approach
+- Ask how would they change this if some dependencies changed
+- ...
+
+**References:**
+
+- [Active Listening for Developers](https://thevaluable.dev/active-listening-communication-developer)
+- [What great listeners usually do](https://hbr.org/2016/07/what-great-listeners-actually-do)
+- [How to practice active listening](https://www.verywellmind.com/what-is-active-listening-3024343)
+- [Asking small talk follow-up questions](https://www.verywellmind.com/how-do-i-ask-follow-up-questions-during-small-talk-3024865)
+- https://speakingaboutpresenting.com/presentation-skills/speaking-up-in-meetings-for-introverts/
+- https://thefinancialdiet.com/how-to-speak-up-at-work-when-youre-a-quiet-person/
+
+
 # 03.22.2022 - Angular/Component CSS Isolation
 
 In Angular, component styles are isolated (a.k.a [View Encapsulation](https://angular.io/guide/view-encapsulation)). That means CSS styles of a component are only affect the component itself, **not its parent or child components**.

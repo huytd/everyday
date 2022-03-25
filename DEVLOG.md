@@ -68,12 +68,33 @@ Now, let's take a look at the `InlayHints.provideInlayHints` function: it takes 
 
 Some interesting information in the `InlayHintsContext`:
 
+```typescript
+export interface InlayHintsContext {
+    file: SourceFile;
+    program: Program;
+    cancellationToken: CancellationToken;
+    host: LanguageServiceHost;
+    span: TextSpan;
+    preferences: UserPreferences;
+}
+```
+
 - The compiling context of the source file (where you can access the source, the AST, the type checker,...)
 - The TextSpan (is the position of text that we want to process the inlayHints)
-- The settings from the user's editor
+- The preferences from the user's editor (In IntelliJ, you can see the options at _Preferences -> Editor -> InlayHints -> TypeScript_)
 - And lastly, the CancellationToken, I guess it's for cancel the previous inlayHints requests.
 
 An `InlayHint` has the structure of:
+
+```typescript
+export interface InlayHint {
+    text: string;
+    position: number;
+    kind: InlayHintKind;
+    whitespaceBefore?: boolean;
+    whitespaceAfter?: boolean;
+}
+```
 
 - The text content
 - The position where we will add the inlay hint to

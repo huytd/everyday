@@ -132,15 +132,15 @@ function addEnumMemberValueHints(text: string, position: number) {
 
 So we know there are 3 types of <abbr>inlay hints</abbr>:
 
-- <abbr>**parameter hint:**</abbr> Is the hint that appears in function calls parameters
+1. <abbr>**parameter hint:**</abbr> Is the hint that appears in function calls parameters
   
   ![](_meta/parameter-inlayhints.png)
   
-- <abbr>**type hint:**</abbr> This is the hint that appears in variable or class/struct fields declarations
+2. <abbr>**type hint:**</abbr> This is the hint that appears in variable or class/struct fields declarations
   
   ![](_meta/type-inlayhints.png)
   
-- <abbr>**enum member value hint:**</abbr> This is the hint for the values of enums
+3. <abbr>**enum member value hint:**</abbr> This is the hint for the values of enums
   
   ![](_meta/enum-inlayhints.png)
 

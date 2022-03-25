@@ -24,7 +24,7 @@ The communication between the editor and the <abbr>language server</abbr> via <a
 
 ## Explore the code
 
-Let's start looking at TypeScript's source code to see how the InlayHints feature is implemented. Since it's a language server's feature, this has to be something related to `tsserver`. The best way to start is to look at the test files.
+Let's start looking at TypeScript's source code to see how the <abbr>inlay hints</abbr> feature is implemented. Since it's a language server's feature, this has to be something related to `tsserver`. The best way to start is to look at the test files.
 
 The unit tests for every features in `tsserver` is defined in the [testRunner/unittests/tsserver](https://github.com/microsoft/TypeScript/tree/main/src/testRunner/unittests/tsserver) folder. Look into it, we will see there is an [inlayHints.ts](https://github.com/microsoft/TypeScript/blob/main/src/testRunner/unittests/tsserver/inlayHints.ts) file.
 
@@ -201,7 +201,7 @@ In case you are lazy and scroll all the way down here from the beginning, here's
 
 _(You can open the image in a new tab for a better resolution)_
 
-At this point, we are pretty clear about how the InlayHints feature works, what we should do next is dig deeper into the AST traversal, messing up with various types of user preferences or the `InlayHint` structure to see how things change in the tests and maybe in your editor!
+At this point, we are pretty clear about how the <abbr>inlay hints</abbr> feature works, what we should do next is dig deeper into the AST traversal, messing up with various types of user preferences or the `InlayHint` structure to see how things change in the tests and maybe in your editor!
 
 All the files in this walkthrough:
 

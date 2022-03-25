@@ -26,9 +26,9 @@ The communication between the editor and the Language Servers via Language Serve
 
 Let's start looking at TypeScript's source code to see how the InlayHints feature is implemented. Since it's a language server's feature, this has to be something related to `tsserver`. The best way to start is to look at the test files.
 
-The test runner for every features in `tsserver` is defined in the [**testRunner/unittests/tsserver**](https://github.com/microsoft/TypeScript/tree/main/src/testRunner/unittests/tsserver) folder. Look into it, we will see there is an [**inlayHints.ts**](https://github.com/microsoft/TypeScript/blob/main/src/testRunner/unittests/tsserver/inlayHints.ts) file, this is the entry-point to test all the InlayHints test cases.
+The unit tests for every features in `tsserver` is defined in the [**testRunner/unittests/tsserver**](https://github.com/microsoft/TypeScript/tree/main/src/testRunner/unittests/tsserver) folder. Look into it, we will see there is an [**inlayHints.ts**](https://github.com/microsoft/TypeScript/blob/main/src/testRunner/unittests/tsserver/inlayHints.ts) file.
 
-By the way, all the tests cases for InlayHints are defined in the [**tests/cases/fourslash/inlayHints(...).ts**](https://github.com/microsoft/TypeScript/tree/main/tests/cases/fourslash) files, you can look at these files too.
+Also, there are other tests cases for InlayHints defined in the [**tests/cases/fourslash/inlayHints(...).ts**](https://github.com/microsoft/TypeScript/tree/main/tests/cases/fourslash) files, you can look at these files too.
 
 ### The Execution Path
 

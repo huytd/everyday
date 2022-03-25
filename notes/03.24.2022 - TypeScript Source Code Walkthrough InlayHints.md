@@ -4,7 +4,7 @@ So, I want to look into the TypeScript source code to understand how things work
 
 This is a quite big project but I think the code organization is pretty good. And they have loads of documents as well.
 
-The [How the TypeScript Compiler Compiles](https://www.youtube.com/watch?v=X8k_4tZ16qU&list=PLYUbsZda9oHu-EiIdekbAzNO0-pUM5Iqj&index=4) video is a good place to start when you want to understand the codebase.
+The [How the TypeScript Compiler Compiles](https://www.youtube.com/watch?v=X8k_4tZ16qU&list=PLYUbsZda9oHu-EiIdekbAzNO0-pUM5Iqj&index=4) video is a good place to start when you want to understand the compilation process of TypeScript.
 
 Also, there are a lot of notes in [TypeScript Compiler Notes](https://github.com/microsoft/TypeScript-Compiler-Notes) repository, and the [TypeScript Deep Dive](https://basarat.gitbook.io/typescript/overview) book.
 
@@ -26,15 +26,15 @@ The communication between the editor and the Language Servers via Language Servi
 
 Let's start looking at TypeScript's source code to see how the InlayHints feature is implemented. Since it's a language server's feature, this has to be something related to `tsserver`. The best way to start is to look at the test files.
 
+The test runner for every features in `tsserver` is defined in the [**testRunner/unittests/tsserver**](https://github.com/microsoft/TypeScript/tree/main/src/testRunner/unittests/tsserver) folder. Look into it, we will see there is an [**inlayHints.ts**](https://github.com/microsoft/TypeScript/blob/main/src/testRunner/unittests/tsserver/inlayHints.ts) file, this is the entry-point to test all the InlayHints test cases.
+
+By the way, all the tests cases for InlayHints are defined in the [**tests/cases/fourslash/inlayHints(...).ts**](https://github.com/microsoft/TypeScript/tree/main/tests/cases/fourslash) files, you can look at these files too.
+
 ### The Execution Path
 
 ![](_meta/inlayhints-execution-path.png)
 
-In the [**testRunner/unittests/tsserver**](https://github.com/microsoft/TypeScript/tree/main/src/testRunner/unittests/tsserver) folder, we will see there is an [**inlayHints.ts**](https://github.com/microsoft/TypeScript/blob/main/src/testRunner/unittests/tsserver/inlayHints.ts) file, this is the entry-point to test all the InlayHints test cases.
-
-By the way, all the tests cases for InlayHints are defined in the [**tests/cases/fourslash/inlayHints*.ts**](https://github.com/microsoft/TypeScript/tree/main/tests/cases/fourslash) files, you can look at these files too.
-
-In the test code, the InlayHints feature are invoked with the `session.executeCommandSeq<protocol.InlayHintsRequest>` call:
+In the test runner, the InlayHints feature are invoked with the `session.executeCommandSeq<protocol.InlayHintsRequest>` call:
 
 **testRunner/unittests/tsserver/inlayHints.ts**
 

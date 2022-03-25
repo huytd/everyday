@@ -12,13 +12,13 @@ After reading them, what next is to pick up a feature that I want to look at. Si
 
 ## Before we start: LSP and InlayHints
 
-**Language Service Protocol (LSP)** is the communication protocol between the *code editors* (Neovim, VSCode, IntelliJ IDEA,...) and the **Language Servers** (tsserver, gopls, rust-analyzer...) to provide rich editing and code analysis experience.
+**Language Server Protocol (LSP)** is the communication protocol between the *code editors* (Neovim, VSCode, IntelliJ IDEA,...) and the **Language Servers** (tsserver, gopls, rust-analyzer...) to provide rich editing and code analysis experience.
 
 **InlayHints** is one of the features provided by the Language Servers, to help the editor render the type annotation next to some tokens of code. For example, the little `:Point` tag in this screenshot:
 
 ![](_meta/inlay-hint.png)
 
-The communication between the editor and the Language Servers via Language Service Protocol can be described as the following diagram:
+The communication between the editor and the Language Servers via Language Server Protocol can be described as the following diagram:
 
 ![](_meta/lsp-protocol.png)
 

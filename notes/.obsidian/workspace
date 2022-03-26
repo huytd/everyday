@@ -9,8 +9,8 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "03.25.2022 - CSS Counter Reset respects start attribute.md",
-            "mode": "preview",
+            "file": "03.26.2022 - Typography Hanging Punctuation.md",
+            "mode": "source",
             "source": true
           }
         }
@@ -53,8 +53,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "3b849a0a1d9c5f60",
@@ -70,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "03.25.2022 - CSS Counter Reset respects start attribute.md",
+                "file": "03.26.2022 - Typography Hanging Punctuation.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -90,6 +89,7 @@
   },
   "active": "660f05558c93a97f",
   "lastOpenFiles": [
+    "03.26.2022 - Typography Hanging Punctuation.md",
     "03.25.2022 - CSS Counter Reset respects start attribute.md",
     "03.24.2022 - TypeScript Source Code Walkthrough InlayHints.md",
     "03.23.2022 - Skills Active Listening.md",
@@ -98,7 +98,6 @@
     "03.20.2022 - Reading Notes Collector Fallacy.md",
     "03.19.2022 - Angular A quick guide to getting started.md",
     "03.18.2022 - Reading Notes Contributing to complex projects.md",
-    "03.17.2022 - JavaScript Partial update an object in IndexedDB.md",
-    "03.16.2022 - JavaScript Moving to IndexedDB.md"
+    "03.17.2022 - JavaScript Partial update an object in IndexedDB.md"
   ]
 }

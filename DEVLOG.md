@@ -149,33 +149,33 @@ The [How the TypeScript Compiler Compiles](https://www.youtube.com/watch?v=X8k_4
 
 Also, there are a lot of notes in [TypeScript Compiler Notes](https://github.com/microsoft/TypeScript-Compiler-Notes) repository, and the [TypeScript Deep Dive](https://basarat.gitbook.io/typescript/overview) book.
 
-After reading them, what next is to pick up a feature that I want to look at. Since I saw a [recently closed ticket](https://github.com/microsoft/TypeScript/issues/48277) about <abbr>inlay hints</abbr>, maybe I can just go with it.
+After reading them, what next is to pick up a feature that I want to look at. Since I saw a [recently closed ticket](https://github.com/microsoft/TypeScript/issues/48277) about inlay hints, maybe I can just go with it.
 
 ## Before we start: LSP and InlayHints
 
-<abbr>**language server protocol (LSP)**</abbr> is the communication protocol between the *code editors* (Neovim, VSCode, IntelliJ IDEA,...) and the <abbr>**language servers**</abbr> (tsserver, gopls, rust-analyzer...) to provide rich editing and code analysis experience.
+**Language Server Protocol (LSP)** is the communication protocol between the **code editors** (Neovim, VSCode, IntelliJ IDEA,...) and the **language servers** (tsserver, gopls, rust-analyzer...) to provide rich editing and code analysis experience.
 
-<abbr>**inlay hints**</abbr> is one of the features provided by the <abbr>language servers</abbr>, to help the editor render the type annotation next to some tokens of code. For example, the little `:Point` tag in this screenshot:
+**Inlay Hints** is one of the features provided by the language servers, to help the editor render the type annotation next to some tokens of code. For example, the little `:Point` tag in this screenshot:
 
 ![](_meta/inlay-hint.png)
 
-The communication between the editor and the <abbr>language server</abbr> via <abbr>language server protocol</abbr> can be described as the following diagram:
+The communication between the editor and the language server via language server protocol can be described as the following diagram:
 
 ![](_meta/lsp-protocol.png)
 
 ## Explore the code
 
-Let's start looking at TypeScript's source code to see how the <abbr>inlay hints</abbr> feature is implemented. Since it's a language server's feature, this has to be something related to `tsserver`. The best way to start is to look at the test files.
+Let's start looking at TypeScript's source code to see how the inlay hints feature is implemented. Since it's a language server's feature, this has to be something related to `tsserver`. The best way to start is to look at the test files.
 
 The unit tests for every features in `tsserver` is defined in the [testRunner/unittests/tsserver](https://github.com/microsoft/TypeScript/tree/main/src/testRunner/unittests/tsserver) folder. Look into it, we will see there is an [inlayHints.ts](https://github.com/microsoft/TypeScript/blob/main/src/testRunner/unittests/tsserver/inlayHints.ts) file.
 
-Also, there are other tests cases for <abbr>inlay hints</abbr> defined in the [tests/cases/fourslash/inlayHints(...).ts](https://github.com/microsoft/TypeScript/tree/main/tests/cases/fourslash) files, you can look at these files too.
+Also, there are other tests cases for inlay hints defined in the [tests/cases/fourslash/inlayHints(...).ts](https://github.com/microsoft/TypeScript/tree/main/tests/cases/fourslash) files, you can look at these files too.
 
 ### The Execution Path
 
 ![](_meta/inlayhints-execution-path.png)
 
-In the test runner, the <abbr>inlay hints</abbr> feature are invoked with the `session.executeCommandSeq<protocol.InlayHintsRequest>` call:
+In the test runner, the inlay hints feature are invoked with the `session.executeCommandSeq<protocol.InlayHintsRequest>` call:
 
 **testRunner/unittests/tsserver/inlayHints.ts**
 
@@ -201,7 +201,7 @@ private handlers = new Map(
         }));
 ```
 
-Now, we arrive at the `provideInlayHints` function, what this method does it to call the `LanguageService.provideInlayHints()` method. Which is located at [src/services/inlayHints.ts](https://github.com/microsoft/TypeScript/blob/main/src/services/inlayHints.ts). And this is where TypeScript implemented the <abbr>inlay hints</abbr> feature.
+Now, we arrive at the `provideInlayHints` function, what this method does it to call the `LanguageService.provideInlayHints()` method. Which is located at [src/services/inlayHints.ts](https://github.com/microsoft/TypeScript/blob/main/src/services/inlayHints.ts). And this is where TypeScript implemented the inlay hints feature.
 
 ### How provideInlayHints works
 
@@ -221,9 +221,9 @@ export interface InlayHintsContext {
 ```
 
 - The compiling context of the source file (where you can access the source, the AST, the type checker,...)
-- The TextSpan (is the position of text that we want to process the <abbr>inlay hints</abbr>)
+- The TextSpan (is the position of text that we want to process the inlay hints)
 - The preferences from the user's editor (In IntelliJ, you can see the options at _Preferences -> Editor -> InlayHints -> TypeScript_)
-- And lastly, the CancellationToken, I guess it's for cancel the previous <abbr>inlay hints</abbr> requests.
+- And lastly, the CancellationToken, I guess it's for cancel the previous inlay hints requests.
 
 An `InlayHint` has the structure of:
 
@@ -238,8 +238,8 @@ export interface InlayHint {
 ```
 
 - The text content
-- The position where we will add the <abbr>inlay hints</abbr> to
-- The kind of <abbr>inlay hints</abbr>
+- The position where we will add the inlay hints to
+- The kind of inlay hints
 
 You can see the details of the above types at [src/services/types.ts](https://github.com/microsoft/TypeScript/blob/main/src/services/types.ts).
 
@@ -271,17 +271,17 @@ function addEnumMemberValueHints(text: string, position: number) {
 }
 ```
 
-So we know there are 3 types of <abbr>inlay hints</abbr>:
+So we know there are 3 types of inlay hints:
 
-1. <abbr>**parameter hint:**</abbr> Is the hint that appears in function calls parameters
+1. **Parameter Hint:** Is the hint that appears in function calls parameters
   
   ![](_meta/parameter-inlayhints.png)
   
-2. <abbr>**type hint:**</abbr> This is the hint that appears in variable or class/struct fields declarations
+2. **Type Hint:** This is the hint that appears in variable or class/struct fields declarations
   
   ![](_meta/type-inlayhints.png)
   
-3. <abbr>**enum member value hint:**</abbr> This is the hint for the values of enums
+3. **Enum Member Value Hint:** This is the hint for the values of enums
   
   ![](_meta/enum-inlayhints.png)
 
@@ -315,7 +315,7 @@ if (typeDisplayString) {
 
 ![](_meta/inlayhint-ast-walk-run.png)
 
-There are some interesting pieces like the `printTypeInSingleLine(type: Type)` to format the <abbr>inlay hints</abbr> of a type into a single line, for example, with the following type:  
+There are some interesting pieces like the `printTypeInSingleLine(type: Type)` to format the inlay hints of a type into a single line, for example, with the following type:  
       
 ```json 
 {  
@@ -342,7 +342,7 @@ In case you are lazy and scroll all the way down here from the beginning, here's
 
 _(You can open the image in a new tab for a better resolution)_
 
-At this point, we are pretty clear about how the <abbr>inlay hints</abbr> feature works, what we should do next is dig deeper into the AST traversal, messing up with various types of user preferences or the `InlayHint` structure to see how things change in the tests and maybe in your editor!
+At this point, we are pretty clear about how the inlay hints feature works, what we should do next is dig deeper into the AST traversal, messing up with various types of user preferences or the `InlayHint` structure to see how things change in the tests and maybe in your editor!
 
 All the files in this walkthrough:
 

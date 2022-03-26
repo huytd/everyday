@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "03.26.2022 - Typography Hanging Punctuation.md",
+            "file": "03.24.2022 - TypeScript Source Code Walkthrough InlayHints.md",
             "mode": "source",
             "source": true
           }
@@ -53,7 +53,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "3b849a0a1d9c5f60",
@@ -69,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "03.26.2022 - Typography Hanging Punctuation.md",
+                "file": "03.24.2022 - TypeScript Source Code Walkthrough InlayHints.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,9 +90,9 @@
   },
   "active": "660f05558c93a97f",
   "lastOpenFiles": [
+    "03.24.2022 - TypeScript Source Code Walkthrough InlayHints.md",
     "03.26.2022 - Typography Hanging Punctuation.md",
     "03.25.2022 - CSS Counter Reset respects start attribute.md",
-    "03.24.2022 - TypeScript Source Code Walkthrough InlayHints.md",
     "03.23.2022 - Skills Active Listening.md",
     "03.22.2022 - Angular Component CSS Isolation.md",
     "03.21.2022 - Rust Skip some fields when serializing.md",

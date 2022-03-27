@@ -1,3 +1,27 @@
+# 03.27.2022 - Typography/Respect user's default font size
+
+When working with text and CSS, we usually assume that the default font size of the browser is always a fixed number (for example, 16px), therefore, we don't think much when setting the base font size in the `html` or `body` tags to a particular pixel value, for example:
+
+```css
+html {
+    font-size: 16px;
+}
+```
+
+This is fine with web applications, but for content-oriented websites (like news sites, blogs, or other forms of content), this could lead to usability problems. Not everyone has the same preference for the default font size, and users can change their browser's default font size to any number. For example, in Chrome, it can be changed in [chrome://settings/fonts](chrome://settings/fonts).
+
+It's a good practice to respect the user's preferences by setting your document's font size to a relative unit, for example:
+
+```css
+html {
+    font-size: 100%;
+}
+```
+
+And then, use `em` or `rem` values accordingly for the inner elements.
+
+You can check sites like [Wikipedia](https://wikipedia.com), [The Economist](https://economist.com), [NYTimes](https://nytimes.com),... and see that they do respect the browser's default font size. While there are a lot of other well-known websites that set their own font size in pixels.
+
 # 03.26.2022 - Typography/Hanging Punctuation
 
 Hanging punctuation is the practice of pulling the punctuation marks into the margin of a text so that it does not disturb the _vertical [reading flow](https://betterwebtype.com/articles/2018/10/15/rhythm-in-web-typography/)_.

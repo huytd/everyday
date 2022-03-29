@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "03.28.2022 - React Memorization with React.memo.md",
+            "file": "03.29.2022 - TypeScript A note about lib.dom.d.ts.md",
             "mode": "preview",
             "source": true
           }
@@ -70,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "03.28.2022 - React Memorization with React.memo.md",
+                "file": "03.29.2022 - TypeScript A note about lib.dom.d.ts.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -90,6 +90,7 @@
   },
   "active": "660f05558c93a97f",
   "lastOpenFiles": [
+    "03.29.2022 - TypeScript A note about lib.dom.d.ts.md",
     "03.28.2022 - React Memorization with React.memo.md",
     "03.27.2022 - Typography Respect default font size.md",
     "03.24.2022 - TypeScript Source Code Walkthrough InlayHints.md",
@@ -98,7 +99,6 @@
     "03.23.2022 - Skills Active Listening.md",
     "03.22.2022 - Angular Component CSS Isolation.md",
     "03.21.2022 - Rust Skip some fields when serializing.md",
-    "03.20.2022 - Reading Notes Collector Fallacy.md",
-    "03.19.2022 - Angular A quick guide to getting started.md"
+    "03.20.2022 - Reading Notes Collector Fallacy.md"
   ]
 }

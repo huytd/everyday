@@ -12,9 +12,9 @@ The [microsoft/TypeScript-DOM-lib-generator](https://github.com/microsoft/TypeSc
 
 In this repository, we can modify the behavior of the generator like:
 
-- Adding new types definition in `inputfiles/addedTypes.jsonc`
-- Overriding the default type definition from the specs in `inputfiles/overridingTypes.jsonc`
-- Modify the comment string of a type (which will also being shown in the documentation popup of the editor) in `inputfiles/comments.jsonc`
+- **Adding new type definition** in the _inputfiles/addedTypes.jsonc_ file.
+- **Overriding the default type definition** from the specs in the _inputfiles/overridingTypes.jsonc_ file.
+- **Modify the comment string of a type** (which will also being shown in the documentation popup of the editor) in the _inputfiles/comments.jsonc_ file.
 
 When the `npm run build` command is triggered, the `src/build.ts` script will pull the interfaces from _webref_ and check the `inputfiles/removedTypes.jsonc` to see if there is any types needed to be removed, then it checks the `addedTypes.jsonc` and `overridingTypes.jsonc` to modify the remaining interfaces accordingly.
 

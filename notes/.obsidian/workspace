@@ -9,8 +9,13 @@
         "state": {
           "type": "markdown",
           "state": {
+<<<<<<< HEAD
             "file": "03.29.2022 - TypeScript A note about lib.dom.d.ts.md",
             "mode": "preview",
+=======
+            "file": "03.28.2022 - React Memorization with React.memo.md",
+            "mode": "source",
+>>>>>>> 3e9051182d4af5fdc838616c77ec796f2c455061
             "source": true
           }
         }

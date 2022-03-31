@@ -2,7 +2,7 @@
 
 TypeScript provides several [utility types](https://www.typescriptlang.org/docs/handbook/utility-types.html) to help us manipulate types easier, like: `Partial<T>`, `Required<T>`, `Pick<T, Keys>`,...
 
-Internally, these types are implemented in the **src/lib/es5.d.ts**, at the [type level](https://www.typescriptlang.org/docs/handbook/2/types-from-types.html. And their implementation details are very interesting.
+Internally, these types are implemented in the **src/lib/es5.d.ts**, at the [type level](https://www.typescriptlang.org/docs/handbook/2/types-from-types.html). And their implementation details are very interesting.
 
 ## Prerequisites: Mapped Type
 

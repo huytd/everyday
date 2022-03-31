@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "03.29.2022 - TypeScript A note about lib.dom.d.ts.md",
+            "file": "03.30.2022 TypeScript How some utility types are implemented.md",
             "mode": "source",
             "source": true
           }
@@ -40,7 +40,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "Required",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -49,7 +49,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -70,7 +71,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "03.29.2022 - TypeScript A note about lib.dom.d.ts.md",
+                "file": "03.30.2022 TypeScript How some utility types are implemented.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -90,6 +91,7 @@
   },
   "active": "c009989497be1c5c",
   "lastOpenFiles": [
+    "03.30.2022 TypeScript How some utility types are implemented.md",
     "03.29.2022 - TypeScript A note about lib.dom.d.ts.md"
   ]
 }

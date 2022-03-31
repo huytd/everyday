@@ -14,7 +14,7 @@ type AllBoolean<Type> = {
 }
 ```
 
-The `keyof` keyword returns a union of all the keys inside a type, we then use the index signature syntax to iterate through these keys, map them with the `Boolean` type, the end result is a new type containing all the keys of `Type`, with type type `Boolean`.
+The `keyof` keyword returns a union of all the keys inside a type, we then use the index signature syntax to iterate through these keys, map them with the `Boolean` type, the end result is a new type containing all the keys of `Type`, with the type `Boolean`.
 
 Later on, we can use this `AllBoolean` type like this:
 

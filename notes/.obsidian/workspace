@@ -9,8 +9,8 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "03.31.2022 - TypeScript The intrinsic keyword.md",
-            "mode": "source",
+            "file": "01.04.2022 - TypeScript Compilation Process.md",
+            "mode": "preview",
             "source": true
           }
         }
@@ -71,7 +71,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "03.31.2022 - TypeScript The intrinsic keyword.md",
+                "file": "01.04.2022 - TypeScript Compilation Process.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -91,6 +91,7 @@
   },
   "active": "c009989497be1c5c",
   "lastOpenFiles": [
+    "01.04.2022 - TypeScript Compilation Process.md",
     "03.31.2022 - TypeScript The intrinsic keyword.md",
     "03.30.2022 - TypeScript How some utility types are implemented.md",
     "03.29.2022 - TypeScript A note about lib.dom.d.ts.md"

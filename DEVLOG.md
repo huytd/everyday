@@ -1,3 +1,53 @@
+# 03.31.2022 - TypeScript/The intrinsic keyword
+
+In the [previous post](/everyday/03-30-2022-typescript-how-some-utility-types-are-implemented), we learned how some utility types are implemented. The fact that they're all done at the type level is very interesting. But not all utility types can be done like that.
+
+In TypeScript, there are some special utility types for string literal types manipulation like `Uppercase<T>`, `Lowercase<T>`, `Capitalize<T>`, `Uncapitalize<T>`. We would use them on a string literal types like this:
+
+```typescript
+type T10 = Uppercase<'hello'>;  // "HELLO"
+type T11 = Lowercase<'HELLO'>;  // "hello"
+type T12 = Capitalize<'hello'>;  // "Hello"
+type T13 = Uncapitalize<'Hello'>;  // "hello"
+```
+
+Under the hood, they are implemented with nothing but a mystery `intrinsic` keyword:
+
+```typescript
+type Uppercase<S extends string> = intrinsic;
+type Lowercase<S extends string> = intrinsic;
+type Capitalize<S extends string> = intrinsic;
+type Uncapitalize<S extends string> = intrinsic;
+```
+
+`intrinsic` is the keyword that TypeScript used to let the type checker know that it needs to provide an implementation for this type because it cannot be done in the type system.
+
+Do a quick search in the Typescript code, we can see exactly where TypeScript implemented these types, in the compiler's type checker (*src/compiler/checker.ts*):
+
+```typescript
+function applyStringMapping(symbol: Symbol, str: string) {
+    switch (intrinsicTypeKinds.get(symbol.escapedName as string)) {
+        case IntrinsicTypeKind.Uppercase: return str.toUpperCase();
+        case IntrinsicTypeKind.Lowercase: return str.toLowerCase();
+        case IntrinsicTypeKind.Capitalize: return str.charAt(0).toUpperCase() + str.slice(1);
+        case IntrinsicTypeKind.Uncapitalize: return str.charAt(0).toLowerCase() + str.slice(1);
+    }
+    return str;
+}
+```
+
+Currently, the `intrinsic` keywords are limited to these utility types, in the future, there might be more:
+
+```typescript
+const intrinsicTypeKinds: ReadonlyESMap<string, IntrinsicTypeKind> = new Map(getEntries({
+    Uppercase: IntrinsicTypeKind.Uppercase,
+    Lowercase: IntrinsicTypeKind.Lowercase,
+    Capitalize: IntrinsicTypeKind.Capitalize,
+    Uncapitalize: IntrinsicTypeKind.Uncapitalize
+}));
+```
+
+
 # 03.30.2022 - TypeScript/How some utility types are implemented
 
 TypeScript provides several [utility types](https://www.typescriptlang.org/docs/handbook/utility-types.html) to help us manipulate types easier, like: `Partial<T>`, `Required<T>`, `Pick<T, Keys>`,...

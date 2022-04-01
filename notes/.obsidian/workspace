@@ -9,8 +9,8 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "03.30.2022 - TypeScript How some utility types are implemented.md",
-            "mode": "preview",
+            "file": "03.31.2022 - TypeScript The intrinsic keyword.md",
+            "mode": "source",
             "source": true
           }
         }
@@ -71,7 +71,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "03.30.2022 - TypeScript How some utility types are implemented.md",
+                "file": "03.31.2022 - TypeScript The intrinsic keyword.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -91,6 +91,7 @@
   },
   "active": "c009989497be1c5c",
   "lastOpenFiles": [
+    "03.31.2022 - TypeScript The intrinsic keyword.md",
     "03.30.2022 - TypeScript How some utility types are implemented.md",
     "03.29.2022 - TypeScript A note about lib.dom.d.ts.md"
   ]

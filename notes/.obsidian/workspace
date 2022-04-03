@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "04.02.2022 - Algorithms Merge two sorted arrays with extra space.md",
+            "file": "04.03.2022 - Algorithms Sliding Window.md",
             "mode": "source",
             "source": true
           }
@@ -71,7 +71,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "04.02.2022 - Algorithms Merge two sorted arrays with extra space.md",
+                "file": "04.03.2022 - Algorithms Sliding Window.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -91,6 +91,7 @@
   },
   "active": "f8a07040a4edc5f3",
   "lastOpenFiles": [
+    "04.03.2022 - Algorithms Sliding Window.md",
     "04.02.2022 - Algorithms Merge two sorted arrays with extra space.md",
     "03.04.2022 - Reading Notes Zeigarnik Effect.md",
     "03.03.2022 - Git CODEOWNERS file.md",
@@ -99,7 +100,6 @@
     "02.28.2022 - TypeScript Type Annotation vs Type Assertion.md",
     "02.26.2022 - Reading Notes Suffering Oriented Programming.md",
     "02.25.2022 - TypeScript Lookup Types.md",
-    "_meta/lookup-type-001.png",
-    "01.02.2022 - TypeScript Type Intersection.md"
+    "_meta/lookup-type-001.png"
   ]
 }

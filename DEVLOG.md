@@ -1,3 +1,95 @@
+# 04.05.2022 - TypeScript/Some random notes about Classes
+
+Some notes about some not-so-well-known things about TypeScript Classes.
+
+## Parameter properties
+
+In TypeScript, you can define a class's properties in two ways: Define it as a class property in the normal way, or define it as a constructor's parameter, a.k.a Parameter Properties:
+
+```typescript
+class Foo {
+    private bar: Bar;
+    public beep: Boop;
+
+    constructor() {}
+}
+
+// is equivalent to
+
+class Foo {
+    constructor(
+        private bar: Bar,
+        public beep: Boop
+    ) {}
+}
+```
+
+You probably use this a lot if you've been writing Angular code:
+
+```typescript
+@Component({ ... })
+class SomeComponent {
+    constructor(
+        private apiService: ApiService,
+        ...
+    ) {}
+}
+```
+
+## Static blocks in class
+
+You can define a static block in a class, it is useful when you need to do some initialization for static members of the class.
+
+For example, you want to init some static values for the class, you cannot init it in a constructor, because it's just wrong:
+
+```typescript
+class Foo {
+    static bar = 0;
+    constructor() {
+        Foo.bar = calculateSomethingComplex();
+    }
+}
+
+console.log(Foo.bar); // output = 0
+```
+
+The right way to do this is, to use a `static` block:
+
+```typescript
+class Foo {
+    static bar = 0;
+    static {
+        Foo.bar = calculateSomethingComplex(); // 50
+    }
+}
+
+console.log(Foo.bar); // output = 50
+```
+
+## Classes are just shapes
+
+For most of the cases, classes in TypeScript are compared structurally, this means, as long as the classes have the same shape, you can use them interchangeably:
+
+```typescript
+class Foo {
+    x: number;
+    y: string;
+}
+
+class Bar {
+    x: number;
+    y: string;
+    z: boolean;
+}
+
+let x: Foo = new Bar(); // OK
+let y: Bar = new Foo(); // Fail
+```
+
+In the above example, the **Bar** class has all the members of **Foo**, so it can be assigned to a variable of type **Foo**, but not the other way around because the **Foo** class doesn't have the `z: boolean` property.
+
+This means, you can also assign an empty class to anything, but it does not mean you should do it.
+
 # 04.04.2022 - Reading Notes/Understand Complex Code with Dry Run
 
 OK, this one is embarrassing, I still remember the first time I was taught to dry run the code. It was many years ago when I started learning how to program. But I've never actually tried it properly.

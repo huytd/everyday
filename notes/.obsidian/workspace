@@ -1,15 +1,15 @@
 {
   "main": {
-    "id": "b6b3cd0b8277411b",
+    "id": "16ce62fe84e592af",
     "type": "split",
     "children": [
       {
-        "id": "f8a07040a4edc5f3",
+        "id": "c009989497be1c5c",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "04.03.2022 - Algorithms Sliding Window.md",
+            "file": "04.04.2022 - Reading Notes Dry Run.md",
             "mode": "source",
             "source": true
           }
@@ -19,15 +19,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "81dd6e685d78e1a7",
+    "id": "d8ceb93614c2b03f",
     "type": "split",
     "children": [
       {
-        "id": "a82717e2274e4aa3",
+        "id": "a25e3931304f1345",
         "type": "tabs",
         "children": [
           {
-            "id": "6e5f58ab67b74dd8",
+            "id": "a333c3aaf6341c9a",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -35,12 +35,12 @@
             }
           },
           {
-            "id": "7d36e4a2d0ae1f5d",
+            "id": "0aad45401283d779",
             "type": "leaf",
             "state": {
               "type": "search",
               "state": {
-                "query": "\"Read more\"",
+                "query": "Required",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -58,20 +58,20 @@
     "collapsed": true
   },
   "right": {
-    "id": "3b849a0a1d9c5f60",
+    "id": "8a7eb0175a0f1a3d",
     "type": "split",
     "children": [
       {
-        "id": "7dc6b1e92a3cca4f",
+        "id": "b6644debf72f3085",
         "type": "tabs",
         "children": [
           {
-            "id": "2734460cb1a247da",
+            "id": "36fb62f7cc576a06",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "04.03.2022 - Algorithms Sliding Window.md",
+                "file": "04.04.2022 - Reading Notes Dry Run.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,17 +89,12 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "f8a07040a4edc5f3",
+  "active": "c009989497be1c5c",
   "lastOpenFiles": [
-    "04.03.2022 - Algorithms Sliding Window.md",
-    "04.02.2022 - Algorithms Merge two sorted arrays with extra space.md",
-    "03.04.2022 - Reading Notes Zeigarnik Effect.md",
-    "03.03.2022 - Git CODEOWNERS file.md",
-    "03.02.2022 - TypeScript Arrow Function in Classes.md",
-    "03.01.2022 - Reading Notes Tetris Effect.md",
-    "02.28.2022 - TypeScript Type Annotation vs Type Assertion.md",
-    "02.26.2022 - Reading Notes Suffering Oriented Programming.md",
-    "02.25.2022 - TypeScript Lookup Types.md",
-    "_meta/lookup-type-001.png"
+    "04.04.2022 - Reading Notes Dry Run.md",
+    "04.01.2022 - TypeScript Compilation Process.md",
+    "03.31.2022 - TypeScript The intrinsic keyword.md",
+    "03.30.2022 - TypeScript How some utility types are implemented.md",
+    "03.29.2022 - TypeScript A note about lib.dom.d.ts.md"
   ]
 }

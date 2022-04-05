@@ -7,7 +7,7 @@ Most of the time, I just let the compiler run and put a log between the lines to
 - We can't just put a log on every line of code, for example, on an **if** statement
 - Sometimes, it's not straightforward to just test a particular function without running the whole program or the flow. Using a step debugger won't help in this case.
 
-Until recently when I do a mock interview with a friend, she did it to verify her implementation, it also helped me understand the code she wrote better.
+Until recently, a friend shows me the way she dry-run her code without actually running it with the compiler. As she goes over every line in their code, she put a comment on the side to trace the values of the variables. It helped detect the bugs faster and also helped everyone understand the code better.
 
 When working with some code that you do not immediately understand, it's also good to apply this technique as well. The point is to slow down and actually take a closer look at every line of code and see how the input values transform between the lines.
 

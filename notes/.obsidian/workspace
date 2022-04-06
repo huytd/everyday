@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "04.05.2022 - TypeScript Some random notes about Classes.md",
+            "file": "04.06.2022 - Monorepo Code organization when using Nx.md",
             "mode": "source",
             "source": true
           }
@@ -71,7 +71,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "04.05.2022 - TypeScript Some random notes about Classes.md",
+                "file": "04.06.2022 - Monorepo Code organization when using Nx.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -91,6 +91,7 @@
   },
   "active": "c009989497be1c5c",
   "lastOpenFiles": [
+    "04.06.2022 - Monorepo Code organization when using Nx.md",
     "04.05.2022 - TypeScript Some random notes about Classes.md",
     "04.04.2022 - Reading Notes Dry Run.md",
     "04.01.2022 - TypeScript Compilation Process.md",

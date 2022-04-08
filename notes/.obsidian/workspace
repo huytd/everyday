@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "04.01.2022 - TypeScript Compilation Process.md",
+            "file": "04.08.2022 - Algorithms Cyclic Sort.md",
             "mode": "source",
             "source": true
           }
@@ -71,7 +71,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "04.01.2022 - TypeScript Compilation Process.md",
+                "file": "04.08.2022 - Algorithms Cyclic Sort.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -91,11 +91,12 @@
   },
   "active": "c009989497be1c5c",
   "lastOpenFiles": [
-    "04.01.2022 - TypeScript Compilation Process.md",
+    "04.08.2022 - Algorithms Cyclic Sort.md",
     "04.07.2022 - Algorithms Fast and slow pointers for Linked List.md",
     "04.06.2022 - Monorepo Code organization when using Nx.md",
     "04.05.2022 - TypeScript Some random notes about Classes.md",
     "04.04.2022 - Reading Notes Dry Run.md",
+    "04.01.2022 - TypeScript Compilation Process.md",
     "03.31.2022 - TypeScript The intrinsic keyword.md",
     "03.30.2022 - TypeScript How some utility types are implemented.md",
     "03.29.2022 - TypeScript A note about lib.dom.d.ts.md"

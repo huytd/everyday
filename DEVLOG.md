@@ -414,6 +414,8 @@ $$ a = [1, 2, 3, 4, 5, 7] $$
 
 # 04.01.2022 - TypeScript/How the compiler compiles
 
+This article is inspired by the talk [How the TypeScript compiler compiles](https://www.youtube.com/watch?v=X8k_4tZ16qU), you should really check it out for a more in-depth understanding about the TypeScript's compiling process.
+
 At a high level, the TypeScript compiler is a tool to help us analyze and compile the TypeScript code into JavaScript (\*.js), as well as some type definition files (\*.d.ts) or source maps (\*.js.map).
 
 ![](_meta/tsc-high-level.png)

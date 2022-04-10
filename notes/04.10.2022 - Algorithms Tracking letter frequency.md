@@ -58,7 +58,7 @@ for (const i in s) {
 ```
 
 $$
-hash = \[ \\overset{a}{0}, \\overset{b}{0}, \\overset{c}{0}, ..., \\overset{e}{1},... \\overset{h}{1},... \\overset{l}{2},... \\overset{o}{1},..., \\overset{z}{0} \]
+hash = \[ \\overset{a}{0}, \\overset{b}{0}, \\overset{c}{0}, \cdots, \\overset{e}{1},\cdots \\overset{h}{1},\cdots \\overset{l}{2},\cdots \\overset{o}{1},\cdots, \\overset{z}{0} \]
 $$
 
 To compare the two arrays, we just need to iterate and compare each position. Writing for loop is boring, in JavaScript, we make it more fun:

@@ -1,3 +1,99 @@
+# 04.10.2022 - Algorithms/Tracking letter frequency with Hashmap and Array
+
+Sometimes, you will need to count the frequency of letters in a string and do something with that count.
+
+For example, with a simple algorithm to check if a string is a permutation of another one, we can build a character frequency map of each string, and compare the two maps if they're the same.
+
+$$\\begin{align}
+s1 &= hello \\rightarrow \\{ h= 1, e= 1, l= 2, o= 1 \\} \\\\
+s2 &= olleh \\rightarrow \\{ o= 1, l= 2, e= 1, h= 1 \\}
+\\end{align}$$
+
+There are different approaches for creating a character frequency map, like using a hashmap, or arrays.
+
+A hashmap-alike data structure in JavaScript can be easily implemented using an empty object:
+
+```javascript
+const s = "hello";
+const hash = {};
+
+for (const i in s) {
+    let chr = s[i];
+    if (!hash[chr]) hash[chr] = 0;
+    hash[chr]++;
+}
+```
+
+You can pre-define the keys to avoid changing the shape of the hashmap on every loop. But for some small coding problems, it's not really a big deal.
+
+Comparing the two hashmaps (or objects, in this case) is requires us to get all the keys in one map, and compare the value with its corresponding value in the other map:
+
+```javascript
+const compareTwoHashmaps = (hash, hash) => {
+    for (const [chr, count] of Object.entries(hash)) {
+        if (count !== hash[chr]) return false;
+    }
+    return true;
+}
+```
+
+Another approach is to use an array as a map. We can use the fact that for each character, we can map their char code to the range from 0 by subtracting the char code with the char code of the letter **'a'**, or **97**.
+
+```javascript
+'a'.charCodeAt(0) - 'a'.charCodeAt(0) === 0
+// or
+'z'.charCodeAt(0) - 97 === 25
+```
+
+We can use this range number as an index in the frequency map array, assuming we only working with strings containing all lowercase letters:
+
+```javascript
+const s = "hello";
+const hash = new Array(26).fill(0);
+
+for (const i in s) {
+    const chrCode = s[i].charCodeAt(0);
+    hash[chrCode - 97]++;
+}
+```
+
+$$
+hash = \[ \\overset{a}{0}, \\overset{b}{0}, \\overset{c}{0}, ..., \\overset{e}{1},... \\overset{h}{1},... \\overset{l}{2},... \\overset{o}{1},..., \\overset{z}{0} \]
+$$
+
+To compare the two arrays, we just need to iterate and compare each position. Writing for loop is boring, in JavaScript, we make it more fun:
+
+```javascript
+hash1.every(i => hash2[i] === hash1[i])
+
+// or
+
+hash1.some(i => hash2[i] !== hash1[i])
+```
+
+But writing code like the two above examples might not great for code readability.
+
+Speaking of readability, I really like that in Golang, it's more convenient to create the character frequency array.
+
+```go
+hash := [26]int{}
+
+for i := range s {
+    hash[s[i] - 'a']++
+}
+```
+
+Since most coding problems will have well-defined constraints on the input string, it is more likely that the frequency hash will have a fixed size, like, all the letters from a to z, or a to Z. We can just use an array instead of slice.
+
+Using arrays also have another benefit, we can compare two arrays directly without writing any for loop (of course, it's just about code readability, not talking about the complexity of the comparison here):
+
+```go
+if array1 == array2 {
+    return true
+}
+```
+
+
 # 04.09.2022 - Golang/Use Delve on M1 Mac
 
 [Delve](https://github.com/go-delve/delve/tree/master/Documentation/installation) is a GDB-alike debugger for Golang, with better support for Go's data structures and Goroutine.

@@ -9,8 +9,8 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "04.11.2022 - TypeScript String as enum key.md",
-            "mode": "source",
+            "file": "04.12.2022 - Reading Notes Monotonic Clock.md",
+            "mode": "preview",
             "source": true
           }
         }
@@ -71,7 +71,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "04.11.2022 - TypeScript String as enum key.md",
+                "file": "04.12.2022 - Reading Notes Monotonic Clock.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -91,6 +91,7 @@
   },
   "active": "c009989497be1c5c",
   "lastOpenFiles": [
+    "04.12.2022 - Reading Notes Monotonic Clock.md",
     "04.11.2022 - TypeScript String as enum key.md",
     "04.08.2022 - Algorithms Cyclic Sort.md",
     "04.07.2022 - Algorithms Fast and slow pointers for Linked List.md",
@@ -99,7 +100,6 @@
     "04.04.2022 - Reading Notes Dry Run.md",
     "04.01.2022 - TypeScript Compilation Process.md",
     "03.31.2022 - TypeScript The intrinsic keyword.md",
-    "03.30.2022 - TypeScript How some utility types are implemented.md",
-    "03.29.2022 - TypeScript A note about lib.dom.d.ts.md"
+    "03.30.2022 - TypeScript How some utility types are implemented.md"
   ]
 }

@@ -10,9 +10,11 @@
   "listChangedFilesInMessageBody": true,
   "showStatusBar": true,
   "updateSubmodules": false,
+  "syncMethod": "merge",
   "gitPath": "",
   "customMessageOnAutoBackup": false,
   "autoBackupAfterFileChange": false,
-  "mergeOnPull": true,
-  "treeStructure": false
+  "treeStructure": false,
+  "refreshSourceControl": true,
+  "basePath": ""
 }

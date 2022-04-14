@@ -3,8 +3,8 @@
 [**go-staticcheck**](https://github.com/dominikh/go-tools/) is a static code analysis tool for Go. It has an interesting ability to detect infinite recursive calls. For example, infinite calls like this would be detected early before the program run:
 
 ```go
-func frac(n int) int {
-    return n * frac(n - 1);
+func fac(n int) int {
+    return n * fac(n - 1);
 //             ^^^^^^^^^^^^
 // infinite recursive call (SA5007) go-staticcheck
 }
@@ -14,9 +14,9 @@ The way it works is interesting. It is based on [**Control Flow Graph Analysis**
 
 Control Flow Graph (CFG) is a way to represent the code by a *directed graph*, where each *node* is a *basic block* — a straight line of code without any jumps. Each graph must have an _entry block_ and an _exit block_.
 
-For example, look at the following fractional function:
+For example, look at the following factorial function:
 
-![](_meta/frac-cfg.png)
+![](_meta/fac-cfg.png)
 
 There are 3 blocks **(1)**, **(2)**, and **(3)**. And the CFG for this function can be illustrated in the above graph. It has the **(entry)** and **(exit)** blocks.
 
@@ -24,7 +24,7 @@ In the above graph, there is a recursive call from the block **(3)**, which crea
 
 Let's see what happens if we make this function an infinite recursive, by removing the base condition:
 
-![](_meta/frac-cfg-infinite.png)
+![](_meta/fac-infinite.png)
 
 Now, the recursive call from the block **(1)** creates a loop to the **(entry)** block, but there is nothing to stop the loop. We will never reach the block **(exit)**. So we know this is an infinite recursive call.
 
@@ -58,7 +58,7 @@ It is worth noting that, this approach is only based on the syntax of the code, 
 
 For example, in the above infinite recursive call example, we can manipulate the CFG to pass the check by adding a dummy **if** statement, which does not actually serve as a base condition of the recursive call:
 
-![](_meta/frac-cfg-dummy.png)
+![](_meta/fac-dummy.png)
 
 Syntactically, the **if** statement always creates two branches in the CFG, the static analyzer will assume that the **(exit)** block can be reached. But in this case, our **if** statement evaluates the **false** expression, which makes it always fall into the **false** branch, and the **true** branch will never reach. And at runtime, it will cause a stack overflow.
 

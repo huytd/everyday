@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "04.14.2022 - TypeScript Understanding keyof typeof.md",
+            "file": "04.15.2022 - Math Prime Factorization.md",
             "mode": "source",
             "source": true
           }
@@ -71,7 +71,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "04.14.2022 - TypeScript Understanding keyof typeof.md",
+                "file": "04.15.2022 - Math Prime Factorization.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -91,15 +91,15 @@
   },
   "active": "c009989497be1c5c",
   "lastOpenFiles": [
-    "04.14.2022 - TypeScript Understanding keyof typeof.md",
-    "04.13.2022 - Reading Notes Control Flow Graph and Infinite Recursive Detection.md",
-    "04.12.2022 - Reading Notes Monotonic Clock.md",
-    "04.11.2022 - TypeScript String as enum key.md",
-    "04.08.2022 - Algorithms Cyclic Sort.md",
+    "04.15.2022 - Math Prime Factorization.md",
+    "04.10.2022 - Algorithms Tracking letter frequency.md",
+    "04.02.2022 - Algorithms Merge two sorted arrays with extra space.md",
+    "04.09.2022 - Golang Use Delve on M1 Mac.md",
+    "04.01.2022 - TypeScript Compilation Process.md",
     "04.07.2022 - Algorithms Fast and slow pointers for Linked List.md",
     "04.06.2022 - Monorepo Code organization when using Nx.md",
     "04.05.2022 - TypeScript Some random notes about Classes.md",
     "04.04.2022 - Reading Notes Dry Run.md",
-    "04.01.2022 - TypeScript Compilation Process.md"
+    "03.31.2022 - TypeScript The intrinsic keyword.md"
   ]
 }

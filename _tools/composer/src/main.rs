@@ -15,7 +15,7 @@ fn main() -> Result<()> {
     for entry in source {
         if let Ok(entry) = entry {
             if let Some(file_name) = entry.file_name().to_str() {
-                if !file_name.starts_with(".") && !file_name.starts_with("_") {
+                if !file_name.starts_with(".") && !file_name.starts_with("_") && file_name.ends_with(".md") {
                     let content = fs::read_to_string(format!("notes/{}", file_name))?;
                     let title = content.lines().next().unwrap().replace("# ", "");
                     let date_str = title.split_once(" - ").unwrap().0;

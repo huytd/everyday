@@ -12,6 +12,7 @@ c &= (A_x - C_x) ^ 2 + (A_y - C_y) ^ 2 - r ^ 2 \\\\
 $$
 
 Now we have 3 cases:
+
 - $\Delta < 0$: ray does not intersect the circle
 - $\Delta = 0$: ray intersects the circle in one point (tangent)
 - $\Delta > 0$: ray intersects the circle in two points (secant)

@@ -1,3 +1,96 @@
+# 04.16.2022 - Math/Circle and Ray Intersection
+
+Let $P$ be the intersection point, $A$ is the anchor point of the ray, $B$ is the endpoint of the ray (assuming the ray is length-limited) and $C$ is the circle's center point, with radius $r$.
+
+$$
+\\begin{align}
+a &= (B_x - A_x) ^ 2 + (B_y - A_y) ^ 2 \\\\
+b &= 2((B_x - A_x)(A_x - C_x) + (B_y - A_y)(A_y - C_y)) \\\\
+c &= (A_x - C_x) ^ 2 + (A_y - C_y) ^ 2 - r ^ 2 \\\\
+\\Delta &= b ^ 2 - 4ac
+\\end{align}
+$$
+
+Now we have 3 cases:
+- $\Delta < 0$: ray does not intersect the circle
+- $\Delta = 0$: ray intersects the circle in one point (tangent)
+- $\Delta > 0$: ray intersects the circle in two points (secant)
+
+If $\Delta = 0$, we have $t = \tfrac{-b}{2a}$, and if $t \geq 0$, we can calculate the position of $P$ as:
+
+$$\\begin{align}
+  P_x &= t(B_x - A_x) + A_x \\\
+  P_y &= t(B_y - A_y) + A_y
+\\end{align}$$
+
+If $\Delta > 0$, we have:
+
+$$\\begin{align}
+  t_1 &= \\tfrac{-b -\\sqrt{\\Delta}}{2a} \\\\
+  t_2 &= \\tfrac{-b +\\sqrt{\\Delta}}{2a} \\\\
+\\end{align}$$
+
+In this case, if $t_i \geq 0$ then the two intersection points can be calculated as:
+
+$$\\begin{align}
+  P_{i_x} &= t_i(B_x - A_x) + A_x \\\\
+  P_{i_y} &= t_i(B_y - A_y) + A_y
+\\end{align}$$
+
+Implementation in JavaScript:
+
+```javascript
+function getIntersectionPoint(ray, circle) {
+  const [A, B] = ray;
+  const C = { x: circle.x, y: circle.y };
+  const r = circle.radius;
+
+  const a = (B.x - A.x) ** 2 + (B.y - A.y) ** 2;
+  const b = 2 * ((B.x - A.x) * (A.x - C.x) + (B.y - A.y) * (A.y - C.y));
+  const c = (A.x - C.x) ** 2 + (A.y - C.y) ** 2 - r ** 2;
+  const discriminant = b ** 2 - 4 * a * c;
+
+  const result = [];
+  
+  if(discriminant === 0) {
+    const t = -b / (2 * a);
+
+    if(t >= 0) {
+      const x = t * (B.x - A.x) + A.x;
+      const y = t * (B.y - A.y) + A.y;
+
+      result.push({ x, y });
+    }
+  } else if(discriminant > 0) {
+    const discriminantSqrt = Math.sqrt(discriminant);
+    const t1 = (-b + discriminantSqrt) / (2 * a);
+    const t2 = (-b - discriminantSqrt) / (2 * a);
+
+    if(t1 >= 0) {
+      const x = t1 * (B.x - A.x) + A.x;
+      const y = t1 * (B.y - A.y) + A.y;
+
+      result.push({ x, y })
+    }
+
+    if(t2 >= 0) {
+      const x = t2 * (B.x - A.x) + A.x;
+      const y = t2 * (B.y - A.y) + A.y;
+
+      result.push({ x, y });
+    }
+  }
+
+  return result;
+}
+```
+
+**References:**
+
+- https://sszczep.github.io/ray-casting-in-2d-game-engines/
+- https://sszczep.github.io/ray-casting-in-2d-game-engines/cheatsheet.html
+- https://mathworld.wolfram.com/Circle-LineIntersection.html
+
 # 04.15.2022 - Math/Prime Factorization Uniqueness
 
 In mathematics, the [fundamental theorem of arithmetic](https://en.wikipedia.org/wiki/Fundamental_theorem_of_arithmetic) states that: **"Any integer number larger than 1 can be written as a product of prime numbers in one and only one way".**

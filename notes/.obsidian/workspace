@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "04.15.2022 - Math Prime Factorization.md",
+            "file": "04.16.2022 - Math Circle and Ray Intersection.md",
             "mode": "source",
             "source": true
           }
@@ -71,7 +71,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "04.15.2022 - Math Prime Factorization.md",
+                "file": "04.16.2022 - Math Circle and Ray Intersection.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -91,6 +91,7 @@
   },
   "active": "c009989497be1c5c",
   "lastOpenFiles": [
+    "04.16.2022 - Math Circle and Ray Intersection.md",
     "04.15.2022 - Math Prime Factorization.md",
     "04.10.2022 - Algorithms Tracking letter frequency.md",
     "04.02.2022 - Algorithms Merge two sorted arrays with extra space.md",
@@ -99,7 +100,6 @@
     "04.07.2022 - Algorithms Fast and slow pointers for Linked List.md",
     "04.06.2022 - Monorepo Code organization when using Nx.md",
     "04.05.2022 - TypeScript Some random notes about Classes.md",
-    "04.04.2022 - Reading Notes Dry Run.md",
-    "03.31.2022 - TypeScript The intrinsic keyword.md"
+    "04.04.2022 - Reading Notes Dry Run.md"
   ]
 }

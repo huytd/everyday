@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "04.16.2022 - Math Circle and Ray Intersection.md",
+            "file": "04.17.2022 - Data Structures Bitboard Tic Tac Toe.md",
             "mode": "source",
             "source": true
           }
@@ -71,7 +71,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "04.16.2022 - Math Circle and Ray Intersection.md",
+                "file": "04.17.2022 - Data Structures Bitboard Tic Tac Toe.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -91,6 +91,7 @@
   },
   "active": "c009989497be1c5c",
   "lastOpenFiles": [
+    "04.17.2022 - Data Structures Bitboard Tic Tac Toe.md",
     "04.16.2022 - Math Circle and Ray Intersection.md",
     "04.15.2022 - Math Prime Factorization.md",
     "04.10.2022 - Algorithms Tracking letter frequency.md",
@@ -99,7 +100,6 @@
     "04.01.2022 - TypeScript Compilation Process.md",
     "04.07.2022 - Algorithms Fast and slow pointers for Linked List.md",
     "04.06.2022 - Monorepo Code organization when using Nx.md",
-    "04.05.2022 - TypeScript Some random notes about Classes.md",
-    "04.04.2022 - Reading Notes Dry Run.md"
+    "04.05.2022 - TypeScript Some random notes about Classes.md"
   ]
 }

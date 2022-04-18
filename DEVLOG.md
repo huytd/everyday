@@ -38,7 +38,7 @@ $$
 \\end{align}
 $$
 
-In reality., there's no 9-bits number type on any computer, we could use two 16-bits numbers instead, that sums up to 4 bytes, or we can even use just use 3 bytes (this would be a great exercise for the readers).
+In reality, there's no 9-bits number type on any computer, we could use two 16-bits numbers instead, that sums up to 4 bytes, or we can even use just use 3 bytes (this would be a great exercise for the readers).
 
 Now, how can we perform the board evaluation algorithm?
 
@@ -55,7 +55,7 @@ To print the board, we could write something like:
 
 ![](_meta/bitboard-algo-02.png)
 
-Now, let's say we want to check if it's X or O is winning the 2nd row of the board. We can check if every bit at the second row of each board is equal to 1. To do this, we apply the bitwise AND operator between each board and a mask board of *0b000111000*:
+Now, let's say we want to check if it's X or O is winning the 2nd row of the board. We can check if every bit at the second row of each board is equal to 1. To do this, we apply the bitwise `AND` operator between each board and a mask board of `0b000111000`:
 
 $$
 \\def\\arraystretch{1.5}    \\begin{array}{c:c:c}    0 & 1 & 0 \\\\ \\hdashline    1 & 0 & 1 \\\\
@@ -66,7 +66,7 @@ $$
 \\hdashline    0 & 0 & 0 \\end{array}
 $$
 
-In case we do have a winner, the result of the AND operation between two boards would be the mask board itself.
+In case we do have a winner, the result of the `AND` operation between two boards would be the mask board itself.
 
 $$
 \\def\\arraystretch{1.5}    \\begin{array}{c:c:c}    0 & 1 & 0 \\\\ \\hdashline    1 & 1 & 1 \\\\

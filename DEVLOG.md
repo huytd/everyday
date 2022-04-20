@@ -7,7 +7,7 @@ A simple approach would be extracting the digits from the right to the left, sto
 $\underline{\normalsize{P}\small{RINT} \normalsize{D}\small{IGITS}\cdot\normalsize{R}\small{IGHT}\normalsize{T}\small{O}\normalsize{L}\small{EFT}(n)}$
 $1: \quad digits \leftarrow \text{empty list}$
 $2: \quad \textbf{while} \ n \gt 0$
-$3: \quad \quad d \leftarrow n \ \\% \ 10$
+$3: \quad \quad d \leftarrow n \\ \\% \\ 10$
 $4: \quad \quad n \leftarrow n \div 10$
 $5: \quad \quad \textbf{push}\ d\ \rightarrow \ digits$
 $6: \quad i := length\ of\ digits$
@@ -28,7 +28,7 @@ $$
 And the remainder of the above calculation is actually the number $n$ without its first digit!
 
 $$
-54321\ \\%\ 10^4 = 4321
+54321\\ \\% \\ 10^4 = 4321
 $$
 
 We already know [how to count the digits of a number](/everyday/01-21-2022-math-count-number-of-digits-with-logarithm), it can be obtained by:
@@ -43,7 +43,7 @@ $\underline{\normalsize{P}\small{RINT}\normalsize{D}\small{IGITS}\cdot\normalsiz
 $1: \quad k \leftarrow log_{10}(n) + 1$
 $2: \quad \textbf{while} \ n \gt 0$
 $3: \quad \quad d \leftarrow n \div 10^{k-1}$
-$4: \quad \quad n \leftarrow n\ \\%\ 10^{k-1}$
+$4: \quad \quad n \leftarrow n\\ \\% \\ 10^{k-1}$
 $5: \quad \quad k \leftarrow log_{10}(n) + 1$
 $6: \quad \quad \textbf{print} \ d$
 

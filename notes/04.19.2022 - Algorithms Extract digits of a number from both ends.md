@@ -4,7 +4,7 @@ Let's say, we have a problem that requires us to print all the digits of a numbe
 
 A simple approach would be extracting the digits from the right to the left, storing them in an array, and printing that array in a reverse way.
 
-$\underline{\sc{PRINT}\sc{DIGITS}\cdot\sc{RIGHT}\sc{TO}\sc{LEFT}(n)}$
+$\underline{\normalsize{P}\small{RINT} \normalsize{D}\small{IGITS}\cdot\normalsize{R}\small{IGHT}\normalsize{T}\small{O}\normalsize{L}\small{EFT}(n)}$
 $1: \quad digits \leftarrow \text{empty list}$
 $2: \quad \textbf{while} \ n \gt 0$
 $3: \quad \quad d \leftarrow n \ \% \ 10$
@@ -39,7 +39,7 @@ $$
 
 So, the algorithm to extract the digits from the left to the right would be:
 
-$\underline{\sc{PRINT}\sc{DIGITS}\cdot\sc{LEFT}\sc{TO}\sc{RIGHT}(n)}$
+$\underline{\normalsize{P}\small{RINT}\normalsize{D}\small{IGITS}\cdot\normalsize{L}\small{EFT}\normalsize{T}\small{O}\normalsize{R}\small{IGHT}(n)}$
 $1: \quad k \leftarrow log_{10}(n) + 1$
 $2: \quad \textbf{while} \ n \gt 0$
 $3: \quad \quad d \leftarrow n \div 10^{k-1}$

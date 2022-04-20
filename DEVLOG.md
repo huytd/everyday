@@ -1,3 +1,156 @@
+# 04.20.2022 - TypeScript/Building an Event System using the browser's CustomEvent
+
+An event system is a mechanism for globally receiving and broadcasting messages, which can be used in a Web Application to allow different components that do not have any parent-child relation to communicating with each other.
+
+## Technical Background
+
+There's a native [`Event`](https://developer.mozilla.org/en-US/docs/Web/API/Event) support in the browser. It works on the element level. We will stick with the top-level element, the `document`.
+
+To listen to an event, use `document.addEventListener(<event-name>, <callback>)`, where `callback` is a function that takes an `Event` object as its only parameter.
+
+To create an event with some additional data, use [`CustomEvent`](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent). Any data passed into the constructor will be available via the `detail` object.  
+
+```typescript
+const event = new CustomEvent("event-name", {  
+    a: 10,  
+    b: 'Hello'  
+});  
+```
+
+To dispatch the event, do it in document level `document.dispatchEvent(evt)`.
+
+With this approach, we could not clean up the event listeners after the class instance is destroyed because there's no way we can detect whenever the class is being destroyed. We can still provide a way to let users deallocate it themself.
+
+So, instead of using `document`, we can create a new dummy target. Using this, we don't have to worry about cleaning up things after the class is destroyed because the `target` itself will be destroyed.  
+
+```typescript
+const target = new EventTarget();  
+target.dispatchEvent(evt);  
+```
+
+Using browser's Event API, we can have the benefit of using `e.preventDefault()` (to cancel an event, if that event has `cancellable` set to true), `e.stopPropagation()`.
+
+The downside probably is the dependency on the DOM API, which make this only work with the browsers, but that's the intention.
+
+## API Design
+
+Init the Event System:  
+
+```typescript
+const comm = new EventSystem();  
+```  
+    
+If there are different `EventSystem`'s instances, each of them should be able to track their events with no overlap, even if the event names are the same.
+
+Dispatch an Event:  
+
+```typescript
+comm.emit("event-name", {  
+    customData: 'Hello'  
+});  
+```
+
+Handling an Event: 
+
+```typescript
+comm.on("event-name", (event) => {  
+    console.log(event);  
+});  
+```
+
+Optional but nice to have, it should support `once()`, `off()` methods.
+
+## Implementation Notes
+
+This would be a class where each event system instance can be created with a dummy DOM element to handle the creation and dispatch of an event. This can also help avoid overlapping events between multiple instances of the class.  
+
+```typescript
+class EventSystem {  
+    constructor() {  
+        this.target = new EventTarget();  
+    }  
+}  
+```
+
+Dispatching an event should take the event system instance into its account, and the new event is based on `CustomEvent`:
+
+```typescript
+class EventSystem {  
+    ...  
+    emit(name: string, detail: any) {  
+        const e = new CustomEvent(name, { 
+            detail,
+            cancellable: true 
+        });  
+        this.target.dispatchEvent(e);  
+    }  
+    ...  
+}  
+```
+
+Then, event handling is just simple, but we're messing with `document`. It's necessary to keep track of the event listeners and remove them upon the instance destroyed.  
+
+```typescript
+class EventSystem {  
+    ...  
+    on(name: string, fn: EventHandler) {  
+        this.target.addEventListener(name, fn);  
+    }  
+    ...  
+}  
+```
+
+---
+
+If you are interested, here's the [full implementation of an Event System](https://github.com/huytd/web-debugger/blob/master/frontend/lib/events.ts) that I'm using for a web-based debugger. It is used to communicate/share data between different components on a page.
+
+```typescript
+export type UIEventHandlerFn = (event: Event) => void;
+export type UIEventHandler = {
+  name: string,
+  action: UIEventHandlerFn
+};
+
+export class UIEventSystem {
+  target: EventTarget;
+
+  constructor() {
+    this.target = new EventTarget();
+  }
+
+  emit(name: string, data?: any) {
+    const e = new CustomEvent(name, {
+      detail: data,
+      cancelable: true
+    });
+    return this.target.dispatchEvent(e);
+  }
+
+  on(name: string, fn: UIEventHandlerFn) {
+    return this.target.addEventListener(name, fn, false);
+  }
+
+  ons(handlers: UIEventHandler[]) {
+    handlers.forEach(({ name, action }) => {
+      this.on(name, action);
+    });
+  }
+
+  once(name: string, fn: UIEventHandlerFn) {
+    return this.target.addEventListener(name, fn, { once: true });
+  }
+
+  off(name: string, fn: UIEventHandlerFn) {
+    return this.target.removeEventListener(name, fn, false);
+  }
+};
+```
+
+**References:**
+
+- https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent
+- https://developer.mozilla.org/en-US/docs/Web/API/Event
+
 # 04.19.2022 - Algorithms/Extract digits of a number from both ends
 
 Let's say, we have a problem that requires us to print all the digits of a number from the left to right.

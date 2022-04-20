@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "04.19.2022 - Algorithms Extract digits of a number from both ends.md",
+            "file": "04.20.2022 - TypeScript Using the browser's CustomEvent.md",
             "mode": "source",
             "source": true
           }
@@ -71,7 +71,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "04.19.2022 - Algorithms Extract digits of a number from both ends.md",
+                "file": "04.20.2022 - TypeScript Using the browser's CustomEvent.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -91,6 +91,7 @@
   },
   "active": "c009989497be1c5c",
   "lastOpenFiles": [
+    "04.20.2022 - TypeScript Using the browser's CustomEvent.md",
     "04.19.2022 - Algorithms Extract digits of a number from both ends.md",
     "01.21.2022 - Math Count number of digits with Logarithm.md",
     "04.18.2022 - Algorithms Detect chess piece movement with Bitboard.md",
@@ -99,7 +100,6 @@
     "04.12.2022 - Reading Notes Monotonic Clock.md",
     "04.11.2022 - TypeScript String as enum key.md",
     "04.08.2022 - Algorithms Cyclic Sort.md",
-    "04.07.2022 - Algorithms Fast and slow pointers for Linked List.md",
-    "04.06.2022 - Monorepo Code organization when using Nx.md"
+    "04.07.2022 - Algorithms Fast and slow pointers for Linked List.md"
   ]
 }

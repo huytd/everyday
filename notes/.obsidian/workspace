@@ -9,8 +9,8 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "04.18.2022 - Algorithms Detect chess piece movement with Bitboard.md",
-            "mode": "source",
+            "file": "04.19.2022 - Algorithms Extract digits of a number from both ends.md",
+            "mode": "preview",
             "source": true
           }
         }
@@ -71,7 +71,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "04.18.2022 - Algorithms Detect chess piece movement with Bitboard.md",
+                "file": "04.19.2022 - Algorithms Extract digits of a number from both ends.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -91,6 +91,8 @@
   },
   "active": "c009989497be1c5c",
   "lastOpenFiles": [
+    "04.19.2022 - Algorithms Extract digits of a number from both ends.md",
+    "01.21.2022 - Math Count number of digits with Logarithm.md",
     "04.18.2022 - Algorithms Detect chess piece movement with Bitboard.md",
     "04.14.2022 - TypeScript Understanding keyof typeof.md",
     "04.13.2022 - Reading Notes Control Flow Graph and Infinite Recursive Detection.md",
@@ -98,8 +100,6 @@
     "04.11.2022 - TypeScript String as enum key.md",
     "04.08.2022 - Algorithms Cyclic Sort.md",
     "04.07.2022 - Algorithms Fast and slow pointers for Linked List.md",
-    "04.06.2022 - Monorepo Code organization when using Nx.md",
-    "04.05.2022 - TypeScript Some random notes about Classes.md",
-    "04.04.2022 - Reading Notes Dry Run.md"
+    "04.06.2022 - Monorepo Code organization when using Nx.md"
   ]
 }

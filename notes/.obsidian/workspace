@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "04.24.2022 - Compilers Variable declaration in Virtual Stack Machine.md",
+            "file": "05.08.2022 - Parsing Recursive Descent Parser.md",
             "mode": "source",
             "source": true
           }
@@ -70,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "04.24.2022 - Compilers Variable declaration in Virtual Stack Machine.md",
+                "file": "05.08.2022 - Parsing Recursive Descent Parser.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -90,6 +90,7 @@
   },
   "active": "02e68c6fb10c9e2f",
   "lastOpenFiles": [
+    "05.08.2022 - Parsing Recursive Descent Parser.md",
     "04.24.2022 - Compilers Variable declaration in Virtual Stack Machine.md",
     "04.21.2022 - Compilers Virtual Stack Machines.md",
     "04.17.2022 - Data Structures Bitboard Tic Tac Toe.md",
@@ -98,7 +99,6 @@
     "04.10.2022 - Algorithms Tracking letter frequency.md",
     "04.02.2022 - Algorithms Merge two sorted arrays with extra space.md",
     "04.09.2022 - Golang Use Delve on M1 Mac.md",
-    "04.01.2022 - TypeScript Compilation Process.md",
-    "04.07.2022 - Algorithms Fast and slow pointers for Linked List.md"
+    "04.01.2022 - TypeScript Compilation Process.md"
   ]
 }

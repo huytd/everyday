@@ -47,6 +47,34 @@ it('should throw error if there is a file larger than 5MB', () => {
 })
 ```
 
+# 08.27.2022 - TypeScript/Testing localStorage in Jest
+
+One approach to testing the `localStorage` function in Jest is to mock the `setItem`/`getItem` methods.
+
+To mock something with `localStorage`, we can do it via the `Storage.prototype`, for example:
+
+```typescript
+jest.spyOn(Storage.prototype, 'setItem');
+jest.spyOn(Storage.prototype, 'getItem');
+```
+
+Now, you'll be able to test their behavior:
+
+```typescript
+// test write to localStorage
+expect(localStorage.setItem).toHaveBeenCalledWith('key', 'value')
+
+// test read from localStorage
+expect(localStorage.getItem).toHaveBeenCalledWith('key')
+```
+
+Or, use `mockReturnValue` method if you want to mock the return value of `localStorage.getItem`:
+
+```typescript
+jest.spyOn(Storage.prototype, 'getItem')
+    .mockReturnValue(10);
+```
+
 # 06.06.2022 - Self-hosting/Migrating docker-compose application to M1 Mac
 
 Previously, I hosted [Plausible](https://plausible.io) on my Linux server. It's a Google Analytics alternative, that runs as a set of 4 Docker containers, managed with `docker-compose`. Which is cool.

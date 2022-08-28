@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "06.06.2022 - Self-hosting Migrating docker-compose application.md",
+            "file": "08.28.2022 - TypeScript Mocking File and FileList in Jest.md",
             "mode": "source",
             "source": true
           }
@@ -71,7 +71,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "06.06.2022 - Self-hosting Migrating docker-compose application.md",
+                "file": "08.28.2022 - TypeScript Mocking File and FileList in Jest.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",

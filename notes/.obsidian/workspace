@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "08.27.2022 - TypeScript Testing localStorage in Jest.md",
+            "file": "08.29.2022 - TypeScript Optional Chaining and Code Coverage.md",
             "mode": "source",
             "source": true
           }
@@ -71,7 +71,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "08.27.2022 - TypeScript Testing localStorage in Jest.md",
+                "file": "08.29.2022 - TypeScript Optional Chaining and Code Coverage.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -91,6 +91,7 @@
   },
   "active": "02e68c6fb10c9e2f",
   "lastOpenFiles": [
+    "08.27.2022 - TypeScript Testing localStorage in Jest.md",
     "08.28.2022 - TypeScript Mocking File and FileList in Jest.md",
     "06.06.2022 - Self-hosting Migrating docker-compose application.md",
     "05.08.2022 - Parsing Recursive Descent Parser.md",
@@ -99,7 +100,6 @@
     "04.17.2022 - Data Structures Bitboard Tic Tac Toe.md",
     "04.16.2022 - Math Circle and Ray Intersection.md",
     "04.15.2022 - Math Prime Factorization.md",
-    "04.10.2022 - Algorithms Tracking letter frequency.md",
-    "04.02.2022 - Algorithms Merge two sorted arrays with extra space.md"
+    "04.10.2022 - Algorithms Tracking letter frequency.md"
   ]
 }

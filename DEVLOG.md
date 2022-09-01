@@ -1,3 +1,37 @@
+# 08.31.2022 - TypeScript/Test parameter passed into a function with Jest
+
+OK, this one is super useful, I promise!
+
+As you may already know, we can use `toHaveBeenCalledWith` on a spied function to check if that function has been called with a set of arguments.
+
+For example, the following code test the `apiService.get` to be called with a correct URL when `ping` is invoked.
+
+```typescript
+const ping = (name: string) => {
+    return apiService.get(`/api/ping?user=${name}`);
+};
+
+test('ping should call correct URL', () => {
+    const getSpy = jest.spyOn(apiService, 'get');
+    ping('huy');
+    expect(getSpy)
+        .toHaveBeenCalledWith('/api/ping?user=huy');
+});
+```
+
+What if you only want to test just a small part of an URL parameter that has been passed to `apiService.get`?
+
+You can use `expect.stringContaining` as a parameter of `toHaveBeenCalledWith`!
+
+```typescript
+test('ping should call with URL containing correct name', () => {
+    const getSpy = jest.spyOn(apiService, 'get');
+    ping('huy');
+    expect(getSpy)
+        .toHaveBeenCalledWith(expect.stringContaining('huy'));
+});
+```
+
 # 08.29.2022 - TypeScript/Optional Chaining and Code Coverage
 
 For the uninformed, **optional chaining** is a new JavaScript feature that allows you to access property values deep inside an object without checking that each reference in the chain is valid. For example:

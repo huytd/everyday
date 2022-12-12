@@ -256,7 +256,7 @@ For searching, the most simple one is the [`std.mem.indexOf`](https://ziglang.or
 const foundAt = std.mem.indexOf(u32, [_]u32{1, 2, 3, 5}, [_]u32{2});
 ```
 
-Or you can use [std.sort.binarySearch]:
+Or you can use [std.sort.binarySearch](https://github.com/ziglang/zig/blob/master/lib/std/sort.zig#L7):
 
 ```js
 fn order_u32(context: void, lhs: u32, rhs: u32) math.Order {
@@ -267,7 +267,7 @@ fn order_u32(context: void, lhs: u32, rhs: u32) math.Order {
 const index = binarySearch(u32, 5, &[_]u32{ 1, 2, 3, 4, 5 }, {}, S.order_u32);
 ```
 
-For sorting, most of the time, you can use [std.sort.sort] method:
+For sorting, most of the time, you can use [std.sort.sort](https://github.com/ziglang/zig/blob/master/lib/std/sort.zig#L196-L204) method:
 
 ```js
 std.sort.sort(i32, haystack, {}, std.sort.desc(i32));

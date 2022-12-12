@@ -1,6 +1,9 @@
 {
   "baseFontSize": 16,
   "theme": "system",
-  "cssTheme": "Minimal",
-  "enabledCssSnippets": []
+  "cssTheme": "",
+  "enabledCssSnippets": [],
+  "accentColor": "#6a956f",
+  "textFontFamily": "iA Writer Quattro V",
+  "monospaceFontFamily": "American Typewriter"
 }

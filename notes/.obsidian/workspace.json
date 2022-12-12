@@ -1,0 +1,113 @@
+{
+  "main": {
+    "id": "16ce62fe84e592af",
+    "type": "split",
+    "children": [
+      {
+        "id": "b84d4fc0b9295291",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "fbeae0d0fb34598e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "12.11.2022 - Zig Using Zig for Advent of Code.md",
+                "mode": "source",
+                "source": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "d8ceb93614c2b03f",
+    "type": "split",
+    "children": [
+      {
+        "id": "a25e3931304f1345",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a333c3aaf6341c9a",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "0aad45401283d779",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "$",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "right": {
+    "id": "8a7eb0175a0f1a3d",
+    "type": "split",
+    "children": [
+      {
+        "id": "b6644debf72f3085",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "36fb62f7cc576a06",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "12.11.2022 - Zig Using Zig for Advent of Code.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "fbeae0d0fb34598e",
+  "lastOpenFiles": [
+    "02.16.2022 - TypeScript The unknown Type.md",
+    "12.11.2022 - Zig Using Zig for Advent of Code.md",
+    "08.31.2022 - TypeScript Test parameter passed into a function with Jest.md",
+    "08.29.2022 - TypeScript Optional Chaining and Code Coverage.md",
+    "08.27.2022 - TypeScript Testing localStorage in Jest.md",
+    "08.28.2022 - TypeScript Mocking File and FileList in Jest.md",
+    "06.06.2022 - Self-hosting Migrating docker-compose application.md",
+    "05.08.2022 - Parsing Recursive Descent Parser.md",
+    "04.24.2022 - Compilers Variable declaration in Virtual Stack Machine.md",
+    "04.21.2022 - Compilers Virtual Stack Machines.md"
+  ]
+}

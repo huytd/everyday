@@ -285,6 +285,16 @@ Anyway, AoC has yet to be concluded, and so does my journey with Zig. This post 
 
 Thank you so much for reading. I hope you all have a great holiday!
 
+---
+
+After I published the article, @andrewrk commented with some suggestions about the points I made in the article:
+
+- (1) Use `std.fs.Dir.readFileAlloc` instead of your `readInputFile` function.
+- (2) No need to append lines into an array list. Just iterate over the memory directly.
+- (4) `std.fmt.digitToChar`
+- (6) `std.fifo.LinearFifo`
+- (9) Please be aware of what `@intCast` does which is asserting that the mathematical value is representable in the destination type. Also, the `%` operator is available but only when modulus division and remainder division would yield the same result, i.e., when the inputs are unsigned.
+
 # 08.31.2022 - TypeScript/Test parameter passed into a function with Jest
 
 OK, this one is super useful, I promise!

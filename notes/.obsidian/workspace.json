@@ -97,6 +97,15 @@
     "width": 300,
     "collapsed": true
   },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "command-palette:Open command palette": false,
+      "markdown-importer:Open format converter": false
+    }
+  },
   "active": "fbeae0d0fb34598e",
   "lastOpenFiles": [
     "02.16.2022 - TypeScript The unknown Type.md",
